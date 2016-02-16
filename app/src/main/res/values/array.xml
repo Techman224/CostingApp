@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sports_array">
+        <item>Sale 1</item>
+        <item>Look at all of these paddle boards!</item>
+        <item>I\'m totally selling things</item>
+        <item>Step 1: Click top right button</item>
+        <item>Step 2: Click Calculator</item>
+        <item>Step 3: ???</item>
+        <item>Step 4: Profit</item>
+    </string-array>
+</resources>
