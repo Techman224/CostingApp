@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:id="@+id/gridLayout"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:clickable="false"
+        android:orientation="vertical">
 
         <Button
             android:layout_width="wrap_content"
@@ -33,12 +35,79 @@
             android:layout_height="wrap_content"
             android:text="Calculate"
             android:id="@+id/button"
-            android:layout_marginBottom="165dp"
             android:layout_row="1"
             android:layout_column="0"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toEndOf="@+id/gridLayout" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="List"
+            android:id="@+id/textView2"
+            android:layout_row="0"
+            android:layout_column="0"
             android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Price"
+            android:id="@+id/textView5"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Items"
+            android:id="@+id/textView4"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Name"
+            android:id="@+id/textView3"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="center_horizontal" />
+
     </GridLayout>
 
 </RelativeLayout>
