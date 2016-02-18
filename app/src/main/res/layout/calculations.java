@@ -1,4 +1,4 @@
-public class calculations
+public class Calculations
 {
     public static void main(String[] args)
     {
@@ -6,7 +6,7 @@ public class calculations
     }
 }
 
-class order
+class Order
 {
     private int day;
     private int month;
@@ -52,7 +52,7 @@ class order
     }
 }
 
-class totalOrder
+class TotalOrder
 {
     public totalOrder()
     {
@@ -92,5 +92,34 @@ class totalOrder
     public float totalGST()
     {
         // sum GSTCharged from objects
+    }
+}
+
+class Node
+{
+    private Order head;
+    private Node next;
+
+    public Node()
+    {
+        head = null;
+        next = null;
+    }
+
+    public Node(Order head)
+    {
+        Order head = new Order();
+        this.head = head;
+        next = null;
+    }
+
+    public Order getNode()
+    {
+        return head;
+    }
+
+    public Order getNext()
+    {
+        return next
     }
 }
