@@ -1,3 +1,113 @@
-Feb 18:
+Software Engineering Group Meeting Minutes (By Jasmin)
 
-Ryan, Jasmine, Joseph met, discussed layouts, handin for Iter1, discussion on architecture.
+Meeting 1 - Jan 11:
+People: Ryan, Joseph, Daniel, Courtney, Alan, & Jasmin
+Location: Conference room c in Engineering Library
+
+Start: 3:30PM
+- Discussed ideas for app
+- Considered shopping app, astronomy app, & job costing app
+- All 6/6 voted for job costing app
+End: 4:30PM
+
+
+
+Meeting 2 - Jan 21:
+People: Ryan, Joseph, Courtney, Alan, & Jasmin
+Location: Room 362C in Engineering Library
+
+Start: 4:00PM
+- Reviewed sent data from customer (analyzing excel spreadsheet & email)
+- Started creating big user stories and detailed user stories
+- Storing and accessing data and processed information (high)
+- Deducing derived information form raw data user inputs (high)
+- Viewing a summary of all financial transactions (for a particular order / period of time) (low)
+- Editing previous entries (medium)
+- Calculate the profit of an order base on revenues and profits I enter
+- Calculate the margin
+- Being able to store tax rate, and update it when needed
+- Navigate the app using a constant menu
+- Started vision statement
+End: 5:30PM
+
+
+
+Meeting 3 - Jan 22:
+People: Ryan, Joseph, Courtney, Alan, Daniel (Skype), & Jasmin
+Location: Room 363C in Engineering Library
+
+Start: 2:30PM
+- Continued creating big user stories and detailed user stories
+- Continued adding to vision statement
+- Sorting, filter, & search with medium priorities
+- Autocomplete (low priority)
+- Multiple business profiles / accounts (low priority)
+- Planned video meeting tomorrow in armes with customer
+End: 4:15PM
+
+
+
+Meeting 4 with Video Interview - Jan 23:
+People: Keith (Customer), Ryan, Joseph, Courtney, Alan, & Jasmin
+Location: Armes lower level
+
+Start: 4:00PM
+- Lenght of video interview 28 minutes (Joseph edited for max 5 minutes)
+- Discussed his current work flow
+- Discussed needs of the app
+- Reviewed big user stories and detailed user stories with Keith
+- Added a new feature called quick calculator with low priority
+End: 5:00PM
+
+
+
+Meeting 5 - Jan 25:
+People: Ryan, Joseph, Courtney, Alan, & Jasmin
+Location: EITC 160
+
+Start: 10:00AM
+- Quick review with everyone
+- Set all priorities and all engineering days for big user stories
+- Finalize vision statement
+End: 11:45AM
+
+
+
+Meeting 6 - Feb 2:
+People: Courtney, Alan, Joseph, Daniel (Skype), & Jasmin
+Location: William R. Newman Library (Agriculture Building)
+
+Start: 10:30AM
+- Short meeting for configuring git and github
+- Pushed sample text file to test repository with android studio
+End: 12:30PM
+
+
+
+Meeting 7 - Feb 6:
+People: Ryan, Joseph, Courtney, Alan, Daniel, & Jasmin (left at 12PM)
+Location: Armes lower level
+
+Start: 10:00AM
+- Went over big user stories and detailed user stories
+- Assigned stories to individual team members
+- Ryan: Contributing to viewing and order (summary of that order)
+- Courtney: Do the add page for order
+- Alan: Do stub database & update (edit) page for order
+- Joseph: Do navigation layout around the whole app
+- Daniel: Displaying an order
+- Jasmin: Do calculation logic behind the scenes and a little of entering data layout
+- Small discussion about database design
+End: 1PM
+
+
+
+Meeting 8 - Feb 18:
+People: Ryan, Joseph, Jasmin
+Location: Armes lower level
+
+Start: 11:00AM
+- Discussed current layout done so far
+- Reviewed what had to be done for Iter1
+- Discussed a little on business logic and architecture
+End: 12:00PM
