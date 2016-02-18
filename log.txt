@@ -1,0 +1,4 @@
+Feb 17
+
+Joseph Bernshine:
+Starting to implement Navigation Drawer, will split into Fragments latter. 
