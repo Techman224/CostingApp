@@ -42,14 +42,17 @@ class order
 
     public float margin()
     {
-
+        return profit / board;
     }
 
     public float total()
     {
-
+        return
     }
+}
 
+class totalOrder
+{
     public float totalSold()
     {
 
