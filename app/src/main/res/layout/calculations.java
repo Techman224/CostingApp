@@ -28,13 +28,13 @@ class order
 
     public order()
     {
-
+        // empty constructor
     }
 
     public float profit()
     {
         float profit;
-
+        // warning not finalized
         profit = board + shippingTo - fees - shippingFrom - GSTPaid - promoItems
 
         return profit;
@@ -47,44 +47,50 @@ class order
 
     public float total()
     {
-        return
+        // warning not finalized
+        // calculates total of the order
     }
 }
 
 class totalOrder
 {
+    public totalOrder()
+    {
+        // empty constructor
+    }
+
     public float totalSold()
     {
-
+        // sum board amounts from order objects
     }
 
     public float totalProfit()
     {
-
+        // sum profit amounts from order objects
     }
 
     public int boardsSold()
     {
-
+        // increment when seeing boards in objects
     }
 
     public float profitPerBoard()
     {
-
+        return totalProfit() / boardsSold();
     }
 
     public float totalMargin()
     {
-
+        // sum margins from objects then divide by the # of objects
     }
 
     public float totalPST()
     {
-
+        // sum PSTCharged from objects
     }
 
     public float totalGST()
     {
-
+        // sum GSTCharged from objects
     }
 }
