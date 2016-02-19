@@ -32,24 +32,34 @@ class Order
         // empty constructor
     }
 
-    public void addBoard(float amount)
+    public void addBoard(String description, float amount)
     {
-
+        this.board = new Board(description, amount);
     }
 
-    public void addShippingTo(float amount)
+    public void addShippingTo(String description, float amount)
     {
-
+        this.shippingTo = new ShippingTo(description, amount);
     }
 
-    public void addShippingFrom(float amount)
+    public void addShippingFrom(String description, float amount)
     {
-
+        this.shippingFrom = new ShippingFrom(description, amount);
     }
 
-    public void addFees(float amount)
+    public void addFees(String description, float amount)
     {
-        
+        this.fees = new Fees(description, amount);
+    }
+
+    public void addAccessories(String description, float amount)
+    {
+        this.accessories = new Accessories(description, amount);
+    }
+
+    public void addPromoItems(String description, float amount)
+    {
+        this.fees = new Fees(description, amount);
     }
 
     public float profit()
@@ -170,30 +180,72 @@ class Node
 
 class Board
 {
+    private String description;
+    private float amount;
 
+    public Board(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
 
 class ShippingTo
 {
+    private String description;
+    private float amount;
 
+    public ShippingTo(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
 
 class ShippingFrom
 {
+    private String description;
+    private float amount;
 
+    public ShippingFrom(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
 
 class Fees
 {
+    private String description;
+    private float amount;
 
+    public Fees(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
 
 class Accessories
 {
+    private String description;
+    private float amount;
 
+    public Accessories(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
 
 class PromoItems
 {
+    private String description;
+    private float amount;
 
+    public PromoItems(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
 }
