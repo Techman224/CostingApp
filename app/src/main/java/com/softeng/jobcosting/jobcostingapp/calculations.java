@@ -29,7 +29,16 @@ class Order
 
     public Order()
     {
-        // empty constructor
+        board = null;
+        accessories = null;
+        promoItems = null;
+        shippingTo = null;
+        shippingFrom = null;
+        fees = null;
+        GSTPaid = null;
+        PSTPaid = null;
+        GSTCharged = null;
+        PSTCharged = null;
     }
 
     public void addBoard(String description, float amount)
@@ -136,45 +145,6 @@ class TotalOrder
     {
         // sum of all orders
         return (float)2.2;
-    }
-}
-
-class Node
-{
-    private Order head;
-    private Node next;
-
-    public Node()
-    {
-        head = null;
-        next = null;
-    }
-
-    public Node(Order head)
-    {
-        this.head = new Order();
-        this.head = head;
-        next = null;
-    }
-
-    public Order getNode()
-    {
-        return head;
-    }
-
-    public Node getNext()
-    {
-        return next;
-    }
-
-    public void setNode(Order head)
-    {
-        this.head = head;
-    }
-
-    public void setNext(Node next)
-    {
-        this.next = next;
     }
 }
 
