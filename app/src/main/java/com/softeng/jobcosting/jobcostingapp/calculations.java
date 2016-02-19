@@ -54,27 +54,27 @@ class Order
 
     public void addShippingTo(String description, float amount)
     {
-        this.shippingTo = new ShippingTo(description, amount);
+        list.add(new ShippingTo(description, amount));
     }
 
     public void addShippingFrom(String description, float amount)
     {
-        this.shippingFrom = new ShippingFrom(description, amount);
+        list.add(new ShippingFrom(description, amount));
     }
 
     public void addFees(String description, float amount)
     {
-        this.fees = new Fees(description, amount);
+        list.add(new Fees(description, amount));
     }
 
     public void addAccessories(String description, float amount)
     {
-        this.accessories = new Accessories(description, amount);
+        list.add(new Accessories(description, amount));
     }
 
     public void addPromoItems(String description, float amount)
     {
-        this.fees = new Fees(description, amount);
+        list.add(new PromoItems(description, amount));
     }
 
     public float profit()
