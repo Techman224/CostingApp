@@ -22,10 +22,10 @@ class Order
     private ShippingTo shippingTo;
     private ShippingFrom shippingFrom;
     private Fees fees;
-    private float GSTPaid;
-    private float PSTPaid;
-    private float GSTCharged;
-    private float PSTCharged;
+    private GSTPaid GSTPaid;
+    private PSTPaid PSTPaid;
+    private GSTCharged GSTCharged;
+    private PSTCharged PSTCharged;
 
     public Order()
     {
@@ -235,5 +235,37 @@ class PromoItems extends OrderDetailType
     public PromoItems(String description, float amount)
     {
         super(description, amount);
+    }
+}
+
+class GSTPaid extends OrderDetailType
+{
+    public GSTPaid(float amount)
+    {
+        super("GST", amount);
+    }
+}
+
+class PSTPaid extends OrderDetailType
+{
+    public PSTPaid(float amount)
+    {
+        super("PST", amount);
+    }
+}
+
+class GSTCharged extends OrderDetailType
+{
+    public GSTCharged(float amount)
+    {
+        super("GST", amount);
+    }
+}
+
+class PSTCharged extends OrderDetailType
+{
+    public PSTCharged(float amount)
+    {
+        super("PST", amount);
     }
 }
