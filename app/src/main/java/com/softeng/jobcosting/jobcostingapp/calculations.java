@@ -4,7 +4,10 @@ public class Calculations
 {
     public static void main(String[] args)
     {
-        System.out.println("hello world!");
+        Order sampleorder = new Order();
+
+        sampleorder.addBoard("12-6 Race", (float)1749.00);
+        System.out.println(sampleorder.toString());
     }
 }
 
@@ -26,6 +29,8 @@ class Order
     private PSTPaid PSTPaid;
     private GSTCharged GSTCharged;
     private PSTCharged PSTCharged;
+    private Node<OrderDetailType> head;
+    private Node<OrderDetailType> curr;
 
     public Order()
     {
@@ -39,11 +44,24 @@ class Order
         PSTPaid = null;
         GSTCharged = null;
         PSTCharged = null;
+        head = null;
     }
 
     public void addBoard(String description, float amount)
     {
-        this.board = new Board(description, amount);
+        if(head == null)
+        {
+            head = new Node<OrderDetailType>(new Board(description, amount));
+        }
+        else
+        {
+            curr = head;
+            while(curr != null)
+            {
+                curr = curr.getNext();
+            }
+            curr = new Node<OrderDetailType>(new Board(description, amount));
+        }
     }
 
     public void addShippingTo(String description, float amount)
@@ -73,16 +91,16 @@ class Order
 
     public float profit()
     {
-        float profit;
+        float profit = (float)2.2;
         // warning not finalized
-        profit = board + shippingTo - fees - shippingFrom - GSTPaid - promoItems;
+
 
         return profit;
     }
 
     public float margin()
     {
-        return profit() / board;
+        return (float)2.2;
     }
 
     public float total()
@@ -90,6 +108,20 @@ class Order
         // warning not finalized
         // calculates total of the order
         return (float)2.2;
+    }
+
+    public String toString()
+    {
+        String value = "";
+
+        curr = head;
+        while(curr != null)
+        {
+            value += curr.getData().toString();
+            curr = curr.getNext();
+        }
+
+        return value;
     }
 }
 
@@ -158,6 +190,11 @@ abstract class OrderDetailType
         this.description = description;
         this.amount = amount;
     }
+
+    public String toString()
+    {
+        return "Description: " + description + " Amount: $" + amount;
+    }
 }
 
 class Board extends OrderDetailType
@@ -165,6 +202,11 @@ class Board extends OrderDetailType
     public Board(String description, float amount)
     {
         super(description, amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 }
 

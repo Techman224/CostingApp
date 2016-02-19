@@ -17,7 +17,7 @@ public class Node<E>
         this.next = null;
     }
 
-    public E getNode()
+    public E getData()
     {
         return data;
     }
