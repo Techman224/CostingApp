@@ -27,7 +27,7 @@ public class Node<E>
         return next;
     }
 
-    public void setNode(E head)
+    public void setData(E head)
     {
         this.data = head;
     }

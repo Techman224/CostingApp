@@ -7,6 +7,7 @@ public class Calculations
         Order sampleorder = new Order();
 
         sampleorder.addBoard("12-6 Race", (float)1749.00);
+        sampleorder.addBoard("10-6 Ride", (float)1399.00);
         System.out.println(sampleorder.toString());
     }
 }
@@ -29,8 +30,7 @@ class Order
     private PSTPaid PSTPaid;
     private GSTCharged GSTCharged;
     private PSTCharged PSTCharged;
-    private Node<OrderDetailType> head;
-    private Node<OrderDetailType> curr;
+    private LinkedList<OrderDetailType> list;
 
     public Order()
     {
@@ -44,24 +44,12 @@ class Order
         PSTPaid = null;
         GSTCharged = null;
         PSTCharged = null;
-        head = null;
+        list = new LinkedList<OrderDetailType>();
     }
 
     public void addBoard(String description, float amount)
     {
-        if(head == null)
-        {
-            head = new Node<OrderDetailType>(new Board(description, amount));
-        }
-        else
-        {
-            curr = head;
-            while(curr != null)
-            {
-                curr = curr.getNext();
-            }
-            curr = new Node<OrderDetailType>(new Board(description, amount));
-        }
+        list.add(new Board(description, amount));
     }
 
     public void addShippingTo(String description, float amount)
@@ -112,16 +100,7 @@ class Order
 
     public String toString()
     {
-        String value = "";
-
-        curr = head;
-        while(curr != null)
-        {
-            value += curr.getData().toString();
-            curr = curr.getNext();
-        }
-
-        return value;
+        return list.returnList();
     }
 }
 
