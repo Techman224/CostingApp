@@ -1,3 +1,5 @@
+package com.softeng.jobcosting.jobcostingapp;
+
 public class Calculations
 {
     public static void main(String[] args)
@@ -12,21 +14,21 @@ class Order
     private int month;
     private int year;
     private int id;
-    private string store;
+    private String store;
 
     private float board;
     private float boardDemo;
     private float accessories;
     private float promoItems;
     private float shippingTo;
-    private float shipppingFrom;
+    private float shippingFrom;
     private float fees;
     private float GSTPaid;
     private float PSTPaid;
     private float GSTCharged;
     private float PSTCharged;
 
-    public order()
+    public Order()
     {
         // empty constructor
     }
@@ -35,26 +37,27 @@ class Order
     {
         float profit;
         // warning not finalized
-        profit = board + shippingTo - fees - shippingFrom - GSTPaid - promoItems
+        profit = board + shippingTo - fees - shippingFrom - GSTPaid - promoItems;
 
         return profit;
     }
 
     public float margin()
     {
-        return profit / board;
+        return profit() / board;
     }
 
     public float total()
     {
         // warning not finalized
         // calculates total of the order
+        return (float)2.2;
     }
 }
 
 class TotalOrder
 {
-    public totalOrder()
+    public TotalOrder()
     {
         // empty constructor
     }
@@ -62,16 +65,19 @@ class TotalOrder
     public float totalSold()
     {
         // sum board amounts from order objects
+        return (float)2.2;
     }
 
     public float totalProfit()
     {
         // sum profit amounts from order objects
+        return (float)2.2;
     }
 
     public int boardsSold()
     {
         // increment when seeing boards in objects
+        return 2;
     }
 
     public float profitPerBoard()
@@ -82,16 +88,19 @@ class TotalOrder
     public float totalMargin()
     {
         // sum margins from objects then divide by the # of objects
+        return (float)2.2;
     }
 
     public float totalPST()
     {
         // sum PSTCharged from objects
+        return (float)2.2;
     }
 
     public float totalGST()
     {
         // sum GSTCharged from objects
+        return (float)2.2;
     }
 }
 
@@ -108,7 +117,7 @@ class Node
 
     public Node(Order head)
     {
-        Order head = new Order();
+        this.head = new Order();
         this.head = head;
         next = null;
     }
@@ -118,8 +127,18 @@ class Node
         return head;
     }
 
-    public Order getNext()
+    public Node getNext()
     {
-        return next
+        return next;
+    }
+
+    public void setNode(Order head)
+    {
+        this.head = head;
+    }
+
+    public void setNext(Node next)
+    {
+        this.next = next;
     }
 }
