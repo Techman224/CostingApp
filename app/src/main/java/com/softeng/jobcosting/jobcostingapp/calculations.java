@@ -178,74 +178,62 @@ class Node
     }
 }
 
-class Board
+class OrderDetailType
 {
     private String description;
     private float amount;
 
+    public OrderDetailType(String description, float amount)
+    {
+        this.description = description;
+        this.amount = amount;
+    }
+}
+
+class Board extends OrderDetailType
+{
     public Board(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
 
-class ShippingTo
+class ShippingTo extends OrderDetailType
 {
-    private String description;
-    private float amount;
-
     public ShippingTo(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
 
-class ShippingFrom
+class ShippingFrom extends OrderDetailType
 {
-    private String description;
-    private float amount;
-
     public ShippingFrom(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
 
-class Fees
+class Fees extends OrderDetailType
 {
-    private String description;
-    private float amount;
-
     public Fees(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
 
-class Accessories
+class Accessories extends OrderDetailType
 {
-    private String description;
-    private float amount;
-
     public Accessories(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
 
-class PromoItems
+class PromoItems extends OrderDetailType
 {
-    private String description;
-    private float amount;
-
     public PromoItems(String description, float amount)
     {
-        this.description = description;
-        this.amount = amount;
+        super(description, amount);
     }
 }
