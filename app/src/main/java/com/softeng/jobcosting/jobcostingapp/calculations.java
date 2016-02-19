@@ -216,6 +216,11 @@ class ShippingTo extends OrderDetailType
     {
         super(description, amount);
     }
+
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class ShippingFrom extends OrderDetailType
@@ -223,6 +228,11 @@ class ShippingFrom extends OrderDetailType
     public ShippingFrom(String description, float amount)
     {
         super(description, amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 }
 
@@ -232,6 +242,11 @@ class Fees extends OrderDetailType
     {
         super(description, amount);
     }
+
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class Accessories extends OrderDetailType
@@ -239,6 +254,11 @@ class Accessories extends OrderDetailType
     public Accessories(String description, float amount)
     {
         super(description, amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 }
 
@@ -248,6 +268,11 @@ class PromoItems extends OrderDetailType
     {
         super(description, amount);
     }
+
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class GSTPaid extends OrderDetailType
@@ -255,6 +280,11 @@ class GSTPaid extends OrderDetailType
     public GSTPaid(float amount)
     {
         super("GST", amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 }
 
@@ -264,6 +294,11 @@ class PSTPaid extends OrderDetailType
     {
         super("PST", amount);
     }
+
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class GSTCharged extends OrderDetailType
@@ -272,6 +307,11 @@ class GSTCharged extends OrderDetailType
     {
         super("GST", amount);
     }
+
+    public String toString()
+    {
+        return super.toString();
+    }
 }
 
 class PSTCharged extends OrderDetailType
@@ -279,5 +319,10 @@ class PSTCharged extends OrderDetailType
     public PSTCharged(float amount)
     {
         super("PST", amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
     }
 }
