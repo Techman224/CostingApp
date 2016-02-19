@@ -178,7 +178,7 @@ class Node
     }
 }
 
-class OrderDetailType
+abstract class OrderDetailType
 {
     private String description;
     private float amount;
