@@ -16,13 +16,12 @@ class Order
     private int id;
     private String store;
 
-    private float board;
-    private float boardDemo;
-    private float accessories;
-    private float promoItems;
-    private float shippingTo;
-    private float shippingFrom;
-    private float fees;
+    private Board board;
+    private Accessories accessories;
+    private PromoItems promoItems;
+    private ShippingTo shippingTo;
+    private ShippingFrom shippingFrom;
+    private Fees fees;
     private float GSTPaid;
     private float PSTPaid;
     private float GSTCharged;
@@ -31,6 +30,26 @@ class Order
     public Order()
     {
         // empty constructor
+    }
+
+    public void addBoard(float amount)
+    {
+
+    }
+
+    public void addShippingTo(float amount)
+    {
+
+    }
+
+    public void addShippingFrom(float amount)
+    {
+
+    }
+
+    public void addFees(float amount)
+    {
+        
     }
 
     public float profit()
@@ -102,6 +121,12 @@ class TotalOrder
         // sum GSTCharged from objects
         return (float)2.2;
     }
+
+    public float grandTotal()
+    {
+        // sum of all orders
+        return (float)2.2;
+    }
 }
 
 class Node
@@ -141,4 +166,34 @@ class Node
     {
         this.next = next;
     }
+}
+
+class Board
+{
+
+}
+
+class ShippingTo
+{
+
+}
+
+class ShippingFrom
+{
+
+}
+
+class Fees
+{
+
+}
+
+class Accessories
+{
+
+}
+
+class PromoItems
+{
+
 }
