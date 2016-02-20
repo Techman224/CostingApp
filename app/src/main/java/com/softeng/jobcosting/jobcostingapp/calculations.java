@@ -4,10 +4,19 @@ public class Calculations
 {
     public static void main(String[] args)
     {
-        Order sampleorder = new Order();
+        Order sampleorder = new Order(11, 06, 2015, 1006, "Shopify");
 
         sampleorder.addBoard("12-6 Race", (float)1749.00);
-        sampleorder.addBoard("10-6 Ride", (float)1399.00);
+        sampleorder.addShippingTo("Shipping", (float) 100.00);
+        sampleorder.addFees("Shopify Fees", (float) -53.92);
+        sampleorder.addBrand("Red Paddle", (float)-1175.00);
+        sampleorder.addShippingFrom("Shipping", (float) -55.00);
+        sampleorder.addShippingTo("Drop Ship", (float) -75.00);
+        sampleorder.addGSTPaid((float) -65.25);
+        sampleorder.addPromoItems("Paddle & Leash", (float) -141.53);
+        sampleorder.addShippingTo("UPS Shipping", (float)-54.29);
+
+
         System.out.println(sampleorder.toString());
     }
 }
@@ -19,6 +28,9 @@ class Order
     private int year;
     private int id;
     private String store;
+    private float profit;
+    private float boardTotal;
+    private float orderTotal;
 
     private Board board;
     private Accessories accessories;
@@ -32,8 +44,14 @@ class Order
     private PSTCharged PSTCharged;
     private LinkedList<OrderDetailType> list;
 
-    public Order()
+    public Order(int day, int month, int year, int id, String store)
     {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.id = id;
+        this.store = store;
+
         board = null;
         accessories = null;
         promoItems = null;
@@ -50,57 +68,105 @@ class Order
     public void addBoard(String description, float amount)
     {
         list.add(new Board(description, amount));
+        orderTotal += amount;
+        profit += amount;
+        boardTotal += amount;
     }
 
     public void addShippingTo(String description, float amount)
     {
         list.add(new ShippingTo(description, amount));
+        orderTotal += amount;
+        profit += amount;
     }
 
     public void addShippingFrom(String description, float amount)
     {
         list.add(new ShippingFrom(description, amount));
+        orderTotal += amount;
+        profit += amount;
     }
 
     public void addFees(String description, float amount)
     {
         list.add(new Fees(description, amount));
+        orderTotal += amount;
+        profit += amount;
     }
 
     public void addAccessories(String description, float amount)
     {
         list.add(new Accessories(description, amount));
+        orderTotal += amount;
+        profit += amount;
     }
 
     public void addPromoItems(String description, float amount)
     {
         list.add(new PromoItems(description, amount));
+        orderTotal += amount;
+        profit += amount;
+    }
+
+    public void addGSTPaid(float amount)
+    {
+        list.add(new GSTPaid(amount));
+        orderTotal += amount;
+        profit += amount;
+    }
+
+    public void addPSTPaid(float amount)
+    {
+        list.add(new PSTPaid(amount));
+        orderTotal += amount;
+        profit += amount;
+    }
+
+    public void addGSTCharged(float amount)
+    {
+        list.add(new GSTCharged(amount));
+        orderTotal += amount;
+        profit += amount;
+    }
+
+    public void addPSTCharged(float amount)
+    {
+        list.add(new PSTCharged(amount));
+        orderTotal += amount;
+    }
+
+    public void addBrand(String description, float amount)
+    {
+        list.add(new Brand(description, amount));
+        orderTotal += amount;
+        profit += amount;
     }
 
     public float profit()
     {
-        float profit = (float)2.2;
-        // warning not finalized
-
-
         return profit;
     }
 
     public float margin()
     {
-        return (float)2.2;
+        return profit / boardTotal;
     }
 
     public float total()
     {
-        // warning not finalized
-        // calculates total of the order
-        return (float)2.2;
+        return orderTotal;
     }
 
     public String toString()
     {
-        return list.returnList();
+        String value = "";
+
+        value += list.returnList();
+        value += total() + "\n";
+        value += profit() + "\n";
+        value += margin() + "\n";
+
+        return value;
     }
 }
 
@@ -172,7 +238,7 @@ abstract class OrderDetailType
 
     public String toString()
     {
-        return "Description: " + description + " Amount: $" + amount;
+        return "Description: " + description + " Amount: $" + amount + "\n";
     }
 }
 
@@ -298,6 +364,19 @@ class PSTCharged extends OrderDetailType
     public PSTCharged(float amount)
     {
         super("PST", amount);
+    }
+
+    public String toString()
+    {
+        return super.toString();
+    }
+}
+
+class Brand extends OrderDetailType
+{
+    public Brand(String description, float amount)
+    {
+        super(description, amount);
     }
 
     public String toString()
