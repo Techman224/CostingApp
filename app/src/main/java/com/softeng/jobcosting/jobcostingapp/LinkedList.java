@@ -1,5 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp;
 
+import java.util.Iterator;
+
 public class LinkedList<E>
 {
     private Node<E> head;
@@ -29,6 +31,42 @@ public class LinkedList<E>
             }
             curr = new Node<E>(item);
             prev.setNext(curr);
+        }
+    }
+
+    public Iterator<E> iterator()
+    {
+        return new LinkedListIterator();
+    }
+
+    private class LinkedListIterator implements Iterator<E>
+    {
+        private Node<E> next;
+
+        public LinkedListIterator()
+        {
+            next = head;
+        }
+
+        public boolean hasNext()
+        {
+            return next.getNext() != null;
+        }
+
+        public E next()
+        {
+            E result = null;
+            if(!hasNext())
+            {
+                result = next.getData();
+                next = next.getNext();
+            }
+            return result;
+        }
+
+        public void remove()
+        {
+
         }
     }
 

@@ -1,5 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp;
 
+import java.util.*;
+
 public class Calculations
 {
     public static void main(String[] args)
@@ -78,6 +80,11 @@ class Order
         orderTotal += amount;
         profit += amount;
         boardTotal += amount;
+    }
+
+    public float boardAmount()
+    {
+        return boardTotal;
     }
 
     public void addShippingTo(String description, float amount)
@@ -189,7 +196,16 @@ class TotalOrder
     public float totalSold()
     {
         // sum board amounts from order objects
-        return (float)2.2;
+        Iterator<Order> itr = allOrders.iterator();
+        float totalSold = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalSold += item.boardAmount();
+        }
+        System.out.println(totalSold);
+        return totalSold;
     }
 
     public float totalProfit()
