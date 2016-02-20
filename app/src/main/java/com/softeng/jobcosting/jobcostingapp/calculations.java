@@ -254,7 +254,19 @@ class TotalOrder
     public float totalMargin()
     {
         // sum margins from objects then divide by the # of objects
-        return (float)2.2;
+        Iterator<Order> itr = allOrders.iterator();
+        float totalMargin = 0;
+        int numberOfOrders = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalMargin += item.margin();
+            numberOfOrders++;
+        }
+        totalMargin /= numberOfOrders;
+        System.out.println(totalMargin);
+        return totalMargin;
     }
 
     public float totalPST()
