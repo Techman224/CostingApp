@@ -306,7 +306,16 @@ class TotalOrder
     public float totalGST()
     {
         // sum GSTCharged from objects
-        return (float)2.2;
+        Iterator<Order> itr = allOrders.iterator();
+        float totalGST = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalGST += item.GSTTotal();
+        }
+        System.out.println(totalGST);
+        return totalGST;
     }
 
     public float grandTotal()
