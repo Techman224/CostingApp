@@ -40,6 +40,8 @@ class Order
     private float profit;
     private float boardTotal;
     private float orderTotal;
+    private float PSTTotal;
+    private float GSTTotal;
     private int numberBoardSold;
 
     private Board board;
@@ -61,6 +63,11 @@ class Order
         this.year = year;
         this.id = id;
         this.store = store;
+        this.profit = 0;
+        this.boardTotal = 0;
+        this.orderTotal = 0;
+        this.PSTTotal = 0;
+        this.GSTTotal = 0;
         this.numberBoardSold = 0;
 
         board = null;
@@ -149,12 +156,24 @@ class Order
         list.add(new GSTCharged(amount));
         orderTotal += amount;
         profit += amount;
+        GSTTotal += amount;
+    }
+
+    public float GSTTotal()
+    {
+        return GSTTotal;
     }
 
     public void addPSTCharged(float amount)
     {
         list.add(new PSTCharged(amount));
         orderTotal += amount;
+        PSTTotal += amount;
+    }
+
+    public float PSTTotal()
+    {
+        return PSTTotal;
     }
 
     public void addBrand(String description, float amount)
@@ -272,7 +291,16 @@ class TotalOrder
     public float totalPST()
     {
         // sum PSTCharged from objects
-        return (float)2.2;
+        Iterator<Order> itr = allOrders.iterator();
+        float totalPST = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalPST += item.PSTTotal();
+        }
+        System.out.println(totalPST);
+        return totalPST;
     }
 
     public float totalGST()
