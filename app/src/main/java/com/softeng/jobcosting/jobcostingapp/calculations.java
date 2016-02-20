@@ -321,7 +321,16 @@ class TotalOrder
     public float grandTotal()
     {
         // sum of all orders
-        return (float)2.2;
+        Iterator<Order> itr = allOrders.iterator();
+        float grandTotal = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            grandTotal += item.total();
+        }
+        System.out.println(grandTotal);
+        return grandTotal;
     }
 }
 
