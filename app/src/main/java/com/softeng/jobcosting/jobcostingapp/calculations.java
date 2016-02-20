@@ -6,15 +6,22 @@ public class Calculations
     {
         Order sampleorder = new Order(11, 06, 2015, 1006, "Shopify");
 
-        sampleorder.addBoard("12-6 Race", (float)1749.00);
+        sampleorder.addBoard("12-6 Race", (float) 1749.00);
         sampleorder.addShippingTo("Shipping", (float) 100.00);
         sampleorder.addFees("Shopify Fees", (float) -53.92);
-        sampleorder.addBrand("Red Paddle", (float)-1175.00);
+        sampleorder.addBrand("Red Paddle", (float) -1175.00);
         sampleorder.addShippingFrom("Shipping", (float) -55.00);
         sampleorder.addShippingTo("Drop Ship", (float) -75.00);
         sampleorder.addGSTPaid((float) -65.25);
         sampleorder.addPromoItems("Paddle & Leash", (float) -141.53);
-        sampleorder.addShippingTo("UPS Shipping", (float)-54.29);
+        sampleorder.addShippingTo("UPS Shipping", (float) -54.29);
+
+        Order[] arrayorder = new Order[5];
+        arrayorder[0] = new Order(11, 06, 215,115,"ets");
+
+        LinkedList<Order> listoforders = new LinkedList<Order>();
+
+        TotalOrder allorders = new TotalOrder(listoforders);
 
 
         System.out.println(sampleorder.toString());
@@ -172,9 +179,11 @@ class Order
 
 class TotalOrder
 {
-    public TotalOrder()
+    private LinkedList<Order> allOrders;
+
+    public TotalOrder(LinkedList<Order> allOrders)
     {
-        // empty constructor
+        this.allOrders = allOrders;
     }
 
     public float totalSold()
@@ -186,6 +195,9 @@ class TotalOrder
     public float totalProfit()
     {
         // sum profit amounts from order objects
+        float totalProfit;
+
+
         return (float)2.2;
     }
 
