@@ -211,10 +211,16 @@ class TotalOrder
     public float totalProfit()
     {
         // sum profit amounts from order objects
-        float totalProfit;
+        Iterator<Order> itr = allOrders.iterator();
+        float totalProfit = 0;
 
-
-        return (float)2.2;
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalProfit += item.profit();
+        }
+        System.out.println(totalProfit);
+        return totalProfit;
     }
 
     public int boardsSold()
