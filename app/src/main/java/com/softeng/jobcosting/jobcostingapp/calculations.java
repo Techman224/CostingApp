@@ -40,6 +40,7 @@ class Order
     private float profit;
     private float boardTotal;
     private float orderTotal;
+    private int numberBoardSold;
 
     private Board board;
     private Accessories accessories;
@@ -60,6 +61,7 @@ class Order
         this.year = year;
         this.id = id;
         this.store = store;
+        this.numberBoardSold = 0;
 
         board = null;
         accessories = null;
@@ -80,11 +82,17 @@ class Order
         orderTotal += amount;
         profit += amount;
         boardTotal += amount;
+        numberBoardSold++;
     }
 
     public float boardAmount()
     {
         return boardTotal;
+    }
+
+    public int getNumberBoardSold()
+    {
+        return numberBoardSold;
     }
 
     public void addShippingTo(String description, float amount)
@@ -223,15 +231,24 @@ class TotalOrder
         return totalProfit;
     }
 
-    public int boardsSold()
+    public int totalBoardSold()
     {
         // increment when seeing boards in objects
-        return 2;
+        Iterator<Order> itr = allOrders.iterator();
+        int totalBoardSold = 0;
+
+        while(itr.hasNext())
+        {
+            Order item = itr.next();
+            totalBoardSold += item.getNumberBoardSold();
+        }
+        System.out.println(totalBoardSold);
+        return totalBoardSold;
     }
 
     public float profitPerBoard()
     {
-        return totalProfit() / boardsSold();
+        return totalProfit() / totalBoardSold();
     }
 
     public float totalMargin()
