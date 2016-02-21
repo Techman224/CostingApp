@@ -66,7 +66,7 @@ public class LinkedList<E>
 
         public void remove()
         {
-
+            // Optional implementation (won't need it for now)
         }
     }
 

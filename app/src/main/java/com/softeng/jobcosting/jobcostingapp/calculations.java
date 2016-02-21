@@ -2,6 +2,12 @@ package com.softeng.jobcosting.jobcostingapp;
 
 import java.util.*;
 
+/*
+Name: Calculations
+Description: The class which tests some sample inputs.
+Author: Jasmin Bissonnette
+ */
+
 public class Calculations
 {
     public static void main(String[] args)
@@ -29,6 +35,12 @@ public class Calculations
         System.out.println(sampleorder.toString());
     }
 }
+
+/*
+Name: Order
+Description: The class that involves everything happening in an order.
+Author: Jasmin Bissonnette
+ */
 
 class Order
 {
@@ -211,6 +223,12 @@ class Order
     }
 }
 
+/*
+Name: TotalOrder
+Description: The class calculates the summary and total of all orders.
+Author: Jasmin Bissonnette
+ */
+
 class TotalOrder
 {
     private LinkedList<Order> allOrders;
@@ -334,6 +352,12 @@ class TotalOrder
     }
 }
 
+/*
+Name: OrderDetailType
+Description: The abstract class with generic order detail type.
+Author: Jasmin Bissonnette
+ */
+
 abstract class OrderDetailType
 {
     private String description;
@@ -351,6 +375,12 @@ abstract class OrderDetailType
     }
 }
 
+/*
+Name: Board
+Description: The class Board stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
+
 class Board extends OrderDetailType
 {
     public Board(String description, float amount)
@@ -363,6 +393,12 @@ class Board extends OrderDetailType
         return super.toString();
     }
 }
+
+/*
+Name: ShippingTo
+Description: The class ShippingTo stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
 
 class ShippingTo extends OrderDetailType
 {
@@ -377,6 +413,12 @@ class ShippingTo extends OrderDetailType
     }
 }
 
+/*
+Name: ShippingFrom
+Description: The class ShippingFrom stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
+
 class ShippingFrom extends OrderDetailType
 {
     public ShippingFrom(String description, float amount)
@@ -389,6 +431,12 @@ class ShippingFrom extends OrderDetailType
         return super.toString();
     }
 }
+
+/*
+Name: Fees
+Description: The class Fees stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
 
 class Fees extends OrderDetailType
 {
@@ -403,6 +451,12 @@ class Fees extends OrderDetailType
     }
 }
 
+/*
+Name: Accessories
+Description: The class Accessories stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
+
 class Accessories extends OrderDetailType
 {
     public Accessories(String description, float amount)
@@ -415,6 +469,12 @@ class Accessories extends OrderDetailType
         return super.toString();
     }
 }
+
+/*
+Name: PromoItems
+Description: The class PromoItems stores a description with its amount (cost).
+Author: Jasmin Bissonnette
+ */
 
 class PromoItems extends OrderDetailType
 {
@@ -429,6 +489,12 @@ class PromoItems extends OrderDetailType
     }
 }
 
+/*
+Name: GSTPaid
+Description: The class GSTPaid stores an amount (cost) with description "GST".
+Author: Jasmin Bissonnette
+ */
+
 class GSTPaid extends OrderDetailType
 {
     public GSTPaid(float amount)
@@ -441,6 +507,12 @@ class GSTPaid extends OrderDetailType
         return super.toString();
     }
 }
+
+/*
+Name: PSTPaid
+Description: The class PSTPaid stores an amount (cost) with description "PST".
+Author: Jasmin Bissonnette
+ */
 
 class PSTPaid extends OrderDetailType
 {
@@ -455,6 +527,12 @@ class PSTPaid extends OrderDetailType
     }
 }
 
+/*
+Name: GSTCharged
+Description: The class GSTCharged stores an amount (cost) with description "GST".
+Author: Jasmin Bissonnette
+ */
+
 class GSTCharged extends OrderDetailType
 {
     public GSTCharged(float amount)
@@ -468,6 +546,12 @@ class GSTCharged extends OrderDetailType
     }
 }
 
+/*
+Name: PSTCharged
+Description: The class PSTCharged stores an amount (cost) with description "PST".
+Author: Jasmin Bissonnette
+ */
+
 class PSTCharged extends OrderDetailType
 {
     public PSTCharged(float amount)
@@ -480,6 +564,12 @@ class PSTCharged extends OrderDetailType
         return super.toString();
     }
 }
+
+/*
+Name: Brand
+Description: The class Brand stores a description with an amount (cost).
+Author: Jasmin Bissonnette
+ */
 
 class Brand extends OrderDetailType
 {
