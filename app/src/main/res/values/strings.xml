@@ -6,6 +6,7 @@
     <string name="add_sale">Add Sale</string>
     <string name="calculator">Calculator</string>
     <string name="add_order">Add Order</string>
+    <string name="edit_order">Edit Order</string>
     <string name="title_activity_calculation">CalculationActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -97,4 +98,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_calculations">CalculationsActivity</string>
+    <string name="title_activity_edit_order">EditOrderActivity</string>
 </resources>

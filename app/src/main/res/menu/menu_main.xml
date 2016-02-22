@@ -17,4 +17,9 @@
         android:orderInCategory="100"
         android:title="@string/add_order"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/edit_order"
+        android:orderInCategory="100"
+        android:title="@string/edit_order"
+        app:showAsAction="never" />
 </menu>

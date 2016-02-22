@@ -26,6 +26,7 @@ public class AddOrderActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         items = new ArrayList<View>();
+
         calc = new Calculations();
         String newOrder = calc.newOrder();
 
