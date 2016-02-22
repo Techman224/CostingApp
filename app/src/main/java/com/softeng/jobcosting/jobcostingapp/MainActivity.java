@@ -24,8 +24,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Calculations calc = new Calculations();
+        int [] orderIDs = calc.getOrderIDs();
         ListView mainList = (ListView) findViewById(R.id.listView);
-        String[] listItems = getResources().getStringArray(R.array.sports_array);
+        String[] listItems = new String[orderIDs.length];
+
+        for(int i = 0; i < orderIDs.length; i++)    {
+            listItems[i] = "" + orderIDs[i];
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
         mainList.setAdapter(adapter);
         mainList.setOnItemClickListener(new ListClickListener());
