@@ -19,7 +19,7 @@ public class Calculations {
         db.setTable("Costs");
 
         //if all inserts were successful, returns the result of the query method
-        if(db.update("Store", store, "OrderID", orderID) &&
+        if (db.update("Store", store, "OrderID", orderID) &&
                 db.update("Description", description, "OrderID", orderID) &&
                 db.update("Type", type, "OrderID", orderID) &&
                 db.update("Price", price, "OrderID", orderID)) {
@@ -39,6 +39,10 @@ public class Calculations {
         boolean success = db.where("OrderID", Integer.toString(orderID));
         return db.query();
     }
+
+    //    public int[] getOrderIDs()  {
+//        db
+//    }
 
     /*public float getProfit() {
 

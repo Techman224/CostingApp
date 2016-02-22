@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 public class SummaryActivity extends AppCompatActivity {
 
@@ -18,19 +21,30 @@ public class SummaryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        Intent intent = getIntent();
-//        final int TYPE = 2;
-//        final int DESC = 3;
-//        final int AMT = 4;
+        Intent intent = getIntent();
+        final int TYPE = 2;
+        final int DESC = 3;
+        final int AMT = 4;
 
-//        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
+        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
 //        String items = getOrderInfo(orderID);
 //        String[][] processedItems = parseItems(items);
 
 
+
     }
 
-   // @Override
+//    public void generateTable(String[][]items)  {
+//        TableLayout layout = (TableLayout) findViewById(R.id.tableLay);
+//
+//        for(int row = 0; row < items.length; row++) {
+//            for
+//        }
+//        TableRow newRow = new TableRow(this);
+//        TextView item = new TextView(this);
+//
+//    }
+//    @Override
 //    public String getOrderInfo(int orderID) {
 //        Calculations calc - new Calculations();
 //        return calc.getInfo(orderID);

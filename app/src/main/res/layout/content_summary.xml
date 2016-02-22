@@ -12,16 +12,21 @@
     tools:showIn="@layout/activity_summary">
 
 
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#000000"
-        android:gravity="center">
+        android:id="@+id/scrollView"
+        android:paddingTop="30dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:textColor="#FFFFFF"/>
+            android:id="@+id/linearLayout"
+            android:orientation="vertical">
+
+            <include layout="@layout/colmd_items" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
