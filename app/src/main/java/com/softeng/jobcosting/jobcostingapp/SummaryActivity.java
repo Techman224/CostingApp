@@ -1,10 +1,12 @@
 package com.softeng.jobcosting.jobcostingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 
 public class SummaryActivity extends AppCompatActivity {
@@ -16,14 +18,45 @@ public class SummaryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Intent intent = getIntent();
+        final int TYPE = 2;
+        final int DESC = 3;
+        final int AMT = 4;
+
+        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
+        String items = getOrderInfo(orderID);
+        String[][] processedItems = parseItems(items);
+
+
     }
+
+    @Override
+    public String getOrderInfo(int orderID) {
+        Calculations calc - new Calculations();
+        return calc.getInfo(orderID);
+    }
+
+    public String[][] parseItems(String toParse) {
+
+        String[] parsedItems = toParse.split("\\s+");
+        String[][] parsedAll = new String[parsedItems.length][];
+
+        for(int row = 0; row < parsedAll.length; row++) {
+            parsedAll[row] = parsedAll[row][0].split(",");
+        }
+
+        return parsedAll;
+    }
+
+    private String
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
 
 }
