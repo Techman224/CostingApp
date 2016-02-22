@@ -14,11 +14,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order #: Date:"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@id/scrollView"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@id/scrollView" />
+        android:text="Order #: "
+        android:id="@+id/orderNumber"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:id="@+id/date"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,13 +42,12 @@
 
             <include layout="@layout/input_item" />
         </LinearLayout>
-
     </ScrollView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="Add another item"
+        android:text="ADD ANOTHER ITEM"
         android:id="@+id/button3"
         android:onClick="addItem"
         android:layout_alignParentBottom="true"
@@ -52,6 +58,7 @@
         android:layout_height="@dimen/button_height"
         android:text="DONE"
         android:id="@+id/button"
+        android:onClick="done"
         android:layout_alignTop="@id/button3"
         android:layout_alignEnd="@id/scrollView" />
 

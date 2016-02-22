@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
     @Override
@@ -26,11 +25,6 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    public void secondActivity(View view) {
-        Intent intent = new Intent(this, AddOrderActivity.class);
-        startActivity(intent);
     }
 
     @Override
@@ -44,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.add_sale) {
             return true;
         }
-        else if (id == R.id.calculator) {
-            startActivity(new Intent(MainActivity.this, CalculationActivity.class));
+        else if (id == R.id.add_order) {
+            Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
+            startActivity(addOrderIntent);
         }
 
         return super.onOptionsItemSelected(item);

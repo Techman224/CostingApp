@@ -9,4 +9,17 @@
         <item>Step 3: ???</item>
         <item>Step 4: Profit</item>
     </string-array>
+    <string-array name="types">
+        <item>Board</item>
+        <item>ShippingTo</item>
+        <item>ShippingFrom</item>
+        <item>Fees</item>
+        <item>Accessories</item>
+        <item>PromoItems</item>
+        <item>GSTPaid</item>
+        <item>PSTPaid</item>
+        <item>GSTCharged</item>
+        <item>PSTCharged</item>
+        <item>Brand</item>
+    </string-array>
 </resources>

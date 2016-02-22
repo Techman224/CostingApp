@@ -29,10 +29,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/second_edit_margin" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/typeSpinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/edit_text_height"
-        android:id="@+id/typeEditText"
+        android:entries="@array/types"
         android:layout_toEndOf="@id/typeTextView"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/second_edit_margin"
