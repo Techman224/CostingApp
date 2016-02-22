@@ -1,4 +1,7 @@
+package com.softeng.jobcosting.jobcostingapp;
+
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Calculations2
 {
@@ -12,13 +15,17 @@ public class Calculations2
 	public static int newOrder()
 	{
 		int newOrderID = AtomicInteger.get();
+		insert("date", date());
 		return newOrderID;
 	}
 
-	public static void newItem(String store, String description, String type, float price)
+	public static String newItem(String store, String description, String type, String price)
 	{
-		int newItemID = AtomicInteger.get();
-		insert("costs", store + " " + description + " " + type + " " + price);
+		insert("store", store);
+		insert("description", description);
+		insert("type", type);
+		insert("price", price);
+		return query();
 	}
 
 	public static void editItem(String store, String description, String type, float price)
