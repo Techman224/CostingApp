@@ -1,3 +1,4 @@
+//***** Start Meeting Minutes *****//
 Software Engineering Group Meeting Minutes (By Jasmin)
 
 Meeting 1 - Jan 11:
@@ -112,5 +113,28 @@ Start: 11:00AM
 - Discussed a little on business logic and architecture
 End: 12:00PM
 
+//***** End of Meeting Minutes *****//
+
+//***** Start Task Assignments *****//
+
+- Ryan: Contributing to viewing and order (summary of that order)
+- Courtney: Do the add page for order
+- Alan: Do stub database & update (edit) page for order
+- Joseph: Do navigation layout around the whole app
+- Daniel: Displaying an order
+- Jasmin: Do calculation logic behind the scenes and a little of entering data layout
+
+//***** End Task Assignments *****//
+
+//***** Start Design Changes *****//
+Major: None.
+Minor: 
+      - Didn't use navigation drawer since it as too complicated to implement for now.
+//***** End Design Changes *****//
+
+//***** Start Individual Feedback *****//
+
 Feb 20:
 Joseph - Decided against the navigation drawer, far too complicated to do with short amount of time, will use simple drop down list for now.
+
+//***** End Individual Feedback *****//
