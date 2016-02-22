@@ -1,8 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">JobCostingApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_order">Add Order</string>
     <string name="add_sale">Add Sale</string>
     <string name="calculator">Calculator</string>
     <string name="summary">Summary</string>
+    <string name="add_order">Add Order</string>
     <string name="title_activity_calculation">CalculationActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
