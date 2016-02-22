@@ -16,6 +16,8 @@ public class Calculations {
     public String newItem(String store, String description, String type, String price) {
         String result = null;
 
+        db.setTable("Costs");
+
         //if all inserts were successful, returns the result of the query method
         if(db.insert("Store", store) &&
                 db.insert("Description", description) &&
@@ -28,10 +30,12 @@ public class Calculations {
     }
 
     public void editItem(String field, String newValue, int costID) {
+        db.setTable("Costs");
         boolean success = db.update(field, newValue, "CostID", Integer.toString(costID));
     }
 
     public String getItems(int orderID) {
+        db.setTable("Costs");
         boolean success = db.where("OrderID", Integer.toString(orderID));
         return db.query();
     }

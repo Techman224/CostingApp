@@ -1,6 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,12 +39,12 @@ public class AddOrderActivity extends AppCompatActivity {
         int orderID = Integer.parseInt(values[ORDER_ID]);
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
-        orderNumView += Integer.toString(orderID);
+        orderNumView += " " + Integer.toString(orderID);
         orderNum.setText(orderNumView);
 
         TextView date = (TextView)findViewById(R.id.date);
         String dateView = date.getText().toString();
-        dateView += values[DATE];
+        dateView += " " + values[DATE];
         date.setText(dateView);
     }
 
@@ -57,9 +58,6 @@ public class AddOrderActivity extends AppCompatActivity {
     }
 
     public void done(View view) {
-        boolean success = true;
-
-        /*
         for(View v : items) {
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
@@ -73,7 +71,10 @@ public class AddOrderActivity extends AppCompatActivity {
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
 
-            Order newOrder = new Order();
-        }*/
+            calc.newItem(store, type, description, amount);
+        }
+
+        Intent returnIntent = new Intent(this, MainActivity.class);
+        startActivity(returnIntent);
     }
 }
