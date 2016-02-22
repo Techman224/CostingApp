@@ -4,6 +4,8 @@
     <string name="action_settings">Settings</string>
     <string name="calculator">Calculator</string>
     <string name="summary">Summary</string>
+    <string name="add_order">Add Order</string>
+    <string name="edit_order">Edit Order</string>
     <string name="done_button">DONE</string>
     <string name="update_button">UPDATE</string>
     <string name="add_item_button">ADD ANOTHER ITEM</string>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.softeng.jobcosting.jobcostingapp.MainActivity">
     <item
-        android:id="@+id/addOrder"
+        android:id="@+id/add_order"
         android:orderInCategory="100"
         android:title="@string/title_activity_addOrder"
         app:showAsAction="never" />
@@ -18,8 +18,8 @@
         android:title="@string/summary"
         app:showAsAction="never" />
     <item
-        android:id="@+id/editOrder"
+        android:id="@+id/edit_order"
         android:orderInCategory="100"
-        android:title="@string/title_activity_editOrder"
+        android:title="@string/edit_order"
         app:showAsAction="never" />
 </menu>

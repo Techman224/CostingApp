@@ -53,11 +53,13 @@ public class MainActivity extends AppCompatActivity {
         else if (id == R.id.summary) {
             startActivity(new Intent(MainActivity.this, SummaryActivity.class));
         }
-        else if (id == R.id.editOrder) {
-            startActivity(new Intent(MainActivity.this, EditOrderActivity.class));
+        else if (id == R.id.add_order) {
+            Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
+            startActivity(addOrderIntent);
         }
-        else if (id == R.id.addOrder) {
-            startActivity (new Intent(MainActivity.this, AddOrderActivity.class));
+        else if (id == R.id.edit_order) {
+            Intent editOrderIntent = new Intent(MainActivity.this, EditOrderActivity.class);
+            startActivity(editOrderIntent);
         }
 
         return super.onOptionsItemSelected(item);
