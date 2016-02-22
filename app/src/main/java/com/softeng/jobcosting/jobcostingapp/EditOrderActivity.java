@@ -1,6 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class EditOrderActivity extends AppCompatActivity {
+    private ArrayList<View> views;
+    private Calculations calc;
+    private int firstCostID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +28,12 @@ public class EditOrderActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Calculations calc = new Calculations();
+        views = new ArrayList<View>();
+
+        calc = new Calculations();
         int orderID = 1;
         String dateString = "2016/02/22";
+        firstCostID = 1;
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
@@ -56,7 +63,7 @@ public class EditOrderActivity extends AppCompatActivity {
             for (String item : items) {
                 View mView = inflater.inflate(R.layout.input_item, null);
                 mainLayout.addView(mView);
-                //views.add(mView);
+                views.add(mView);
 
                 String[] fields = item.split(",");
 
@@ -81,5 +88,30 @@ public class EditOrderActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void update(View view) {
+        for(View v : views) {
+            EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
+            String store = storeInput.getText().toString();
+            calc.editItem("Store", store, firstCostID);
+
+            Spinner types = (Spinner) v.findViewById(R.id.typeSpinner);
+            String type = (types.getSelectedItem()).toString();
+            calc.editItem("Type", type, firstCostID);
+
+            EditText descriptionInput = (EditText) v.findViewById(R.id.descEditText);
+            String description = descriptionInput.getText().toString();
+            calc.editItem("Description", description, firstCostID);
+
+            EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
+            String amount = amountInput.getText().toString();
+            calc.editItem("Price", amount, firstCostID);
+
+            firstCostID++;
+        }
+
+        Intent returnIntent = new Intent(this, MainActivity.class);
+        startActivity(returnIntent);
     }
 }

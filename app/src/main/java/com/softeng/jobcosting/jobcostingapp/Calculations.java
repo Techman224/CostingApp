@@ -13,16 +13,16 @@ public class Calculations {
         return db.query();
     }
 
-    public String newItem(String store, String description, String type, String price) {
+    public String newItem(String orderID, String store, String description, String type, String price) {
         String result = null;
 
         db.setTable("Costs");
 
         //if all inserts were successful, returns the result of the query method
-        if(db.insert("Store", store) &&
-                db.insert("Description", description) &&
-                db.insert("Type", type) &&
-                db.insert("Price", price)) {
+        if(db.update("Store", store, "OrderID", orderID) &&
+                db.update("Description", description, "OrderID", orderID) &&
+                db.update("Type", type, "OrderID", orderID) &&
+                db.update("Price", price, "OrderID", orderID)) {
             result = db.query();
         }
 

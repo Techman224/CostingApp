@@ -39,8 +39,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout"
             android:orientation="vertical">
-
-            <include layout="@layout/input_item" />
         </LinearLayout>
     </ScrollView>
 

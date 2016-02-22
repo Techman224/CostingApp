@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class AddOrderActivity extends AppCompatActivity {
     private ArrayList<View> items;
     private Calculations calc;
+    private int orderID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,15 @@ public class AddOrderActivity extends AppCompatActivity {
 
         items = new ArrayList<View>();
 
+        //add the first item
+        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View mView = inflater.inflate(R.layout.input_item, null);
+        items.add(mView);
+        mainLayout.addView(mView);
+
+        //create a new order
         calc = new Calculations();
         String newOrder = calc.newOrder();
 
@@ -36,12 +46,14 @@ public class AddOrderActivity extends AppCompatActivity {
 
         String[] values = newOrder.split(",");
 
-        int orderID = Integer.parseInt(values[ORDER_ID]);
+        //display the orderID
+        orderID = Integer.parseInt(values[ORDER_ID]);
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
         orderNumView += " " + Integer.toString(orderID);
         orderNum.setText(orderNumView);
 
+        //display the date
         TextView date = (TextView)findViewById(R.id.date);
         String dateView = date.getText().toString();
         dateView += " " + values[DATE];
@@ -53,11 +65,14 @@ public class AddOrderActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View mView = inflater.inflate(R.layout.input_item, null);
-        mainLayout.addView(mView);
         items.add(mView);
+        mainLayout.addView(mView);
     }
 
     public void done(View view) {
+        //TextView date = (TextView)findViewById(R.id.date);
+        //date.setText(String.valueOf("ArrayListSize: " + items.size()));
+
         for(View v : items) {
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
@@ -71,7 +86,7 @@ public class AddOrderActivity extends AppCompatActivity {
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
 
-            calc.newItem(store, type, description, amount);
+            calc.newItem(String.valueOf(orderID), store, type, description, amount);
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);
