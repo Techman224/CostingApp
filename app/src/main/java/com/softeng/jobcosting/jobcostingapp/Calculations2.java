@@ -38,7 +38,22 @@ public class Calculations2
 		return result;
 	}
 
-	public static void editItem(String store, String description, String type, float price)
+	public static void editItem(String field, String newValue, )
+	{
+		update(field, newValue, )
+	}
+
+	public static float getProfit()
+	{
+
+	}
+
+	public static float getMargin()
+	{
+
+	}
+
+	public static float getTotal()
 	{
 
 	}
