@@ -2,6 +2,7 @@
     <string name="app_name">JobCostingApp</string>
     <string name="add_sale">Add Sale</string>
     <string name="calculator">Calculator</string>
+    <string name="summary">Summary</string>
     <string name="title_activity_calculation">CalculationActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -92,4 +93,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_summary">Summary</string>
 </resources>

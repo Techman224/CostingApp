@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         else if (id == R.id.calculator) {
             startActivity(new Intent(MainActivity.this, CalculationActivity.class));
         }
+        else if (id == R.id.summary) {
+            startActivity(new Intent(MainActivity.this, SummaryActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }

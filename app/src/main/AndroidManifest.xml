@@ -19,9 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="CalculationActivity"
-            android:label="@string/title_activity_calculation">
-        </activity>
+            android:name=".CalculationActivity"
+            android:label="@string/title_activity_calculation" />
+        <activity
+            android:name=".SummaryActivity"
+            android:label="@string/title_activity_summary"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
