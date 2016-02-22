@@ -40,9 +40,9 @@ public class Calculations {
         return db.query();
     }
 
-    //    public int[] getOrderIDs()  {
-//        db
-//    }
+    public int[] getOrderIDs()  {
+        return null;
+    }
 
     /*public float getProfit() {
 
