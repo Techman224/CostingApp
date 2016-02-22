@@ -21,11 +21,21 @@ public class Calculations2
 
 	public static String newItem(String store, String description, String type, String price)
 	{
-		insert("store", store);
-		insert("description", description);
-		insert("type", type);
-		insert("price", price);
-		return query();
+		String result = null;
+
+		if(insert("store", store) &&
+				insert("description", description) &&
+				insert("type", type) &&
+				insert("price", price))
+		{
+			result = query();
+		}
+		else
+		{
+			// return null
+		}
+
+		return result;
 	}
 
 	public static void editItem(String store, String description, String type, float price)
