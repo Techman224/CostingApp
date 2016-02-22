@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        GlobalDatabase gb = new GlobalDatabase();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,14 +47,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.add_sale) {
-            return true;
-        }
-        else if (id == R.id.calculator) {
-            startActivity(new Intent(MainActivity.this, CalculationActivity.class));
+        if (id == R.id.calculator) {
+            startActivity(new Intent(MainActivity.this, ManualCalculator.class));
         }
         else if (id == R.id.summary) {
             startActivity(new Intent(MainActivity.this, SummaryActivity.class));
+        }
+        else if (id == R.id.editOrder) {
+            startActivity(new Intent(MainActivity.this, EditOrderActivity.class));
+        }
+        else if (id == R.id.addOrder) {
+            startActivity (new Intent(MainActivity.this, AddOrderActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

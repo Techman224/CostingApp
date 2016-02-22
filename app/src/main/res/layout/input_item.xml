@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/inputItem">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:text="Store:"
+        android:id="@+id/storeTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/storeEditText"
+        android:layout_toEndOf="@id/storeTextView"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:text="Type:"
+        android:id="@+id/typeTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/second_edit_margin" />
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:entries="@array/types"
+        android:layout_toEndOf="@id/typeTextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/second_edit_margin"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:text="Description:"
+        android:id="@+id/descTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/third_edit_margin" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/descEditText"
+        android:layout_toEndOf="@id/descTextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/third_edit_margin"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:text="Amount:"
+        android:id="@+id/amtTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/fourth_edit_margin"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/amtEditText"
+        android:layout_toEndOf="@id/amtTextView"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/fourth_edit_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="12dp" />
+
+</RelativeLayout>

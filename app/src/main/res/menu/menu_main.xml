@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.softeng.jobcosting.jobcostingapp.MainActivity">
     <item
-        android:id="@+id/add_sale"
+        android:id="@+id/addOrder"
         android:orderInCategory="100"
-        android:title="@string/add_sale"
+        android:title="@string/title_activity_addOrder"
         app:showAsAction="never" />
     <item
         android:id="@+id/calculator"
@@ -16,5 +16,10 @@
         android:id="@+id/summary"
         android:orderInCategory="100"
         android:title="@string/summary"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/editOrder"
+        android:orderInCategory="100"
+        android:title="@string/title_activity_editOrder"
         app:showAsAction="never" />
 </menu>

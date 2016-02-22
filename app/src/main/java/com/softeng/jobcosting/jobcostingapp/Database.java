@@ -1,3 +1,4 @@
+package com.softeng.jobcosting.jobcostingapp;
 import java.util.Hashtable; 					//For the Stub Database
 import java.util.regex.PatternSyntaxException; 	//For the Stub Database (query processing)
 
@@ -8,7 +9,7 @@ import java.util.regex.PatternSyntaxException; 	//For the Stub Database (query p
  * Date: 07/02/2016
  */
 public class Database {
-	private StubDB db; 		//The Stub Databas
+	private StubDB db; 		//The Stub Database
 	private String query; 	//The active SQL query
 	private String table;
 	

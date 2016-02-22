@@ -19,12 +19,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalculationActivity"
+            android:name= ".ManualCalculator"
             android:label="@string/title_activity_calculation" />
         <activity
-            android:name=".SummaryActivity"
+            android:name= ".AddOrderActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_addOrder" />
+        <activity
+            android:name= ".EditOrderActivity"
+            android:label="@string/title_activity_editOrder" />
+        <activity
+            android:name= ".SummaryActivity"
             android:label="@string/title_activity_summary"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
