@@ -18,23 +18,23 @@ public class SummaryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent = getIntent();
-        final int TYPE = 2;
-        final int DESC = 3;
-        final int AMT = 4;
+//        Intent intent = getIntent();
+//        final int TYPE = 2;
+//        final int DESC = 3;
+//        final int AMT = 4;
 
-        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
-        String items = getOrderInfo(orderID);
-        String[][] processedItems = parseItems(items);
+//        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
+//        String items = getOrderInfo(orderID);
+//        String[][] processedItems = parseItems(items);
 
 
     }
 
-    @Override
-    public String getOrderInfo(int orderID) {
-        Calculations calc - new Calculations();
-        return calc.getInfo(orderID);
-    }
+   // @Override
+//    public String getOrderInfo(int orderID) {
+//        Calculations calc - new Calculations();
+//        return calc.getInfo(orderID);
+//    }
 
     public String[][] parseItems(String toParse) {
 
@@ -48,7 +48,6 @@ public class SummaryActivity extends AppCompatActivity {
         return parsedAll;
     }
 
-    private String
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
