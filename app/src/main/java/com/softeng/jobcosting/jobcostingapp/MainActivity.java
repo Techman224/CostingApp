@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         String[] listItems = getResources().getStringArray(R.array.sports_array);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
         mainList.setAdapter(adapter);
+        mainList.setOnItemClickListener(new ListClickListener());
     }
 
     @Override
@@ -55,5 +57,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public class ListClickListener implements OnItemClickListener   {
+
+        @Override
+        public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+
+            TextView listText = (TextView) view.findViewById(R.id.listText);
+            String textFromList = listText.getText().toString();
+
+            Intent intent = new Intent(MainActivity.this, SummaryActivity.class);
+            intent.putExtra("orderID", textFromList);
+            startActivity(intent);
+        }
     }
 }
