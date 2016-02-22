@@ -13,8 +13,8 @@
     <string name="dateString">Date:</string>
     <string name="title_activity_calculation">Calculation</string>
     <string name="title_activity_summary">Summary</string>
-    <string name="title_activity_addOrder">Add Order</string>
-    <string name="title_activity_editOrder">Edit Order</string>
+    <string name="title_activity_add_order">Add Order</string>
+    <string name="title_activity_edit_order">Edit Order</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

@@ -20,21 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-<<<<<<< HEAD
             android:name= ".ManualCalculator"
             android:label="@string/title_activity_calculation" />
-        <activity
-            android:name= ".AddOrderActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_addOrder" />
-        <activity
-            android:name= ".EditOrderActivity"
-            android:label="@string/title_activity_editOrder" />
         <activity
             android:name= ".SummaryActivity"
             android:label="@string/title_activity_summary"
             android:theme="@style/AppTheme.NoActionBar"/>
-=======
+        <activity
             android:name=".AddOrderActivity"
             android:label="@string/title_activity_add_order"
             android:theme="@style/AppTheme.NoActionBar">
@@ -44,7 +36,6 @@
             android:label="@string/title_activity_edit_order"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
->>>>>>> addOrder
     </application>
 
 </manifest>
