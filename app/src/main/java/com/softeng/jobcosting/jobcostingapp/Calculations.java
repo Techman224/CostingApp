@@ -1,20 +1,16 @@
 package com.softeng.jobcosting.jobcostingapp;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Calculations {
     private Database db;
-    private AtomicInteger newOrderID;
 
     public Calculations() {
         db = GlobalDatabase.getDB();
-        newOrderID = GlobalDatabase.getNewOrderID();
     }
 
-    public int newOrder() {
-        int orderID = newOrderID.get();
-        return orderID;
+    public String newOrder() {
+        db.setTable("Orders");
+        db.insert("Date", "Date()");
+        return db.query();
     }
 
     public String newItem(String store, String description, String type, String price) {

@@ -216,7 +216,7 @@ public class Database {
 						query = query.substring(0, query.lastIndexOf("(") + 1) + conditions + ");";
 						System.out.println("Built query: " + query);
 						
-						//The build happend successfully
+						//The build happened successfully
 						valid = true;
 					}
 					else {

@@ -27,12 +27,23 @@ public class AddOrderActivity extends AppCompatActivity {
 
         items = new ArrayList<View>();
         calc = new Calculations();
-        int orderID = calc.newOrder();
+        String newOrder = calc.newOrder();
+
+        final int ORDER_ID = 0;
+        final int DATE = 1;
+
+        String[] values = newOrder.split(",");
+
+        int orderID = Integer.parseInt(values[ORDER_ID]);
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
         orderNumView += Integer.toString(orderID);
-        //orderNumView += "123";
         orderNum.setText(orderNumView);
+
+        TextView date = (TextView)findViewById(R.id.date);
+        String dateView = date.getText().toString();
+        dateView += values[DATE];
+        date.setText(dateView);
     }
 
     public void addItem(View view) {
