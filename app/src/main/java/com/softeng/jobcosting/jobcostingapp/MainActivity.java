@@ -28,10 +28,17 @@ public class MainActivity extends AppCompatActivity {
         Calculations calc = new Calculations();
         int [] orderIDs = calc.getOrderIDs();
         ListView mainList = (ListView) findViewById(R.id.listView);
-        String[] listItems = new String[orderIDs.length];
+        String[] listItems;
 
-        for(int i = 0; i < orderIDs.length; i++)    {
-            listItems[i] = "" + orderIDs[i];
+        if(orderIDs != null) {
+            listItems = new String[orderIDs.length];
+
+            for (int i = 0; i < orderIDs.length; i++) {
+                listItems[i] = "" + orderIDs[i];
+            }
+        }
+        else    {
+            listItems = getResources().getStringArray(R.array.sports_array);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
         mainList.setAdapter(adapter);
