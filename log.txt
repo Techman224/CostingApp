@@ -111,3 +111,6 @@ Start: 11:00AM
 - Reviewed what had to be done for Iter1
 - Discussed a little on business logic and architecture
 End: 12:00PM
+
+Feb 20:
+Joseph - Decided against the navigation drawer, far too complicated to do with short amount of time, will use simple drop down list for now.
