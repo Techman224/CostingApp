@@ -17,12 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_alignParentTop="true"
-<<<<<<< HEAD
         android:layout_alignParentStart="true">
     </ListView>
-=======
-        android:layout_alignParentStart="true"
-        android:entries="@array/sports_array"/>
->>>>>>> addOrder
 
 </RelativeLayout>

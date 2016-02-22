@@ -27,28 +27,19 @@ public class SummaryActivity extends AppCompatActivity {
         final int AMT = 4;
 
         int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
-//        String items = getOrderInfo(orderID);
-//        String[][] processedItems = parseItems(items);
+        String items = getOrderInfo(orderID);
+        String[][] processedItems = parseItems(items);
 
 
 
     }
 
-//    public void generateTable(String[][]items)  {
-//        TableLayout layout = (TableLayout) findViewById(R.id.tableLay);
-//
-//        for(int row = 0; row < items.length; row++) {
-//            for
-//        }
-//        TableRow newRow = new TableRow(this);
-//        TextView item = new TextView(this);
-//
-//    }
-//    @Override
-//    public String getOrderInfo(int orderID) {
-//        Calculations calc - new Calculations();
-//        return calc.getInfo(orderID);
-//    }
+
+
+    public String getOrderInfo(int orderID) {
+        Calculations calc = new Calculations();
+        return calc.getItems(orderID);
+    }
 
     public String[][] parseItems(String toParse) {
 
