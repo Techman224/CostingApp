@@ -32,9 +32,8 @@ public class SummaryActivity extends AppCompatActivity {
 
     @Override
     public String getOrderInfo(int orderID) {
-        //Calculations calc = new Calculations();
-        //return calc.getInfo(orderID;
-        return null;
+        Calculations calc - new Calculations();
+        return calc.getInfo(orderID);
     }
 
     public String[][] parseItems(String toParse) {

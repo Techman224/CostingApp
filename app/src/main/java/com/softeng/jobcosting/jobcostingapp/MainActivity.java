@@ -38,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void secondActivity(View view) {
-        Intent intent = new Intent(this, AddOrderActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -54,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.add_sale) {
             return true;
         }
-        else if (id == R.id.add_order) {
-            startActivity(new Intent(MainActivity.this, AddOrderActivity.class));
+        else if (id == R.id.calculator) {
+            startActivity(new Intent(MainActivity.this, CalculationActivity.class));
         }
         else if (id == R.id.summary) {
             startActivity(new Intent(MainActivity.this, SummaryActivity.class));
