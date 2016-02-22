@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:id="@+id/inputItem">
 
     <TextView
-        android:id="@+id/store"
-        android:layout_height="0dp"
         android:layout_width="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/storeTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+
 
     <TextView
-        android:layout_height="0dp"
         android:layout_width="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/typeTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/second_edit_margin" />
 
 
-</LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/descTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/third_edit_margin" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/edit_text_height"
+        android:id="@+id/amtTextView"
+        android:paddingTop="@dimen/text_view_padding"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/fourth_edit_margin"
+        android:layout_marginBottom="12dp" />
+
+
+
+</RelativeLayout>
