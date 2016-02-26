@@ -1,6 +1,7 @@
-package com.softeng.jobcosting.jobcostingapp;
+package com.softeng.jobcosting.jobcostingapp.UserInterface;
 
-import android.support.v7.app.AppCompatActivity;
+import com.softeng.jobcosting.jobcostingapp.Database.Database;
+import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 
 public class CalculationActivity {
     public Database db;

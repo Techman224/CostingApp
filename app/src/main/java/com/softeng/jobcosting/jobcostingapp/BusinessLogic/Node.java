@@ -1,4 +1,4 @@
-package com.softeng.jobcosting.jobcostingapp;
+package com.softeng.jobcosting.jobcostingapp.BusinessLogic;
 
 public class Node<E>
 {

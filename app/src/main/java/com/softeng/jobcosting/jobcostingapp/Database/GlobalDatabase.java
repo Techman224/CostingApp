@@ -1,6 +1,8 @@
-package com.softeng.jobcosting.jobcostingapp;
+package com.softeng.jobcosting.jobcostingapp.Database;
 
 import android.app.Application;
+
+import com.softeng.jobcosting.jobcostingapp.Database.Database;
 
 /**
  * Created by Courtney on 2016-02-21.

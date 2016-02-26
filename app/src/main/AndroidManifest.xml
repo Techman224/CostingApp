@@ -3,14 +3,14 @@
     package="com.softeng.jobcosting.jobcostingapp">
 
     <application
-        android:name=".GlobalDatabase"
+        android:name=".Database.GlobalDatabase"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".UserInterface.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,19 +20,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name= ".ManualCalculator"
+            android:name= ".BusinessLogic.ManualCalculator"
             android:label="@string/title_activity_calculation" />
         <activity
-            android:name= ".SummaryActivity"
+            android:name= ".UserInterface.SummaryActivity"
             android:label="@string/title_activity_summary"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".AddOrderActivity"
+            android:name=".UserInterface.AddOrderActivity"
             android:label="@string/title_activity_add_order"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".EditOrderActivity"
+            android:name=".UserInterface.EditOrderActivity"
             android:label="@string/title_activity_edit_order"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

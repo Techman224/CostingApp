@@ -1,4 +1,4 @@
-package com.softeng.jobcosting.jobcostingapp;
+package com.softeng.jobcosting.jobcostingapp.Database;
 import java.util.Hashtable; 					//For the Stub Database
 import java.util.regex.PatternSyntaxException; 	//For the Stub Database (query processing)
 

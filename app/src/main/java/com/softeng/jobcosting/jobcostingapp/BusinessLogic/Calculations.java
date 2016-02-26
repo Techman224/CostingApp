@@ -1,4 +1,7 @@
-package com.softeng.jobcosting.jobcostingapp;
+package com.softeng.jobcosting.jobcostingapp.BusinessLogic;
+
+import com.softeng.jobcosting.jobcostingapp.Database.Database;
+import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 
 public class Calculations {
     private Database db;
