@@ -138,3 +138,6 @@ Feb 20:
 Joseph - Decided against the navigation drawer, far too complicated to do with short amount of time, will use simple drop down list for now.
 
 //***** End Individual Feedback *****//
+
+Feb 26:
+Courtney - Put Java files into 3 packages: UserInterface, BusinessLogic and Database.
