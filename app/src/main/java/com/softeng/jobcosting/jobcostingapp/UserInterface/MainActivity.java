@@ -1,8 +1,10 @@
 package com.softeng.jobcosting.jobcostingapp.UserInterface;
 
+import android.app.LauncherActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -14,11 +16,12 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
+import com.softeng.jobcosting.jobcostingapp.CustomAdapter;
 import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 import com.softeng.jobcosting.jobcostingapp.R;
 
 public class MainActivity extends AppCompatActivity {
-
+private ListView lvItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Calculations calc = new Calculations();
         int [] orderIDs = null;
-        ListView mainList = (ListView) findViewById(R.id.listView);
+        ListView mainList = (ListView) findViewById(R.id.custom_list);
         String[] listItems;
 
         if(orderIDs != null) {
@@ -42,9 +45,20 @@ public class MainActivity extends AppCompatActivity {
         else    {
             listItems = getResources().getStringArray(R.array.sports_array);
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
-        mainList.setAdapter(adapter);
-        mainList.setOnItemClickListener(new ListClickListener());
+        lvItems = (ListView) findViewById(R.id.custom_list);
+        String[] locationsArray = getResources().getStringArray(
+                R.array.sports_array);
+        CustomAdapter adapter = new CustomAdapter(this, locationsArray);
+        lvItems.setAdapter(adapter);
+
+        lvItems.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // Do what ever with your Item.
+            }
+        });
     }
 
     @Override
