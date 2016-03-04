@@ -1,6 +1,7 @@
-package me.alanbridgeman.actual;
+package com.softeng.jobcosting.jobcostingapp.Database;
 
-import me.alanbridgeman.Database;
+import com.softeng.jobcosting.jobcostingapp.Database.*;
+
 
 public class ActualDatabase implements Database {
 	public boolean insert(String field, String value) {
