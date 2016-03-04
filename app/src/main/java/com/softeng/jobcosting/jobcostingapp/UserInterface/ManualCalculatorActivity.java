@@ -10,6 +10,6 @@ public class ManualCalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculation);
+        setContentView(R.layout.activity_manual_calculator);
     }
 }
