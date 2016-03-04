@@ -140,6 +140,13 @@ Joseph - Decided against the navigation drawer, far too complicated to do with s
 Feb 26:
 Courtney - Put Java files into 3 packages: UserInterface, BusinessLogic and Database.
 
+Mar 4: Added method to Calculations to send data from the database.
+
 //***** End Individual Feedback *****//
 
-Mar 4: Added method to Calculations to send data from the database
+Policy:
+-	Merge at the end of the week or if branches get too long
+-	Push at the end of each day with frequent commits
+-	Everyone must complete their tasks before the deadline
+-	Merge at least 2 days before deadline to prevent last minute merge conflicts
+
