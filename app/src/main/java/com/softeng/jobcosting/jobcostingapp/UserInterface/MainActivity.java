@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
-import com.softeng.jobcosting.jobcostingapp.BusinessLogic.ManualCalculator;
 import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 import com.softeng.jobcosting.jobcostingapp.R;
 
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.calculator) {
-            startActivity(new Intent(MainActivity.this, ManualCalculator.class));
+            startActivity(new Intent(MainActivity.this, ManualCalculatorActivity.class));
         }
         else if (id == R.id.summary) {
             startActivity(new Intent(MainActivity.this, SummaryActivity.class));

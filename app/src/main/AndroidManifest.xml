@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name= ".BusinessLogic.ManualCalculator"
+            android:name= ".UserInterface.ManualCalculatorActivity"
             android:label="@string/title_activity_calculation" />
         <activity
             android:name= ".UserInterface.SummaryActivity"
