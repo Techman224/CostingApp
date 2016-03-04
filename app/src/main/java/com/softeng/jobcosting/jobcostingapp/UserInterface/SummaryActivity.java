@@ -23,9 +23,11 @@ public class SummaryActivity extends AppCompatActivity {
         final int DESC = 3;
         final int AMT = 4;
 
-        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
-        String items = getOrderInfo(orderID);
-        String[][] processedItems = parseItems(items);
+        String strOrderID = intent.getStringExtra("orderID");
+        strOrderID = strOrderID.substring(strOrderID.length()-1);
+        int orderID = Integer.parseInt(strOrderID);
+//        String items = getOrderInfo(orderID);
+//        String[][] processedItems = parseItems(items);
 
 
 
