@@ -13,7 +13,7 @@ public class GlobalDatabase extends Application {
     private static Database db;
 
     public void onCreate() {
-        ///super.onCreate();
+        super.onCreate();
         db = new StubDatabase();
     }
 
