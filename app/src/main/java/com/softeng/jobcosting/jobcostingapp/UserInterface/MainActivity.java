@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Calculations calc = new Calculations();
-        int [] orderIDs = calc.getOrderIDs();
+        int [] orderIDs = null;
         ListView mainList = (ListView) findViewById(R.id.listView);
         String[] listItems;
 
