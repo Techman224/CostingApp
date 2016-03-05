@@ -72,7 +72,14 @@ public interface Database {
 	 * Return: boolean - If the where query was properly built
 	 */
 	public boolean where(String[] fields, String innerQuery);
-	
+
+	/*
+	 * Name: Set Table (setTable)
+	 * Description: A public method that allows other parts of the app to set the table in which to
+	 * 				get stuff from the database out ot
+	 * Parameter(s): tableName (String) - The name of the table to be quering
+	 * Return: void (N/A)
+	 */
 	public void setTable(String tableName);
 	
 	/*
