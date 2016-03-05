@@ -20,6 +20,8 @@ import com.softeng.jobcosting.jobcostingapp.CustomAdapter;
 import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 import com.softeng.jobcosting.jobcostingapp.R;
 
+import static android.support.v4.app.ActivityCompat.startActivity;
+
 public class MainActivity extends AppCompatActivity {
 private ListView lvItems;
     @Override
@@ -45,9 +47,12 @@ private ListView lvItems;
         else    {
             listItems = getResources().getStringArray(R.array.sports_array);
         }
+
         lvItems = (ListView) findViewById(R.id.custom_list);
+
         String[] locationsArray = getResources().getStringArray(
-                R.array.sports_array);
+                R.array.sports_array); //once again, for testing
+
         CustomAdapter adapter = new CustomAdapter(this, locationsArray);
         lvItems.setAdapter(adapter);
 
@@ -56,7 +61,12 @@ private ListView lvItems;
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                // Do what ever with your Item.
+                Intent myIntent = new Intent(MainActivity.this, SummaryActivity.class);
+
+                //myIntent.putExtra("test", "hello");
+                //pushing values to summery page?
+
+                startActivity(myIntent);
             }
         });
     }
@@ -85,10 +95,6 @@ private ListView lvItems;
         else if (id == R.id.add_order) {
             Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
             startActivity(addOrderIntent);
-        }
-        else if (id == R.id.edit_order) {
-            Intent editOrderIntent = new Intent(MainActivity.this, EditOrderActivity.class);
-            startActivity(editOrderIntent);
         }
 
         return super.onOptionsItemSelected(item);

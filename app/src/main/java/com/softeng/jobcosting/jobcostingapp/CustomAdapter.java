@@ -1,14 +1,20 @@
 package com.softeng.jobcosting.jobcostingapp;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.support.v7.widget.RecyclerView;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.softeng.jobcosting.jobcostingapp.UserInterface.EditOrderActivity;
+import com.softeng.jobcosting.jobcostingapp.UserInterface.MainActivity;
+
+import static android.support.v4.app.ActivityCompat.startActivity;
 
 public class CustomAdapter extends ArrayAdapter<String> {
 
@@ -25,7 +31,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
         convertView = lf.inflate(R.layout.main_list_layout, parent, false);
         holder = new ViewHolder();
-        holder.btnLocalData = (Button) convertView
+        holder.button = (Button) convertView
         .findViewById(R.id.edit_button);
         holder.tvItem = (TextView) convertView.findViewById(R.id.order);
         holder.initListeners();
@@ -39,11 +45,11 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return convertView;
         }
 
-public static class ViewHolder {
+public class ViewHolder {
     TextView tvItem;
-    Button btnOnlineData;
-    Button btnLocalData;
+    Button button;
     String mItem;
+
 
     public String getItem(){
         return mItem;
@@ -55,14 +61,21 @@ public static class ViewHolder {
     }
 
     public void initListeners() {
-        btnLocalData.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+        button.setFocusable(false);
+        button.setClickable(false);
+        button.setOnClickListener(new View.OnClickListener(){
+
+        @Override
+        public void onClick(View v) {
+            Intent myIntent = new Intent(getContext(), EditOrderActivity.class);
+            getContext().startActivity(myIntent);
+        }
+    });
     }
+
+
 
 }
 
