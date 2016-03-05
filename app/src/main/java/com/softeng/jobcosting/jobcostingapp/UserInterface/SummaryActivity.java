@@ -1,10 +1,14 @@
 package com.softeng.jobcosting.jobcostingapp.UserInterface;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
+import android.widget.GridLayout;
+import android.widget.TextView;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
 import com.softeng.jobcosting.jobcostingapp.R;
@@ -27,9 +31,13 @@ public class SummaryActivity extends AppCompatActivity {
         strOrderID = strOrderID.substring(strOrderID.length()-1);
         int orderID = Integer.parseInt(strOrderID);
         String items = getOrderInfo(orderID);
-//        String[][] processedItems = parseItems(items);
 
+        if(items == null)   {
+            items = "1,1,Shopify,Im a cost,Board,5000.00\n2,1,Red Paddle,Im a revenue,Board,9000.52";
+        }
+        String[][] processedItems = parseItems(items);
 
+//
 
     }
 
@@ -41,14 +49,50 @@ public class SummaryActivity extends AppCompatActivity {
 
     public String[][] parseItems(String toParse) {
 
-        String[] parsedItems = toParse.split("\\s+");
+        String[] parsedItems = toParse.split("\n");
         String[][] parsedAll = new String[parsedItems.length][];
 
         for(int row = 0; row < parsedAll.length; row++) {
-            parsedAll[row] = parsedAll[row][0].split(",");
+
+            parsedAll[row] = parsedItems[row].split(",");
         }
 
         return parsedAll;
+    }
+
+    public void setGridLayout(String[][]items)  {
+
+        GridLayout grLay = (GridLayout)findViewById(R.id.summary_layout);
+        grLay.removeAllViews();
+
+        int total = items.length * items[0].length;
+        int column = items[0].length;
+        int row = items.length;
+        grLay.setColumnCount(column);
+        grLay.setRowCount(row+1);
+
+        for(int i=0, c=0, r=0; i < total; i++,c++)  {
+
+            if(c == column) {
+                c=0;
+                r++;
+            }
+
+            TextView toAdd = new TextView(this);
+            toAdd.setText(items[r][c]);
+
+            GridLayout.LayoutParams param = new GridLayout.LayoutParams();
+            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+            param.rightMargin = 5;
+            param.topMargin = 5;
+            param.setGravity(Gravity.CENTER);
+            param.columnSpec = GridLayout.spec(c);
+            param.rowSpec = GridLayout.spec(r);
+            toAdd.setLayoutParams(param);
+            grLay.addView(toAdd);
+        }
+
     }
 
 
