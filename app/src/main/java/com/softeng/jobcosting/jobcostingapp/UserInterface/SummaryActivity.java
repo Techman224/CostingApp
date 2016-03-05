@@ -26,13 +26,12 @@ public class SummaryActivity extends AppCompatActivity {
         String strOrderID = intent.getStringExtra("orderID");
         strOrderID = strOrderID.substring(strOrderID.length()-1);
         int orderID = Integer.parseInt(strOrderID);
-//        String items = getOrderInfo(orderID);
+        String items = getOrderInfo(orderID);
 //        String[][] processedItems = parseItems(items);
 
 
 
     }
-
 
 
     public String getOrderInfo(int orderID) {
