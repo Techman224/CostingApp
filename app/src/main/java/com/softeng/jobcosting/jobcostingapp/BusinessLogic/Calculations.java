@@ -78,8 +78,12 @@ public class Calculations {
         return profit;
     }
 
-    public float getMargin() {
+    public float getMargin(int orderID) {
+        float margin = 0;
 
+        margin = getProfit(orderID) / getBoardTotal(orderID);
+
+        return margin;
     }
 
     public float getTotal(int orderID) {
@@ -103,7 +107,7 @@ public class Calculations {
         return total;
     }
 
-    public float getPSTCharged(int orderID)
+    private float getPSTCharged(int orderID)
     {
         float PSTCharged = 0;
         String query = null;
@@ -123,5 +127,27 @@ public class Calculations {
         }
 
         return PSTCharged;
+    }
+
+    private float getBoardTotal(int orderID)
+    {
+        float boardTotal = 0;
+        String query = null;
+        String[] tokens = null;
+
+        db.setTable("Costs");
+
+        if(db.where("Type", "Board"))
+        {
+            query = db.query();
+            tokens = query.split(",");
+
+            for(int i = 0; i < tokens.length; i++)
+            {
+                boardTotal += Float.parseFloat(tokens[i]);
+            }
+        }
+
+        return boardTotal;
     }
 }
