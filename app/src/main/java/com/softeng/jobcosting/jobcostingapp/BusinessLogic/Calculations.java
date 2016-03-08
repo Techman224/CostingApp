@@ -72,6 +72,18 @@ public class Calculations {
 
     public float getProfit(int orderID) {
         float profit = 0;
+
+        profit = getTotal(orderID) / getPSTCharged(orderID);
+
+        return profit;
+    }
+
+    public float getMargin() {
+
+    }
+
+    public float getTotal(int orderID) {
+        float total = 0;
         String query = null;
         String[] tokens = null;
 
@@ -84,18 +96,17 @@ public class Calculations {
 
             for(int i = 0; i < tokens.length; i++)
             {
-                profit += Float.parseFloat(tokens[i]);
+                total += Float.parseFloat(tokens[i]);
             }
         }
 
-        return profit;
-    }
-/*
-    public float getMargin() {
-
+        return total;
     }
 
-    public float getTotal() {
+    public float getPSTCharged(int orderID)
+    {
+        float PSTCharged = 0;
 
-    }*/
+        
+    }
 }
