@@ -106,7 +106,22 @@ public class Calculations {
     public float getPSTCharged(int orderID)
     {
         float PSTCharged = 0;
+        String query = null;
+        String[] tokens = null;
 
-        
+        db.setTable("Costs");
+
+        if(db.where("Type", "PSTCharged"))
+        {
+            query = db.query();
+            tokens = query.split(",");
+
+            for(int i = 0; i < tokens.length; i++)
+            {
+                PSTCharged += Float.parseFloat(tokens[i]);
+            }
+        }
+
+        return PSTCharged;
     }
 }
