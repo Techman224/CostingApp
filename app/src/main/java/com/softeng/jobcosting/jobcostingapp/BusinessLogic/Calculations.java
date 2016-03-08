@@ -70,10 +70,27 @@ public class Calculations {
 
     }
 
-    /*public float getProfit() {
+    public float getProfit(int orderID) {
+        float profit = 0;
+        String query = null;
+        String[] tokens = null;
 
+        db.setTable("Costs");
+
+        if(db.where("OrderID", "Price"))
+        {
+            query = db.query();
+            tokens = query.split(",");
+
+            for(int i = 0; i < tokens.length; i++)
+            {
+                profit += Float.parseFloat(tokens[i]);
+            }
+        }
+
+        return profit;
     }
-
+/*
     public float getMargin() {
 
     }
