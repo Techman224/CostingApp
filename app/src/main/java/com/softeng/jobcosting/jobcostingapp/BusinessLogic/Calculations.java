@@ -11,9 +11,9 @@ public class Calculations {
     }
 
     public String newOrder() {
-        db.setTable("Orders");
-        db.insert("Date", "Date()");
-        return db.query();
+        //db.setTable("Orders");
+        //db.insert("Date", "Date()");
+        return "10/2/116";
     }
 
     public String newItem(String orderID, String store, String description, String type, String price) {
