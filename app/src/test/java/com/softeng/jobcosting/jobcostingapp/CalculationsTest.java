@@ -11,6 +11,7 @@ public class CalculationsTest
     @Test
     public void newOrder_isDateCorrect()
     {
-        assertThat(Calculations.newOrder(), new Date());
+        Calculations newCalc = new Calculations();
+        assertTrue(newCalc.newOrder().contains((new Date()).getDate() + "/" + (new Date()).getMonth() + "/" + (new Date()).getYear()));
     }
 }
