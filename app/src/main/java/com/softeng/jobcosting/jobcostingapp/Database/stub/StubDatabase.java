@@ -171,16 +171,7 @@ public class StubDatabase implements Database {
 		return valid;
 	}
 	
-	public boolean select() {
-		boolean valid = false;
-		
-		if(query == null) {
-			query = "SELECT * FROM " + table + " ;";
-			valid = true;
-		}
-		
-		return valid;
-	}
+
 	
 	/*
 	 * Name: where
