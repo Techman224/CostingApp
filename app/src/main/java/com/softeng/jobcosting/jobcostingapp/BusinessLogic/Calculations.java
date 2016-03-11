@@ -32,9 +32,17 @@ public class Calculations {
         return result;
     }
 
-    public void editItem(String field, String newValue, int costID) {
+    public String editItem(String field, String newValue, int costID) {
+        String result = null;
+
         db.setTable("Costs");
-        boolean success = db.update(field, newValue, "CostID", Integer.toString(costID));
+
+        if(db.update(field, newValue, "CostID", Integer.toString(costID)))
+        {
+            result = db.query();
+        }
+
+        return result;
     }
 
     public String getItems(int orderID) {

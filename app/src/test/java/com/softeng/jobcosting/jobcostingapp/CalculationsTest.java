@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class CalculationsTest
 {
 
-    @Test
+    //@Test
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
@@ -25,5 +25,13 @@ public class CalculationsTest
     {
         Calculations newCalc = new Calculations();
         assertEquals(1, (newCalc.newItem("1000", "Shopify", "RV-145", "Board", "100.00")).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
+    }
+
+    @Test
+    public void editItem_isEdited()
+    {
+        Calculations newCalc = new Calculations();
+        assertEquals(1, (newCalc.newItem("1000", "Shopify", "RV-145", "Board", "100.00")).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
+        assertEquals(1, (newCalc.editItem("Store", "EBGames", 1000)).compareTo("1,1000,EBGames,RV-145,Board,100.00"));
     }
 }
