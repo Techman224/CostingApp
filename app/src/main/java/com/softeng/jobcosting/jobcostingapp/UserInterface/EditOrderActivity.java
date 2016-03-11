@@ -45,8 +45,8 @@ public class EditOrderActivity extends AppCompatActivity {
         date.setText(dateView);
 
         calc.newOrder();
-        calc.newItem("1", "Shopify", "red", "Board", "4");
-        calc.newItem("1", "Shopify", "green", "Fees", "5");
+        //calc.newItem("1", "Shopify", "red", "Board", "4");
+        //calc.newItem("1", "Shopify", "green", "Fees", "5");
         String result = calc.getItems(orderID);
 
         if(result != null) {
