@@ -1,6 +1,8 @@
 package com.softeng.jobcosting.jobcostingapp.Database.stub;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 
 /**
@@ -60,6 +62,16 @@ public class SimpleStub {
         return deleted;
     }
 
-    
+    public ArrayList<Order> sortOrders() {
+        ArrayList<Order> sortedOrders = new ArrayList<Order>();
+        for (Order order : orders) {
+            sortedOrders.add(order);
+        }
+
+        Collections.sort(sortedOrders);
+
+        return sortedOrders;
+    }
+
 
 }
