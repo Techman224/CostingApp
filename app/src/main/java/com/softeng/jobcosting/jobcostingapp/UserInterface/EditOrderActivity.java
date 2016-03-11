@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class EditOrderActivity extends AppCompatActivity {
     private ArrayList<View> views;
     private Calculations calc;
+    private int firstCostID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class EditOrderActivity extends AppCompatActivity {
         views = new ArrayList<View>();
 
         calc = new Calculations();
+        firstCostID = 1;
 
         int orderID = 1;
         String dateString = "2016/02/22";
@@ -92,24 +94,24 @@ public class EditOrderActivity extends AppCompatActivity {
     }
 
     public void update(View view) {
-        for(int currCostID = 1; currCostID <= views.size(); currCostID++) {
-            View v = views.get(currCostID - 1); //the first element has costID=1 and index=0
-
+        for(View v : views) {
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
-            calc.editItem("Store", store, currCostID);
+            calc.editItem("Store", store, firstCostID);
 
             Spinner types = (Spinner) v.findViewById(R.id.typeSpinner);
             String type = (types.getSelectedItem()).toString();
-            calc.editItem("Type", type, currCostID);
+            calc.editItem("Type", type, firstCostID);
 
             EditText descriptionInput = (EditText) v.findViewById(R.id.descEditText);
             String description = descriptionInput.getText().toString();
-            calc.editItem("Description", description, currCostID);
+            calc.editItem("Description", description, firstCostID);
 
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
-            calc.editItem("Price", amount, currCostID);
+            calc.editItem("Price", amount, firstCostID);
+
+            firstCostID++;
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);
