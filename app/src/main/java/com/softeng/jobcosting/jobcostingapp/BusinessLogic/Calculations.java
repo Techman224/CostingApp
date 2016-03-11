@@ -22,13 +22,13 @@ public class Calculations {
         db.setTable("Costs");
 
         //if all inserts were successful, returns the result of the query method
-        if (db.update("Store", store, "OrderID", orderID) &&
-                db.update("Description", description, "OrderID", orderID) &&
-                db.update("Type", type, "OrderID", orderID) &&
-                db.update("Price", price, "OrderID", orderID)) {
+        if (db.insert("OrderID", orderID) &&
+                db.insert("Store", store) &&
+                db.insert("Description", description) &&
+                db.insert("Type", type) &&
+                db.insert("Price", price)) {
             result = db.query();
         }
-
         return result;
     }
 

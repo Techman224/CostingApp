@@ -24,6 +24,6 @@ public class CalculationsTest
     public void newItem_isInserted()
     {
         Calculations newCalc = new Calculations();
-        assertEquals(0, (newCalc.newItem("1000", "Shopify", "RV-145", "Board", "100.00")).compareTo("1000, Shopify, RV-145, Board, 100.00"));
+        assertEquals(1, (newCalc.newItem("1000", "Shopify", "RV-145", "Board", "100.00")).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
     }
 }
