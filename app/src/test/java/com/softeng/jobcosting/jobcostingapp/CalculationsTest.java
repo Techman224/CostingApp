@@ -1,9 +1,8 @@
 package com.softeng.jobcosting.jobcostingapp;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
-import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
-import com.softeng.jobcosting.jobcostingapp.Database.stub.StubDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,11 +13,18 @@ public class CalculationsTest
     @Test
     public void newOrder_isDateCorrect()
     {
-        GlobalDatabase gdb = new GlobalDatabase();
         Calculations newCalc = new Calculations();
-        assertTrue(newCalc.getDB() instanceof StubDatabase);
         System.out.println((new Date()).getDate() + "/" + (new Date()).getMonth() + "/" + (new Date()).getYear());
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy/mm/dd");
         Date newDate = new Date();
-        assertEquals(0, newCalc.newOrder().compareTo(newDate.getDate() + "/" + newDate.getMonth() + "/" + newDate.getYear()));
+
+        assertEquals(dt.format(newDate), newCalc.newOrder());
+    }
+
+    @Test
+    public void newItem_isInserted()
+    {
+        Calculations newCalc = new Calculations();
+        assertEquals(0, (newCalc.newItem("1000", "Shopify", "RV-145", "Board", "100.00")).compareTo("1000, Shopify, RV-145, Board, 100.00"));
     }
 }

@@ -34,7 +34,7 @@ public class GlobalDatabase extends Application {
     }
 
     public static Database getDB() {
-        return db;
+        return new StubDatabase();
     }
 	
 
