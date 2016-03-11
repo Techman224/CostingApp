@@ -88,7 +88,7 @@ public class AddOrderActivity extends AppCompatActivity {
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
 
-            calc.newItem(String.valueOf(orderID), store, type, description, amount);
+            //calc.newItem(String.valueOf(orderID), store, type, description, amount);
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);

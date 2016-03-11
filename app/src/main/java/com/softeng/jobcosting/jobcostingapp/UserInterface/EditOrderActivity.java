@@ -49,6 +49,7 @@ public class EditOrderActivity extends AppCompatActivity {
         calc.newOrder();
         calc.newItem(1, "Shopify", "red", "Board", 4.05);
         calc.newItem(1, "Shopify", "green", "Fees", 5.11);
+
         String result = calc.getItems(orderID);
 
         if(result != null) {

@@ -16,17 +16,17 @@ public class Calculations {
         return db.query();
     }
 
-    public String newItem(String orderID, String store, String description, String type, String price) {
+    public String newItem(int orderID, String store, String description, String type, float price) {
         String result = null;
 
         db.setTable("Costs");
 
         //if all inserts were successful, returns the result of the query method
-        if (db.insert("OrderID", orderID) &&
+        if (db.insert("OrderID", Integer.toString(orderID)) &&
                 db.insert("Store", store) &&
                 db.insert("Description", description) &&
                 db.insert("Type", type) &&
-                db.insert("Price", price)) {
+                db.insert("Price", Float.toString(price))) {
             result = db.query();
         }
         return result;
@@ -40,16 +40,22 @@ public class Calculations {
         if(db.update(field, newValue, "CostID", Integer.toString(costID)))
         {
             result = db.query();
-            System.out.println(result);
         }
 
         return result;
     }
 
     public String getItems(int orderID) {
+        String result = null;
+
         db.setTable("Costs");
-        boolean success = db.where("OrderID", Integer.toString(orderID));
-        return db.query();
+
+        if(db.where("OrderID", Integer.toString(orderID)))
+        {
+            result = db.query();
+        }
+
+        return result;
     }
 
     public int[] getOrderIDs()  {
