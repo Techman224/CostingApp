@@ -30,13 +30,11 @@ public class EditOrderActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         views = new ArrayList<View>();
-
         calc = new Calculations();
         firstCostID = 1;
 
         int orderID = 1;
         String dateString = "2016/02/22";
-        int firstCostID = 1;
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
@@ -48,8 +46,10 @@ public class EditOrderActivity extends AppCompatActivity {
         dateView += " " + dateString;
         date.setText(dateView);
 
+        calc.newOrder();
+        calc.newItem(1, "Shopify", "red", "Board", 4.05);
+        calc.newItem(1, "Shopify", "green", "Fees", 5.11);
         String result = calc.getItems(orderID);
-        orderNum.setText(result);
 
         if(result != null) {
             String[] items = result.split("\n");

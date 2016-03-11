@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class CalculationsTest
 {
 
-    //@Test
+    @Test
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
