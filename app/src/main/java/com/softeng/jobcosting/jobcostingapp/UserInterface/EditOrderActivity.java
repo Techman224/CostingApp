@@ -29,10 +29,12 @@ public class EditOrderActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         views = new ArrayList<View>();
+
         calc = new Calculations();
 
-        int orderID = 1;  //retrieve from intent from SummaryActivity
-        String dateString = "2016/02/22";  //retrieve from database using getDate(orderID);
+        int orderID = 1;
+        String dateString = "2016/02/22";
+        int firstCostID = 1;
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
@@ -44,10 +46,8 @@ public class EditOrderActivity extends AppCompatActivity {
         dateView += " " + dateString;
         date.setText(dateView);
 
-        calc.newOrder();
-        calc.newItem("1", "Shopify", "red", "Board", "4");
-        calc.newItem("1", "Shopify", "green", "Fees", "5");
         String result = calc.getItems(orderID);
+        orderNum.setText(result);
 
         if(result != null) {
             String[] items = result.split("\n");
@@ -74,9 +74,9 @@ public class EditOrderActivity extends AppCompatActivity {
 
                     Spinner types = (Spinner) mView.findViewById(R.id.typeSpinner);
                     String[] typeOptions = getResources().getStringArray(R.array.types);
-                    for (int j = 0; j < typeOptions.length && !found; j++) {
-                        if (typeOptions[j].equals(fields[TYPE])) {
-                            types.setSelection(j);
+                    for (int i = 0; i < typeOptions.length && !found; i++) {
+                        if (typeOptions[i].equals(fields[TYPE])) {
+                            types.setSelection(i);
                             found = true;
                         }
                     }

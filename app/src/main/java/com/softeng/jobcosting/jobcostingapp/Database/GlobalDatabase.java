@@ -41,4 +41,6 @@ public class GlobalDatabase extends Application {
 
         return db;
     }
+	
+
 }
