@@ -40,6 +40,7 @@ public class Calculations {
         if(db.update(field, newValue, "CostID", Integer.toString(costID)))
         {
             result = db.query();
+            System.out.println(result);
         }
 
         return result;
