@@ -1,6 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp.Database.stub;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by joseph on 2016-03-10.
@@ -16,7 +17,7 @@ public class SimpleStub {
         costs = new ArrayList<Cost>();
     }
 
-    public void addOrder(String date) {
+    public void addOrder(Date date) {
         Order newOrder = new Order(date);
         orders.add(newOrder);
 
@@ -58,5 +59,7 @@ public class SimpleStub {
 
         return deleted;
     }
+
+    
 
 }

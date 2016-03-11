@@ -1,20 +1,22 @@
 package com.softeng.jobcosting.jobcostingapp.Database.stub;
 
+import java.util.Date;
+
 /**
  * Created by joseph on 2016-03-11.
  */
 public class Order {
 
-    private String date;
+    private Date date;
 
-    public Order(String date) {
+    public Order(Date date) {
         this.date = date;
     }
 
-    public void edit(String date) {
+    public void edit(Date date) {
         this.date = date;
     }
 
-    public String getDate() { return date;}
+    public Date getDate() { return date;}
 
 }
