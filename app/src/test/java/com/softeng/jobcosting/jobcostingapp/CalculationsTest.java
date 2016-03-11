@@ -14,7 +14,6 @@ public class CalculationsTest
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
-        System.out.println((new Date()).getDate() + "/" + (new Date()).getMonth() + "/" + (new Date()).getYear());
         SimpleDateFormat dt = new SimpleDateFormat("yyyy/mm/dd");
         Date newDate = new Date();
 

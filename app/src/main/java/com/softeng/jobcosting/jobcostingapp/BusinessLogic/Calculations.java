@@ -150,6 +150,4 @@ public class Calculations {
 
         return boardTotal;
     }
-
-    public Database getDB() {return db;}
 }
