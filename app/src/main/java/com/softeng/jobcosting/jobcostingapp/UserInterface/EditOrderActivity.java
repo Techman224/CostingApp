@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class EditOrderActivity extends AppCompatActivity {
     private ArrayList<View> views;
     private Calculations calc;
-    private int firstCostID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class EditOrderActivity extends AppCompatActivity {
 
         views = new ArrayList<View>();
         calc = new Calculations();
-        firstCostID = 1;
 
         int orderID = 1;  //retrieve from intent from SummaryActivity
         String dateString = "2016/02/22";  //retrieve from database using getDate(orderID);
@@ -94,24 +92,24 @@ public class EditOrderActivity extends AppCompatActivity {
     }
 
     public void update(View view) {
-        for(View v : views) {
+        for(int currCostID = 1; currCostID <= views.size(); currCostID++) {
+            View v = views.get(currCostID - 1); //the first element has costID=1 and index=0
+
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
-            calc.editItem("Store", store, firstCostID);
+            calc.editItem("Store", store, currCostID);
 
             Spinner types = (Spinner) v.findViewById(R.id.typeSpinner);
             String type = (types.getSelectedItem()).toString();
-            calc.editItem("Type", type, firstCostID);
+            calc.editItem("Type", type, currCostID);
 
             EditText descriptionInput = (EditText) v.findViewById(R.id.descEditText);
             String description = descriptionInput.getText().toString();
-            calc.editItem("Description", description, firstCostID);
+            calc.editItem("Description", description, currCostID);
 
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
-            calc.editItem("Price", amount, firstCostID);
-
-            firstCostID++;
+            calc.editItem("Price", amount, currCostID);
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);
