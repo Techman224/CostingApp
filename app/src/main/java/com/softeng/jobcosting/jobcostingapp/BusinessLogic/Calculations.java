@@ -147,13 +147,14 @@ public class Calculations {
         float PSTCharged = 0;
         String query = null;
         String[] tokens = null;
+        String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
 
-        if(db.where("Type", "PSTCharged"))
+        if(db.where(fieldsToReturn, "Type", "PSTCharged"))
         {
             query = db.query();
-            tokens = query.split(",");
+            tokens = query.split("\n");
 
             for(int i = 0; i < tokens.length; i++)
             {
@@ -169,10 +170,11 @@ public class Calculations {
         float boardTotal = 0;
         String query = null;
         String[] tokens = null;
+        String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
 
-        if(db.where("Type", "Board"))
+        if(db.where(fieldsToReturn, "Type", "Board"))
         {
             query = db.query();
             tokens = query.split(",");
