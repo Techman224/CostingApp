@@ -102,7 +102,7 @@ public class Calculations {
     public float getProfit(int orderID) {
         float profit = 0;
 
-        profit = getTotal(orderID) / getPSTCharged(orderID);
+        profit = getTotal(orderID) - getPSTCharged(orderID);
 
         return profit;
     }
