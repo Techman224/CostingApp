@@ -66,9 +66,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.calculator) {
             startActivity(new Intent(MainActivity.this, ManualCalculatorActivity.class));
         }
-        else if (id == R.id.summary) {
-            startActivity(new Intent(MainActivity.this, SummaryActivity.class));
-        }
         else if (id == R.id.add_order) {
             Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
             startActivity(addOrderIntent);
