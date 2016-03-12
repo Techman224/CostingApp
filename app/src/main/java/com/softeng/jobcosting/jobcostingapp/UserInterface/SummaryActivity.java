@@ -1,19 +1,16 @@
 package com.softeng.jobcosting.jobcostingapp.UserInterface;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Button;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
 import com.softeng.jobcosting.jobcostingapp.R;
@@ -28,11 +25,10 @@ public class SummaryActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        final int TYPE = 2;
-        final int DESC = 3;
-        final int AMT = 4;
 
         String strOrderID = intent.getStringExtra("orderID");
+        setTitle(strOrderID);
+
         strOrderID = strOrderID.substring(strOrderID.length()-1);
         int orderID = Integer.parseInt(strOrderID);
         String items = getOrderInfo(orderID);
@@ -42,21 +38,18 @@ public class SummaryActivity extends AppCompatActivity {
         }
         String[][] processedItems = parseItems(items);
 
-
         setLayout(processedItems);
     }
 
     public void setLayout(String[][]table) {
 
-
+        LinearLayout contentLay = (LinearLayout)findViewById(R.id.summContentLayout);
+        LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        TextView currCol = null;
         View tblLay = null;
 
-
-
         for(int row = 0; row < table.length; row++) {
-            LinearLayout contentLay = (LinearLayout)findViewById(R.id.summContentLayout);
-            LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            TextView currCol = null;
+
             tblLay = inflater.inflate((R.layout.colmd_items), null);
 
             for (int col = 2; col < table[row].length; col++) {
@@ -77,12 +70,23 @@ public class SummaryActivity extends AppCompatActivity {
                         break;
                 }
 
-                System.out.println(table[row][col]);
                 currCol.setText(table[row][col]);
-                System.out.println(currCol.getText());
             }
             contentLay.addView(tblLay);
         }
+
+        Button editButton = new Button(this);
+        editButton.setText(R.string.edit_order);
+
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SummaryActivity.this, EditOrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        contentLay.addView(editButton);
     }
 
     public String getOrderInfo(int orderID) {
