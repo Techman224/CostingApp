@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,26 +8,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".UserInterface.AddOrderActivity"
+    tools:context=".UserInterface.OrderSummaryActivity"
     tools:showIn="@layout/activity_summary"
     android:id="@+id/summary_layout">
 
 
-<!--
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
+        android:id="@+id/summScroll"
         android:paddingTop="30dp">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout"
-            android:orientation="vertical">
+            android:id="@+id/tableLayout">
 
             <include layout="@layout/colmd_items" />
-        </LinearLayout>
+        </TableLayout>
     </ScrollView>
--->
-</GridLayout>
+
+</RelativeLayout>

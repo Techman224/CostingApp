@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/four_col_item"
-    android:orientation="vertical"
-    android:columnCount="4">
+    android:stretchColumns="*">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Shopify!"
-        android:id="@+id/storeTextView"/>
+    <TableRow
+        android:layout_width="0dp">
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="Shopify!"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:id="@+id/storeTextView"/>
 
-        android:text="Board!"
-        android:id="@+id/typeTextView"/>
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="Board!"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:id="@+id/typeTextView"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="I'm a board!"
-        android:id="@+id/descTextView"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="I'm a board! This is what I am"
+            android:layout_margin="4dip"
+            android:layout_weight="2"
+            android:id="@+id/descTextView"/>
 
 
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="5000"
-        android:id="@+id/amtTextView"/>
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:text="5000.75"
+            android:layout_margin="4dip"
+            android:layout_weight="0.75"
+            android:id="@+id/amtTextView"/>
+    </TableRow>
 
-</GridLayout>
+
+</TableLayout>
