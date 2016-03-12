@@ -6,23 +6,26 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Button;
+import android.view.View.OnClickListener;
 
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
 import com.softeng.jobcosting.jobcostingapp.R;
 
+
 public class SummaryActivity extends AppCompatActivity {
 
+    private Calculations calc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        calc = new Calculations();
 
         Intent intent = getIntent();
 
@@ -33,12 +36,13 @@ public class SummaryActivity extends AppCompatActivity {
         int orderID = Integer.parseInt(strOrderID);
         String items = getOrderInfo(orderID);
 
-        if(items == null)   {
+//        if(items == null)   {
             items = "1,1,Shopify,Im a cost,Board,5000.00\n2,1,Red Paddle,Im a revenue,Board,9000.52";
-        }
+//        }
         String[][] processedItems = parseItems(items);
 
         setLayout(processedItems);
+        setFixedBar(orderID);
     }
 
     public void setLayout(String[][]table) {
@@ -77,20 +81,26 @@ public class SummaryActivity extends AppCompatActivity {
 
         Button editButton = new Button(this);
         editButton.setText(R.string.edit_order);
-
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SummaryActivity.this, EditOrderActivity.class);
-                startActivity(intent);
-            }
-        });
+        int orderID = Integer.parseInt(table[0][1]);
+        editButton.setOnClickListener(new editOnClickListener(orderID));
 
         contentLay.addView(editButton);
     }
 
+
+    public void setFixedBar(int orderID)    {
+
+//        String margin = "Profit Margin: " + Float.toString(calc.getMargin(orderID));
+//        String profit = "Total Profit: " + Float.toString(calc.getProfit(orderID));
+
+        String margin = "Profit Margin: temp";
+        String profit = "Total Profit: temp";
+
+        ((TextView)findViewById(R.id.profitLabel)).setText(profit);
+        ((TextView)findViewById(R.id.marginLabel)).setText(margin);
+    }
+
     public String getOrderInfo(int orderID) {
-        Calculations calc = new Calculations();
         return calc.getItems(orderID);
     }
 
@@ -108,5 +118,17 @@ public class SummaryActivity extends AppCompatActivity {
     }
 
 
+    private class editOnClickListener implements OnClickListener    {
+        private int orderID;
 
+        public editOnClickListener(int orderID) {
+            this.orderID = orderID;
+        }
+
+        public void onClick(View v)  {
+            Intent intent = new Intent(SummaryActivity.this, EditOrderActivity.class);
+            intent.putExtra("orderID", orderID);
+            startActivity(intent);
+        }
+    }
 }
