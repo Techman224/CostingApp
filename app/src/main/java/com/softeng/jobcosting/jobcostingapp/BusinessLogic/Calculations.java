@@ -118,14 +118,18 @@ public class Calculations {
     public float getTotal(int orderID) {
         float total = 0;
         String query = null;
-        String[] tokens = null;
+        String[] tokens = {"Price"};
 
         db.setTable("Costs");
 
-        if(db.where("OrderID", "Price"))
+        if(db.where(tokens, "OrderID", Integer.toString(orderID)))
         {
             query = db.query();
+            System.out.println("test" + query);
             tokens = query.split(",");
+
+            System.out.println(tokens[0]);
+            System.out.println(tokens[1]);
 
             for(int i = 0; i < tokens.length; i++)
             {

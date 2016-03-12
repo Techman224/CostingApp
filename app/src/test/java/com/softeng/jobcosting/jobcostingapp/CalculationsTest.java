@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class CalculationsTest
 {
 
-    @Test
+    //@Test
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
@@ -36,7 +36,7 @@ public class CalculationsTest
         assertEquals(2, (newCalc.editItem("Store", "EBGames", 1)).compareTo("1 1000 EBGames RV-145 Board 100.00"));
     }
 
-    @Test
+    //@Test
     public void getItems_isAllItems()
     {
         Calculations newCalc = new Calculations();
@@ -45,5 +45,16 @@ public class CalculationsTest
 
         System.out.println(newCalc.getItems(1000));
         System.out.println(newCalc.getItems(1001));
+    }
+
+    @Test
+    public void getTotal_isCorrect()
+    {
+        Calculations newCalc = new Calculations();
+
+        newCalc.newItem(1000, "Shopify", "RV-145", "Board", 100.00f);
+        newCalc.newItem(1000, "EBGames", "RV-145", "Board", 100.00f);
+
+        System.out.println(newCalc.getTotal(1000));
     }
 }

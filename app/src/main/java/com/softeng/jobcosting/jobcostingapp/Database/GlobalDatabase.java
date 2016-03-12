@@ -34,10 +34,10 @@ public class GlobalDatabase extends Application {
     }
 
     public static Database getDB() {
-        /*if(db == null)
+        if(db == null)
         {
             db = new StubDatabase();
-        }*/
+        }
 
         return db;
     }
