@@ -2,6 +2,7 @@ package com.softeng.jobcosting.jobcostingapp.BusinessLogic;
 
 import com.softeng.jobcosting.jobcostingapp.Database.Database;
 import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
+import com.softeng.jobcosting.jobcostingapp.Database.stub.Cost;
 
 public class Calculations {
     private Database db;
@@ -10,32 +11,24 @@ public class Calculations {
         db = GlobalDatabase.getDB();
     }
 
-    public String newOrder() {
+    /*public String newOrder() {
         db.setTable("Orders");
         db.insert("Date", "Date()");
         return db.query();
     }
+    */
 
-    public String newItem(String orderID, String store, String description, String type, String price) {
-        String result = null;
+    public Cost newItem(int orderID, String store, String description, String type, double price) {
+        Cost newCost;
 
-        db.setTable("Costs");
+        newCost = db.addCost(orderID,store,description,type, price);
 
-        //if all inserts were successful, returns the result of the query method
-        if (db.insert("OrderID", orderID) &&
-                db.insert("Store", store) &&
-                db.insert("Description", description) &&
-                db.insert("Type", type) &&
-                db.insert("Price", price)) {
-            result = db.query();
-        }
-        return result;
+        return newCost;
     }
 
-    public String editItem(String field, String newValue, int costID) {
+    public Object editItem(String field, String newValue, int costID) {
         String result = null;
 
-        db.setTable("Costs");
 
         if(db.update(field, newValue, "CostID", Integer.toString(costID)))
         {

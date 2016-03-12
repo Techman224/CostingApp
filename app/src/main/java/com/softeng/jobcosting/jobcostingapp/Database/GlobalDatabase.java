@@ -3,7 +3,7 @@ package com.softeng.jobcosting.jobcostingapp.Database;
 import android.app.Application;
 import android.provider.Settings;
 
-import com.softeng.jobcosting.jobcostingapp.Database.stub.StubDatabase;
+import com.softeng.jobcosting.jobcostingapp.Database.stub.SimpleStub;
 
 import java.io.Serializable;
 
@@ -29,14 +29,14 @@ public class GlobalDatabase extends Application {
      */
     public GlobalDatabase () {
         if (db == null) {
-            db = new StubDatabase();
+            db = new SimpleStub();
         }
     }
 
     public static Database getDB() {
         if(db == null)
         {
-            db = new StubDatabase();
+            db = new SimpleStub();
         }
 
         return db;

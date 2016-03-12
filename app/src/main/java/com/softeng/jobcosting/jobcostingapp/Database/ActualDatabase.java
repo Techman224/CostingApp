@@ -1,35 +1,35 @@
 package com.softeng.jobcosting.jobcostingapp.Database;
 
 
+import com.softeng.jobcosting.jobcostingapp.Database.stub.Order;
+
+import java.util.ArrayList;
+import java.util.Date;
+
 public class ActualDatabase implements Database {
-	public boolean insert(String field, String value) {
-		return true;
+
+	@Override
+	public void addOrder(Date date) {
+
 	}
-	
-	public boolean update(String field, String value, String condField, String condValue) {
-		return true;
+
+	@Override
+	public boolean deleteOrder(int orderID) {
+		return false;
 	}
-	
-	public boolean select() {
-		return true;
+
+	@Override
+	public boolean addCost(int orderId, String store, String description, String type, double price) {
+		return false;
 	}
-	
-	public boolean where(String field, String value) {
-		return true;
+
+	@Override
+	public boolean deleteCost(int index) {
+		return false;
 	}
-	
-	public boolean where(String[] fields, String field, String value) {
-		return true;
-	}
-	
-	public boolean where(String[] fields, String innerQuery) {
-		return true;
-	}
-	
-	public void setTable(String tableName) {
-	}
-	
-	public String query() {
+
+	@Override
+	public ArrayList<Order> sortOrders() {
 		return null;
 	}
 }

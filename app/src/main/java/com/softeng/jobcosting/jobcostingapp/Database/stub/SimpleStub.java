@@ -1,14 +1,16 @@
 package com.softeng.jobcosting.jobcostingapp.Database.stub;
 
+import com.softeng.jobcosting.jobcostingapp.Database.Database;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
 /**
  * Created by joseph on 2016-03-10.
+ * Indexes will change when you delete
  */
-public class SimpleStub {
+public class SimpleStub implements Database {
 
     // The primary key is the index
     private ArrayList<Order> orders;   //The orders table (OrderID, Date)
@@ -37,18 +39,19 @@ public class SimpleStub {
         return deleted;
     }
 
-    public boolean addCost(int orderId, String store, String description, String type, double price) {
+    public Cost addCost(int orderId, String store, String description, String type, double price) {
         boolean added = false;
+        Cost newCost = null;
 
         if (orders.get(orderId) == null) {
             added = false;
         }
         else {
-            Cost newCost = new Cost(orderId,store,description,type,price);
+            newCost = new Cost(orderId,store,description,type,price);
             costs.add(newCost);
         }
 
-        return added;
+        return newCost;
     }
 
     public boolean deleteCost(int index) {
