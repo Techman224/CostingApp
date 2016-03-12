@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by joseph on 2016-03-11.
  */
-public class Order implements Comparable<Order> {
+public class Order {
 
     private Date date;
 
@@ -18,14 +18,6 @@ public class Order implements Comparable<Order> {
         this.date = date;
     }
 
-
-    @Override
-    public int compareTo(Order another) {
-        return getDate().compareTo(another.getDate());
-    }
-
-
     public Date getDate() { return date;}
-
 
 }

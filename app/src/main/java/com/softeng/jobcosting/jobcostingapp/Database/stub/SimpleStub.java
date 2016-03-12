@@ -71,9 +71,36 @@ public class SimpleStub implements Database {
             sortedOrders.add(order);
         }
 
-        Collections.sort(sortedOrders);
+        OrderComparator comparator = new OrderComparator();
+        Collections.sort(sortedOrders,comparator);
 
         return sortedOrders;
+    }
+
+    public ArrayList<Cost> sortCosts(String attribute) {
+        boolean invalidAttribute = false;
+        ArrayList<Cost> sortedCosts = new ArrayList<Cost>();
+        CostComparator comparator = new CostComparator();
+
+        if (attribute.equals("orderid"))   comparator.setSortingBy(CostComparator.attribute.OrderID);
+        else if (attribute.equals("store")) comparator.setSortingBy(CostComparator.attribute.Store);
+        else if (attribute.equals("description")) comparator.setSortingBy(CostComparator.attribute.Description);
+        else if (attribute.equals("type")) comparator.setSortingBy(CostComparator.attribute.Type);
+        else if (attribute.equals("price")) comparator.setSortingBy(CostComparator.attribute.Price);
+        else invalidAttribute = true;
+
+        if (!invalidAttribute) {
+            for (Cost cost : costs) {
+                sortedCosts.add(cost);
+            }
+
+            Collections.sort(sortedCosts,comparator);
+        }
+        else {
+            sortedCosts = null;
+        }
+
+        return sortedCosts;
     }
 
 
