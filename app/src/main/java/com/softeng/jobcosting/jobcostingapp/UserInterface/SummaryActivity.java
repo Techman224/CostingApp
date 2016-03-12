@@ -67,10 +67,10 @@ public class SummaryActivity extends AppCompatActivity {
                         currCol = (TextView) tblLay.findViewById(R.id.storeTextView);
                         break;
                     case 3:
-                        currCol = (TextView) tblLay.findViewById(R.id.typeTextView);
+                        currCol = (TextView) tblLay.findViewById(R.id.descTextView);
                         break;
                     case 4:
-                        currCol = (TextView) tblLay.findViewById(R.id.descTextView);
+                        currCol = (TextView) tblLay.findViewById(R.id.typeTextView);
                         break;
                     case 5:
                         currCol = (TextView) tblLay.findViewById(R.id.amtTextView);

@@ -12,21 +12,77 @@
     tools:showIn="@layout/activity_summary"
     android:id="@+id/summary_layout">
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:id="@+id/summTopLabel">
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_margin="2dip"
+                android:layout_weight="1"
+                android:id="@+id/storeLabel"
+                android:text="Store"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_margin="2dip"
+                android:layout_weight="1.5"
+                android:id="@+id/descLabel"
+                android:text="Description"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_margin="2dip"
+                android:layout_weight="1"
+                android:id="@+id/typeLabel"
+                android:text="Type"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_margin="2dip"
+                android:layout_weight="0.75"
+                android:id="@+id/amtTextView"
+                android:text="Amount"
+                android:textStyle="bold"/>
+        </TableRow>
+
+    </TableLayout>
+
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/summScroll"
-        android:paddingTop="30dp">
+        android:paddingTop="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:id="@+id/summContentLayout">
 
             <include layout="@layout/colmd_items" />
         </LinearLayout>
     </ScrollView>
+
+
+    </TableLayout>
 
 </RelativeLayout>
