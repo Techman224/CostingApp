@@ -2,7 +2,6 @@ package com.softeng.jobcosting.jobcostingapp;
 
 import com.softeng.jobcosting.jobcostingapp.UserInterface.EditOrderActivity;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -11,9 +10,9 @@ public class EditOrderActivityTest {
 
     @Test
     public void newOrder_isDateCorrect() {
-        Calculations newCalc = new Calculations();
-        SimpleDateFormat dt = new SimpleDateFormat("yyyy/mm/dd");
-        Date newDate = new Date();
+        EditOrderActivity activity = new EditOrderActivity();
+
+
 
         assertEquals(dt.format(newDate), newCalc.newOrder());
     }
