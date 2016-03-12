@@ -13,5 +13,6 @@ public interface Database {
 	public Cost addCost(int orderId, String store, String description, String type, double price);
 	public boolean deleteCost(int index);
 	public ArrayList<Order> sortOrders();
+	public ArrayList<Cost> sortCosts(String attribute);
 
 }
