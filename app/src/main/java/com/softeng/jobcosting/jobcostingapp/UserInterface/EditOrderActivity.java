@@ -47,8 +47,8 @@ public class EditOrderActivity extends AppCompatActivity {
         date.setText(dateView);
 
         calc.newOrder();
-        calc.newItem(1, "Shopify", "red", "Board", 4.05);
-        calc.newItem(1, "Shopify", "green", "Fees", 5.11);
+        calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
+        calc.newItem(1, "RRV", "green", "Fees", 5.11f);
 
         String result = calc.getItems(orderID);
 
@@ -62,9 +62,9 @@ public class EditOrderActivity extends AppCompatActivity {
 
             LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            boolean found = false;
 
             for (String item : items) {
+                boolean found = false;
                 View mView = inflater.inflate(R.layout.input_item, null);
                 mainLayout.addView(mView);
                 views.add(mView);
