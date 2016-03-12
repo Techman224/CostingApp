@@ -62,27 +62,23 @@ public class Calculations {
 
         db.setTable("Orders");
 //        db.select();
-        String results = db.query();
-        int[] orderNums = null;
+        String []orderTable = db.query().split("\n");
+        String unfmtdNums = "";
 
-        if(results != null) {
-            String[] orderTable = results.split("\n");
-            String unfmtdNums = "";
-
-            for (int i = 0; i < orderTable.length; i++) {
-                unfmtdNums += orderTable[i].split(",")[0];
-                if (i != orderTable.length - 1) {
-                    unfmtdNums += ",";
-                }
-            }
-
-            String[] unfmtdArray = unfmtdNums.split(",");
-            orderNums = new int[unfmtdArray.length];
-
-            for (int i = 0; i < orderNums.length; i++) {
-                orderNums[i] = Integer.parseInt(unfmtdArray[i]);
+        for(int i = 0; i < orderTable.length; i++)  {
+            unfmtdNums += orderTable[i].split(",")[0];
+            if(i != orderTable.length-1)   {
+                unfmtdNums += ",";
             }
         }
+
+        String[] unfmtdArray = unfmtdNums.split(",");
+        int[] orderNums = new int[unfmtdArray.length];
+
+        for(int i = 0; i < orderNums.length; i++)   {
+            orderNums[i] = Integer.parseInt(unfmtdArray[i]);
+        }
+
 
 
         return orderNums;

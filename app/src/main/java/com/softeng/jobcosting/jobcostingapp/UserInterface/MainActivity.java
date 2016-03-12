@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Calculations calc = new Calculations();
-        int [] orderIDs = calc.getOrderIDs();
+        int [] orderIDs = null;
         ListView mainList = (ListView) findViewById(R.id.listView);
         String[] listItems;
 
@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < orderIDs.length; i++) {
                 listItems[i] = "" + orderIDs[i];
             }
-
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
-            mainList.setAdapter(adapter);
-            mainList.setOnItemClickListener(new ListClickListener());
         }
-
-
+        else    {
+            listItems = getResources().getStringArray(R.array.sports_array);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
+        mainList.setAdapter(adapter);
+        mainList.setOnItemClickListener(new ListClickListener());
     }
 
     @Override
