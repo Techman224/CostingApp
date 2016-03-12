@@ -21,14 +21,14 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(CostsOrdersContract.SQL_CREATE_ORDERS);
-		db.execSQL(CostsOrdersContract.SQL_CREATE_COSTS);
+		db.execSQL(DatabaseContract.SQL_CREATE_ORDERS);
+		db.execSQL(DatabaseContract.SQL_CREATE_COSTS);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL(CostsOrdersContract.SQL_DROP_COSTS);
-		db.execSQL(CostsOrdersContract.SQL_DROP_ORDERS);
+		db.execSQL(DatabaseContract.SQL_DROP_COSTS);
+		db.execSQL(DatabaseContract.SQL_DROP_ORDERS);
 		onCreate(db);
 	}
 
@@ -179,7 +179,16 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		return valid;
 	}
 
+	public boolean select() {
+		boolean valid = false;
 
+		if(query == null) {
+			query = "SELECT * FROM " + table + " ;";
+			valid = true;
+		}
+
+		return valid;
+	}
 
 	/*
 	 * Name: where

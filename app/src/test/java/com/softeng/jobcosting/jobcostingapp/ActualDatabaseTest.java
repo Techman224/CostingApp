@@ -1,5 +1,7 @@
 package com.softeng.jobcosting.jobcostingapp;
 
+import com.softeng.jobcosting.jobcostingapp.Database.ActualDatabase;
+
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
