@@ -30,15 +30,15 @@ public class EditOrderActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        int orderID = Integer.parseInt(intent.getStringExtra("orderID"));
+        int orderID = intent.getIntExtra("orderID", 0);
 
         views = new ArrayList<View>();
         calc = new Calculations();
         firstCostID = 1;
 
         //calc.newOrder();
-        //calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
-        //calc.newItem(1, "RRV", "green", "Fees", 5.11f);
+        calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
+        calc.newItem(1, "RRV", "green", "Fees", 5.11f);
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();

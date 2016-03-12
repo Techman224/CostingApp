@@ -70,10 +70,6 @@ public class MainActivity extends AppCompatActivity {
             Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
             startActivity(addOrderIntent);
         }
-        else if (id == R.id.edit_order) {
-            Intent editOrderIntent = new Intent(MainActivity.this, EditOrderActivity.class);
-            startActivity(editOrderIntent);
-        }
 
         return super.onOptionsItemSelected(item);
     }
