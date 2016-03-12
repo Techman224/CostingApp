@@ -67,6 +67,11 @@ public class Calculations {
         if(db.where("OrderID", Integer.toString(orderID)))
         {
             result = db.query();
+
+            if(result.length() > 2)
+            {
+                result = result.substring(2);
+            }
         }
 
         return result;
