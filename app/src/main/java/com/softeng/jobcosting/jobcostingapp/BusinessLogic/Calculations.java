@@ -58,6 +58,20 @@ public class Calculations {
         return result;
     }
 
+    public String getDate(int orderID)
+    {
+        String result = null;
+
+        db.setTable("Orders");
+
+        if(db.where("OrderID", Integer.toString(orderID)))
+        {
+            result = db.query();
+        }
+
+        return result;
+    }
+
     public int[] getOrderIDs()  {
 
         db.setTable("Orders");
