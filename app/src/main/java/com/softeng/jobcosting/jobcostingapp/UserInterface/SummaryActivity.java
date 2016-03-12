@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -42,17 +43,47 @@ public class SummaryActivity extends AppCompatActivity {
         String[][] processedItems = parseItems(items);
 
 
-//        setGridLayout(processedItems);
+        setLayout(processedItems);
     }
 
-    public void addItem(View view) {
-        TableLayout row = (TableLayout) findViewById(R.id.tableLayout);
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public void setLayout(String[][]table) {
 
-        View mView = inflater.inflate(R.layout.colmd_items, null);
-        row.addView(mView);
+
+        View tblLay = null;
+
+
+
+        for(int row = 0; row < table.length; row++) {
+            LinearLayout contentLay = (LinearLayout)findViewById(R.id.summContentLayout);
+            LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            TextView currCol = null;
+            tblLay = inflater.inflate((R.layout.colmd_items), null);
+
+            for (int col = 2; col < table[row].length; col++) {
+
+
+                switch (col) {
+                    case 2:
+                        currCol = (TextView) tblLay.findViewById(R.id.storeTextView);
+                        break;
+                    case 3:
+                        currCol = (TextView) tblLay.findViewById(R.id.typeTextView);
+                        break;
+                    case 4:
+                        currCol = (TextView) tblLay.findViewById(R.id.descTextView);
+                        break;
+                    case 5:
+                        currCol = (TextView) tblLay.findViewById(R.id.amtTextView);
+                        break;
+                }
+
+                System.out.println(table[row][col]);
+                currCol.setText(table[row][col]);
+                System.out.println(currCol.getText());
+            }
+            contentLay.addView(tblLay);
+        }
     }
-
 
     public String getOrderInfo(int orderID) {
         Calculations calc = new Calculations();
@@ -71,42 +102,6 @@ public class SummaryActivity extends AppCompatActivity {
 
         return parsedAll;
     }
-
-//    public void setGridLayout(String[][]items)  {
-//
-//        GridLayout grLay = (GridLayout)findViewById(R.id.summary_layout);
-//        grLay.removeAllViews();
-//
-//        int total = items.length * items[0].length;
-//        int column = items[0].length;
-//        int row = items.length;
-//        grLay.setColumnCount(column);
-//        grLay.setRowCount(row+1);
-//
-//        for(int i=0, c=0, r=0; i < total; i++,c++)  {
-//
-//            if(c == column) {
-//                c=0;
-//                r++;
-//            }
-//
-//            TextView toAdd = new TextView(this);
-//            toAdd.setText(items[r][c]);
-//
-//            GridLayout.LayoutParams param = new GridLayout.LayoutParams();
-//            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-//            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-//            param.rightMargin = 5;
-//            param.topMargin = 5;
-//            param.setGravity(Gravity.CENTER);
-//            param.columnSpec = GridLayout.spec(c);
-//            param.rowSpec = GridLayout.spec(r);
-//            toAdd.setLayoutParams(param);
-//            grLay.addView(toAdd);
-//        }
-//
-//    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

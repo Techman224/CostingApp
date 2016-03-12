@@ -12,7 +12,6 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="Shopify!"
             android:layout_margin="4dip"
             android:layout_weight="1"
             android:id="@+id/storeTextView"/>
@@ -21,7 +20,6 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="Board!"
             android:layout_margin="4dip"
             android:layout_weight="1"
             android:id="@+id/typeTextView"/>
@@ -30,7 +28,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="I'm a board! This is what I am"
             android:layout_margin="4dip"
             android:layout_weight="2"
             android:id="@+id/descTextView"/>
@@ -41,7 +38,6 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="5000.75"
             android:layout_margin="4dip"
             android:layout_weight="0.75"
             android:id="@+id/amtTextView"/>
