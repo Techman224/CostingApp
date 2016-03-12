@@ -107,7 +107,7 @@ public class Calculations {
     public float getProfit(int orderID) {
         float profit = 0;
 
-        profit = getTotal(orderID) - getPSTCharged(orderID);
+        profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged") - getTypeTotal(orderID, "GSTCharged");
 
         return profit;
     }
@@ -115,12 +115,12 @@ public class Calculations {
     public float getMargin(int orderID) {
         float margin = 0;
 
-        margin = getProfit(orderID) / getBoardTotal(orderID);
+        margin = getProfit(orderID) / getTypeTotal(orderID, "Board");
 
         return margin;
     }
 
-    public float getTotal(int orderID) {
+    public float getOrderTotal(int orderID) {
         float total = 0;
         String query = null;
         String[] tokens = null;
@@ -142,49 +142,26 @@ public class Calculations {
         return total;
     }
 
-    private float getPSTCharged(int orderID)
+    private float getTypeTotal(int orderID, String type)
     {
-        float PSTCharged = 0;
+        float typeTotal = 0;
         String query = null;
         String[] tokens = null;
         String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
 
-        if(db.where(fieldsToReturn, "Type", "PSTCharged"))
+        if(db.where(fieldsToReturn, "Type", type))
         {
             query = db.query();
             tokens = query.split("\n");
 
             for(int i = 0; i < tokens.length; i++)
             {
-                PSTCharged += Float.parseFloat(tokens[i]);
+                typeTotal += Float.parseFloat(tokens[i]);
             }
         }
 
-        return PSTCharged;
-    }
-
-    private float getBoardTotal(int orderID)
-    {
-        float boardTotal = 0;
-        String query = null;
-        String[] tokens = null;
-        String[] fieldsToReturn = {"Price"};
-
-        db.setTable("Costs");
-
-        if(db.where(fieldsToReturn, "Type", "Board"))
-        {
-            query = db.query();
-            tokens = query.split(",");
-
-            for(int i = 0; i < tokens.length; i++)
-            {
-                boardTotal += Float.parseFloat(tokens[i]);
-            }
-        }
-
-        return boardTotal;
+        return typeTotal;
     }
 }

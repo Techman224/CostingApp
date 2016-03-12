@@ -55,6 +55,7 @@ public class CalculationsTest
         newCalc.newItem(1000, "Shopify", "RV-145", "Board", 100.00f);
         newCalc.newItem(1000, "EBGames", "RV-145", "Board", 100.00f);
 
-        System.out.println(newCalc.getTotal(1000));
+        System.out.println(newCalc.getOrderTotal(1000));
+        System.out.println(newCalc.getDate(1000));
     }
 }
