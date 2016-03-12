@@ -41,6 +41,8 @@ public class AddOrderActivity extends AppCompatActivity {
 
         //create a new order
         calc = new Calculations();
+
+        //returns the orderID and date of the new order, separated by a comma
         String newOrder = calc.newOrder();
 
         final int ORDER_ID = 0;

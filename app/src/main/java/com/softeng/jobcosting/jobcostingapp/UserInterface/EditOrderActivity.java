@@ -29,26 +29,26 @@ public class EditOrderActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent intent = getIntent();
+        int orderID = intent.getIntExtra("orderID", 0);
+
         views = new ArrayList<View>();
         calc = new Calculations();
         firstCostID = 1;
 
-        int orderID = 1;
-        String dateString = "2016/02/22";
+        //calc.newOrder();
+        calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
+        calc.newItem(1, "RRV", "green", "Fees", 5.11f);
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
         orderNumView += " " + Integer.toString(orderID);
         orderNum.setText(orderNumView);
 
-        TextView date = (TextView)findViewById(R.id.date);
+        TextView date = (TextView) findViewById(R.id.date);
         String dateView = date.getText().toString();
-        dateView += " " + dateString;
+        dateView += " " + calc.getDate(orderID);
         date.setText(dateView);
-
-        calc.newOrder();
-        calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
-        calc.newItem(1, "RRV", "green", "Fees", 5.11f);
 
         String result = calc.getItems(orderID);
 
@@ -94,6 +94,7 @@ public class EditOrderActivity extends AppCompatActivity {
         }
     }
 
+    //Called when UPDATE button is clicked
     public void update(View view) {
         for(View v : views) {
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
