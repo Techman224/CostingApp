@@ -123,18 +123,15 @@ public class Calculations {
     public float getTotal(int orderID) {
         float total = 0;
         String query = null;
-        String[] tokens = {"Price"};
+        String[] tokens = null;
+        String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
 
-        if(db.where(tokens, "OrderID", Integer.toString(orderID)))
+        if(db.where(fieldsToReturn, "OrderID", Integer.toString(orderID)))
         {
             query = db.query();
-            System.out.println("test" + query);
-            tokens = query.split(",");
-
-            System.out.println(tokens[0]);
-            System.out.println(tokens[1]);
+            tokens = query.split("\n");
 
             for(int i = 0; i < tokens.length; i++)
             {
