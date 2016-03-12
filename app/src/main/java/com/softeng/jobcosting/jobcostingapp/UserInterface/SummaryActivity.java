@@ -38,10 +38,10 @@ public class SummaryActivity extends AppCompatActivity {
         }
         String[][] processedItems = parseItems(items);
 
-        setLayout(processedItems);
+        setLayout(processedItems, orderID);
     }
 
-    public void setLayout(String[][]table) {
+    public void setLayout(String[][]table, final int orderID) {
 
         LinearLayout contentLay = (LinearLayout)findViewById(R.id.summContentLayout);
         LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -82,6 +82,7 @@ public class SummaryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SummaryActivity.this, EditOrderActivity.class);
+                intent.putExtra("orderID", orderID);
                 startActivity(intent);
             }
         });
