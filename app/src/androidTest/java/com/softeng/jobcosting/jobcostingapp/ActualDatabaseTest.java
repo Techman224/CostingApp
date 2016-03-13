@@ -5,6 +5,7 @@ import static android.support.test.InstrumentationRegistry.getTargetContext;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.MediumTest;
 
+import com.softeng.jobcosting.jobcostingapp.Database.*;
 import com.softeng.jobcosting.jobcostingapp.Database.ActualDatabase;
 import com.softeng.jobcosting.jobcostingapp.Database.GlobalDatabase;
 
@@ -21,6 +22,8 @@ import org.junit.runner.RunWith;
 public class ActualDatabaseTest {
 
     private GlobalDatabase gdb;
+    private Database db;
+    private ActualDatabase adb;
 
     @Before
     public void setUp() throws Exception {
@@ -28,9 +31,18 @@ public class ActualDatabaseTest {
         gdb = new GlobalDatabase();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        if (db instanceof ActualDatabase) {
+            adb = (ActualDatabase) db;
+            adb.close();
+        }
+    }
+
     @Test
     public void testDatabaseType() {
-        assertTrue(gdb.getDB() instanceof ActualDatabase);
+        db = gdb.getDB();
+        assertTrue(db instanceof ActualDatabase);
     }
 
 }
