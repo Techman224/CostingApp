@@ -32,15 +32,17 @@ public class AddOrderActivity extends AppCompatActivity {
         items = new ArrayList<View>();
 
         //add the first item
-        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
+        //LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View mView = inflater.inflate(R.layout.input_item, null);
-        items.add(mView);
-        mainLayout.addView(mView);
+        //View mView = inflater.inflate(R.layout.input_item, null);
+        //items.add(mView);
+        //mainLayout.addView(mView);
 
         //create a new order
         calc = new Calculations();
+
+        //returns the orderID and date of the new order, separated by a comma
         String newOrder = calc.newOrder();
 
         final int ORDER_ID = 0;
@@ -62,6 +64,7 @@ public class AddOrderActivity extends AppCompatActivity {
         date.setText(dateView);
     }
 
+    //Called when ADD ITEM button is clicked
     public void addItem(View view) {
         LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -71,10 +74,8 @@ public class AddOrderActivity extends AppCompatActivity {
         mainLayout.addView(mView);
     }
 
+    //Called when DONE button is clicked
     public void done(View view) {
-        //TextView date = (TextView)findViewById(R.id.date);
-        //date.setText(String.valueOf("ArrayListSize: " + items.size()));
-
         for(View v : items) {
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
@@ -86,9 +87,10 @@ public class AddOrderActivity extends AppCompatActivity {
             String description = descriptionInput.getText().toString();
 
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
-            String amount = amountInput.getText().toString();
+            String stringAmount = amountInput.getText().toString();
+            float amount = Float.parseFloat(stringAmount);
 
-            calc.newItem(String.valueOf(orderID), store, type, description, amount);
+            calc.newItem(orderID, store, type, description, amount);
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);

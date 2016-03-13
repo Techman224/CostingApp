@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/inputItem">
+    android:id="@+id/four_col_item"
+    android:stretchColumns="*">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/edit_text_height"
-        android:id="@+id/storeTextView"
-        android:paddingTop="@dimen/text_view_padding"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+    <TableRow
+        android:layout_width="0dp">
 
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/storeTextView"/>
 
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1.5"
+            android:id="@+id/descTextView"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/edit_text_height"
-        android:id="@+id/typeTextView"
-        android:paddingTop="@dimen/text_view_padding"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/second_edit_margin" />
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/edit_text_height"
-        android:id="@+id/descTextView"
-        android:paddingTop="@dimen/text_view_padding"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/third_edit_margin" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/typeTextView"/>
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/edit_text_height"
-        android:id="@+id/amtTextView"
-        android:paddingTop="@dimen/text_view_padding"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/fourth_edit_margin"
-        android:layout_marginBottom="12dp" />
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="0.75"
+            android:id="@+id/amtTextView"/>
+    </TableRow>
 
 
-
-</RelativeLayout>
+</TableLayout>

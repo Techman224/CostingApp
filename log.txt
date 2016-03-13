@@ -113,9 +113,87 @@ Start: 11:00AM
 - Discussed a little on business logic and architecture
 End: 12:00PM
 
+
+
+Meeting 9 - Feb 26:
+People: Courtney, Ryan, Joseph, Alan, Daniel, Jasmin
+Location: Room 363C
+
+Start: 3:00PM
+Update:
+-	Branching:
+o	Encourage merging more frequently
+o	Make branch you do your thing, then merge it right away to master branch
+o	Otherwise we revert back to a previous branch on master
+o	Do micro deadlines throughout the calendar
+-	Itr1
+o	Fix all documentation from itr1
+o	Fix crashing on android app
+o	Prevent doing stuff at the last minute
+-	Itr2
+o	Not received the itr2 description yet
+o	Figure packages
+o	Someone put files in separate packages (Courtney)
+o	Add export to excel feature (low priority) since we can use external libraries
+o	Fix the update page, where we fetch data from an array
+o	Show only order number and date at the top
+o	Alan wants to implement sqlite database right away such that we have a real database to work with
+Slack vs Basecamp
+	Everyone voted for Basecamp for group communication
+Next tentative meeting: sometime next week
+End: 4:30PM
+
+
+
+Meeting 10 - March 4:
+People: Courtney, Joseph, Alan, Ryan (Skype), Daniel (Skype), Jasmin
+
+Start: 2:52PM
+Updates:
+-	Review of feedback from itr1
+Review location of files:
+-	Change file names
+Stories to have done for itr2:
+-	Sort, Search, Filter user stories
+Database:
+-	Discussion on how the database is initialized
+Assigned tasks:
+-	Alan: Create new SQLite database
+-	Courtney: Checking addOrder and editOrder classes to get them working together and with the database with testing
+-	Joseph: do feature, sort.java in business logic with jUnit testing
+-	Ryan: Summary activity: getting the summary of a specific order from calculations.java and displaying on summary page
+-	Daniel: Main activity: getting the list from calculations.java and displaying it on the main page
+-	Jasmin: Finish methods and testing in calculations.java in business logic
+Micro deadlines:
+-	Joseph & Alan work on merging two database branches with master by midnight on March 4, 2016
+-	Jasmin: finish calculations.java by March 6, 2016
+-	Jasmin: finish jUnit tests by March 8, 2016
+-	Courtney: finish addOrder and editOrder activities by March 7, 2016
+-	Courtney: finish jUnit tests for addOrder and editOrder acitivies by March 11, 2016
+-	Ryan: finish summary.java by March 5, 2016
+-	Ryan: finish jUnit tests by March 11, 2016
+-	Joseph: do sort class by March 10, 2016
+-	Alan: implement actual database by March 10, 2016
+-	Daniel: finish the main page by March 5, 2016
+-	Daniel: do filter by March 10, 2016
+Change of user stories:
+-	Search only used for searching by orderID
+-	Filter used for fields: Store, Type, Date, & Price
+Policy:
+-	Merge at the end of the week or if branches get too long
+-	Push at the end of each day with frequent commits
+-	Everyone must complete their tasks before the deadline
+-	Merge at least 2 days before deadline to prevent last minute merge conflicts
+
+Next Meeting: Monday, March 7, 2016 at 6:30PM
+
+End: 5:12PM
+
+
+
 //***** End of Meeting Minutes *****//
 
-//***** Start Task Assignments *****//
+//***** Start Task Assignments itr1 *****//
 
 - Ryan: Contributing to viewing and order (summary of that order)
 - Courtney: Do the add page for order
@@ -124,13 +202,13 @@ End: 12:00PM
 - Daniel: Displaying an order
 - Jasmin: Do calculation logic behind the scenes and a little of entering data layout
 
-//***** End Task Assignments *****//
+//***** End Task Assignments itr 1 *****//
 
-//***** Start Design Changes *****//
+//***** Start Design Changes itr 1*****//
 Major: None.
 Minor: 
       - Didn't use navigation drawer since it as too complicated to implement for now.
-//***** End Design Changes *****//
+//***** End Design Changes itr 1 *****//
 
 //***** Start Individual Feedback *****//
 
@@ -140,4 +218,13 @@ Joseph - Decided against the navigation drawer, far too complicated to do with s
 Feb 26:
 Courtney - Put Java files into 3 packages: UserInterface, BusinessLogic and Database.
 
+Mar 4: Added method to Calculations to send data from the database.
+
 //***** End Individual Feedback *****//
+
+Policy:
+-	Merge at the end of the week or if branches get too long
+-	Push at the end of each day with frequent commits
+-	Everyone must complete their tasks before the deadline
+-	Merge at least 2 days before deadline to prevent last minute merge conflicts
+
