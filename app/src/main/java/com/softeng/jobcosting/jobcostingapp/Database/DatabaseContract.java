@@ -31,12 +31,12 @@ public final class DatabaseContract {
      * The query to drop (delete) the Orders table
      */
     public static final String SQL_DROP_ORDERS =
-            "DROP TABLE IF EXISTS " + OrdersEntry.TABLE_NAME + ";";
+            "DROP TABLE IF EXISTS " + Orders.TABLE_NAME + ";";
     /*
      * The query to drop (delete) the Costs table
      */
     public static final String SQL_DROP_COSTS =
-            "DROP TABLE IF EXISTS " + CostsEntry.TABLE_NAME + ";";
+            "DROP TABLE IF EXISTS " + Costs.TABLE_NAME + ";";
 
     public DatabaseContract() {
         //Do Nothing (implemented so that nothing happens)

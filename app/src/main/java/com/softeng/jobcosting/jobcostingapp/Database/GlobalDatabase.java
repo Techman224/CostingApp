@@ -20,7 +20,7 @@ public class GlobalDatabase extends Application {
      */
     public void onCreate() {
         super.onCreate();
-        db = new ActualDatabase();
+        db = new ActualDatabase(this);
     }
 
     /**
