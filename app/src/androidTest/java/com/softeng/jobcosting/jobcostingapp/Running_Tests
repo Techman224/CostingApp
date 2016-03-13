@@ -1,0 +1,8 @@
+In order to run ActualDatabaseTest, there's some setup you have to do.
+
+First, from the run dropdown box, the one that says "App", click "Edit Configurations"
+Click the "+" button and select "Android Tests"
+Give it a name, then select the app module
+Under "Test", select Class, then select the ActualDatabaseTest class
+
+Then you're all set! Click run and select your emulator.
