@@ -391,6 +391,25 @@ public class StubDatabase implements Database {
 		return valid;
 	}
 
+	public boolean sort(String field, boolean descending) {
+		boolean valid = false;
+
+		if(query != null) {
+			if(query.contains("SELECT")) {
+				query = query.substring(query.length() - 2) + " ORDER BY " + field + ((descending) ? "DESC" : "ASEC");
+				valid = true;
+			}
+			else {
+				//Error: You can only sort a select query
+			}
+		}
+		else {
+			//Error: Can't sort a non-existant query
+		}
+
+		return valid;
+	}
+
 	public void setTable(String tableName) {
 		table = tableName;
 	}

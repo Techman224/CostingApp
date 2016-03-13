@@ -82,6 +82,16 @@ public interface Database {
 	public boolean where(String[] fields, String innerQuery);
 
 	/*
+	 * Name: Sort
+	 * Description: A public method that will allow other parts of the app to denote how they
+	 * 				want the result set to be sorted before it comes back.
+	 * Parameter(s): field (String) - The field/column to sort by
+	 * 				 descending (boolean) - whether to sort in descending order or not
+	 * Return: boolean - If the sort query was properly built
+	 */
+	public boolean sort(String field, boolean descending);
+
+	/*
 	 * Name: Set Table (setTable)
 	 * Description: A public method that allows other parts of the app to set the table in which to
 	 * 				get stuff from the database out ot
