@@ -48,7 +48,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(query == null) {
 
 			//The query doesn't exist so start a insert
-			query = "INSERT INTO " + table + " (" + field + ") VALUES (" + value + ")";
+			query = "INSERT INTO " + table + " (" + field + ") VALUES ('" + value + "')";
 			//System.out.println("Built query: " + query);
 
 			//The build happend successfully
@@ -80,7 +80,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				//Value validation code to come...
 
 				//Append the new value to the end of the set of values
-				values = values.concat("," + value);
+				values = values.concat(",'" + value + "'");
 
 				//Rebuild the query with the new column and field sets
 				query = "INSERT INTO " + table + " (" + columns + ") VALUES (" + values + ")";
