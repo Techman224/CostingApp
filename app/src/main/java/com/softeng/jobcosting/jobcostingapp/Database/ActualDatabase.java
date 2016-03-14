@@ -257,7 +257,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				}
 				else {
 					//Because the query doesn't have a where clause remove the semicolon and append it
-					query = query.substring(0, query.indexOf(";")) + " WHERE (" + field + " = " + value + ")" ;
+					query = query.substring(0, query.length() - 1) + " WHERE (" + field + " = " + value + ")" ;
 					//System.out.println("Built query: " + query);
 
 					//The build happend successfully
@@ -436,7 +436,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		c.moveToFirst();
 
 		if(query.contains("INSERT INTO")){
-			query = "SELECT * FROM Orders ORDER BY OrderID DESC limit 1";
+			query = "SELECT * FROM " + table + " ORDER BY OrderID DESC limit 1";
 			result = query();
 		}
 		else {
