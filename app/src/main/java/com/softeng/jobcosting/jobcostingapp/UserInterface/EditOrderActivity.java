@@ -36,9 +36,6 @@ public class EditOrderActivity extends AppCompatActivity {
         calc = new Calculations();
         firstCostID = 1;
 
-        //calc.newOrder();
-        calc.newItem(1, "Shopify", "red", "ShippingTo", 4.05f);
-        calc.newItem(1, "RRV", "green", "Fees", 5.11f);
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();

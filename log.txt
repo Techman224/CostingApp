@@ -227,6 +227,7 @@ Major: None.
 Minor: 
 	- Won't get to implement Profit and Margin due to time constraint.
 	- Sorting and search won't be implemented in this iteration due to problems with earlier iteration.
+	- editOrder seems to still do duplicate entries.
 //***** End Design Changes itr2 *****//
 
 //***** Start Individual Feedback *****//
