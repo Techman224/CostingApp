@@ -46,13 +46,13 @@ public class Calculations {
     }
 
     public String getItems(int orderID) {
-        String result = null;
 
         db.setTable("Costs");
+        db.where("OrderID", Integer.toString(orderID));
+        String result = db.query();
 
-        if(db.where("OrderID", Integer.toString(orderID)))
-        {
-            result = db.query();
+        if(result.equals(""))   {
+            result = null;
         }
 
         return result;
