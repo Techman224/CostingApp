@@ -21,11 +21,11 @@ public final class DatabaseContract {
             "CREATE TABLE IF NOT EXISTS " + Costs.TABLE_NAME + " ("
                     + Costs.COLUMN_NAME_COST_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + Costs.COLUMN_NAME_ORDER_ID + " INTEGER NOT NULL, "
-                    + Costs.COLUMN_NAME_STORE + "TEXT, "
-                    + Costs.COLUMN_NAME_DESCRIPTION + "TEXT, "
-                    + Costs.COLUMN_NAME_TYPE + "TEXT, "
-                    + Costs.COLUMN_NAME_PRICE + "REAL NOT NULL, "
-                    + "FOREIGN KEY " + Costs.COLUMN_NAME_ORDER_ID + " REFERENCES " + Orders.TABLE_NAME + "(" + Orders.COLUMN_NAME_ORDER_ID + ")"
+                    + Costs.COLUMN_NAME_STORE + " TEXT, "
+                    + Costs.COLUMN_NAME_DESCRIPTION + " TEXT, "
+                    + Costs.COLUMN_NAME_TYPE + " TEXT, "
+                    + Costs.COLUMN_NAME_PRICE + " REAL NOT NULL "
+                    //+ "FOREIGN KEY " + Costs.COLUMN_NAME_ORDER_ID + " REFERENCES " + Orders.TABLE_NAME + "(" + Orders.COLUMN_NAME_ORDER_ID + ")"
             + ");";
     /*
      * The query to drop (delete) the Orders table

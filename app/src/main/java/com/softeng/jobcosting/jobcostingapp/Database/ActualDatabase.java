@@ -48,7 +48,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(query == null) {
 
 			//The query doesn't exist so start a insert
-			query = "INSERT INTO " + table + " (" + field + ") VALUES (" + value + ");";
+			query = "INSERT INTO " + table + " (" + field + ") VALUES (" + value + ")";
 			//System.out.println("Built query: " + query);
 
 			//The build happend successfully
@@ -83,7 +83,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				values = values.concat("," + value);
 
 				//Rebuild the query with the new column and field sets
-				query = "INSERT INTO " + table + " (" + columns + ") VALUES (" + values + ");";
+				query = "INSERT INTO " + table + " (" + columns + ") VALUES (" + values + ")";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
@@ -117,7 +117,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(field != null && value != null) {
 			if(query == null) {
 				//The query doesn't exist so start a update
-				query = "UPDATE " + table + " SET (" + field + "=" + value + ") WHERE (" + condField + "=" + condValue +");";
+				query = "UPDATE " + table + " SET (" + field + "=" + value + ") WHERE (" + condField + "=" + condValue +")";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
@@ -183,7 +183,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		boolean valid = false;
 
 		if(query == null) {
-			query = "SELECT * FROM " + table + " ;";
+			query = "SELECT * FROM " + table;
 			valid = true;
 		}
 
@@ -206,7 +206,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(field != null && value != null) {
 			if(query == null) {
 				//The query doesn't exist so start a select
-				query = "SELECT * FROM " + table + " WHERE (" + field + " = " + value + ");";
+				query = "SELECT * FROM " + table + " WHERE (" + field + " = " + value + ")";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
@@ -257,7 +257,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				}
 				else {
 					//Because the query doesn't have a where clause remove the semicolon and append it
-					query = query.substring(0, query.indexOf(";")) + " WHERE (" + field + " = " + value + ");" ;
+					query = query.substring(0, query.indexOf(";")) + " WHERE (" + field + " = " + value + ")" ;
 					//System.out.println("Built query: " + query);
 
 					//The build happend successfully
@@ -302,7 +302,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 							query += ",";
 						}
 					}
-					query += ") FROM " + table + ";";
+					query += ") FROM " + table + "";
 					//Reuse this other form of the method so that the code doesn't have to be replicated
 					valid = where(field, value);
 				}
@@ -387,7 +387,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 					query += ", ";
 				}
 			}
-			query += ") FROM " + table + " WHERE (" + innerQuery + ");";
+			query += ") FROM " + table + " WHERE (" + innerQuery + ")";
 			//System.out.println("Built Query: " + query);
 		}
 		else {
@@ -432,7 +432,17 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 		Cursor c = null;
 		c = db.rawQuery(query, null);
+
 		c.moveToFirst();
+
+		if(query.contains("INSERT INTO")){
+			query = "SELECT * FROM Orders ORDER BY OrderID DESC limit 1";
+			result = query();
+		}
+		else {
+			result = "";
+		}
+
 		while (!c.isAfterLast()) {
 			int col = 0;
 			while(col < c.getColumnCount()) {
@@ -452,6 +462,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 					default:
 						//An unknown type was returned.break;
 				}
+				result += ",";
 				col++;
 			}
 			c.moveToNext();

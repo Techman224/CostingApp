@@ -166,7 +166,7 @@ public class StubDB {
 											insertVals[0] = Integer.toString(orders.size());
 										}
 										if(insertVals[1].equalsIgnoreCase("Date()")) {
-											insertVals[1] = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) + "/" + java.util.Calendar.getInstance().get(java.util.Calendar.MONTH) + "/" + java.util.Calendar.getInstance().get(java.util.Calendar.DATE);
+											insertVals[1] = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) + "/" + (java.util.Calendar.getInstance().get(java.util.Calendar.MONTH) + 1) + "/" + java.util.Calendar.getInstance().get(java.util.Calendar.DATE);
 										}
 										orders.put(insertVals[0], insertVals);
 										
