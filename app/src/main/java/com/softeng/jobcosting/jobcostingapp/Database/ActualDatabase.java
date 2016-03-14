@@ -436,7 +436,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		c.moveToFirst();
 
 		if(query.contains("INSERT INTO")){
-			query = "SELECT * FROM Orders ORDER BY OrderID DESC limit 1";
+			query = "SELECT * FROM " + table + " ORDER BY OrderID DESC limit 1";
 			result = query();
 		}
 		else {
