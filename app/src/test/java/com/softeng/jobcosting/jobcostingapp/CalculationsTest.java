@@ -14,13 +14,14 @@ public class CalculationsTest
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
-        SimpleDateFormat dt = new SimpleDateFormat("yyyy/mm/dd");
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy/M/d");
         Date newDate = new Date();
 
-        assertEquals(dt.format(newDate), newCalc.newOrder());
+        assertEquals("1," + dt.format(newDate), newCalc.newOrder());
+        assertEquals("2," + dt.format(newDate), newCalc.newOrder());
     }
 
-    //@Test
+    @Test
     public void newItem_isInserted()
     {
         Calculations newCalc = new Calculations();
@@ -47,7 +48,7 @@ public class CalculationsTest
         System.out.println(newCalc.getItems(1001));
     }
 
-    @Test
+    //@Test
     public void getTotal_isCorrect()
     {
         Calculations newCalc = new Calculations();
