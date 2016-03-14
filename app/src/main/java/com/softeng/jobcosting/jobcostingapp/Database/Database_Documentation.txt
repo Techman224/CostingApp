@@ -1,0 +1,151 @@
+Terminology (for this document NOT formal)
+===========
+Database: A table based storage medium that defines the type or name
+of the data by its column and its related context data within the
+same row
+
+Table: In essence, a two dimensional array containing columns and rows
+
+Row/Entry: A row (sometimes called an entry, mostly when working with
+SQL) is a horizontal representation of data within a table. That is
+to say a row is the single dimensional array returned at a given index
+of a table. The term entry comes from the fact that when you enter
+something into the database you have to put it in as an entire row ergo
+an entry
+
+Field/Column: A column (sometimes called a field, mostly when working
+with SQL) is a vertical representation of data within a table. That
+is to say a column is a single index in a uniform location in a row
+of a given table. The term field comes from similar terminology in
+Object Oriented Programming(OOP) or message passing mechanisms where the
+type and name of a variable is known as a field.
+
+Value/Entity: A single "point" in a table given a row index AND
+column index. A value (sometimes called a entity, mostly when working
+with SQL) is just a piece of data; a variable if you will. The reason
+it is sometimes referred to as a entity goes back to rows being
+called entries and within an entry you have an entity (yeah, okay I
+don't really know why but...)
+
+Database Architecture
+=====================
+Database: The database file is an interface that dictates how the
+rest of the app will be able to access the database no matter if it
+is the stub, the actual or any new implementation or extension of a
+database. The theory being as long as the database implementation
+class implements this interface and the declaration is changed then
+the rest of the app should work as is (open to extension, closed to
+modification)
+
+StubDatabase (A Database implementation): This is the stub implementation
+of the database the methods within this class in essence build a query to
+be executed against the stub database itself (StubDB) adding a layer of
+abstraction (wrapper if you will, that allows access only through certain
+defined mechanisms) to the stub database so that it acts much like what a
+real database would. This was done this way so that testing of the query
+building methods could occur preemptivly to the use of the actual database.
+This was so that when the actual database came in there would be very little
+deviation and misunderstanding between the way the methods worked and give us
+a better base line for testing purposes of what errors occured in our methods
+or the SQLite database system.
+
+StubDB: This class is the "storage" of the stub database it is the thing that
+actually holds the information. Because of the nature of doing this, it has
+also taken on the task of interpreting the SQL to perform operations on this
+storage. However most of these methods are private and in theory (if it didn't
+look so ugly, complicated and long) I'd like to limit the scope of this class so
+that only the StubDatabase would have access to it.
+
+ActualDatabase (A Database implementation): The ActualDatabase class is the class
+that implements the SQLite database using the predefined methods in the Database
+interface it does this through (almost) identical mechanisms as the stub allowing
+for very little variation in the code. Due to the SQLite database being external
+there are a few extra methods to achieve inherent tasks with the stub like setup
+(onCreate).
+
+DatabaseContract: Particularly containing to the inherent tasks mentioned in the
+ActualDatabase descriptions but also as a good design abstraction in general, this
+class provides constants that contain the name of columns and tables within the
+database so that if there were to changes to be made to the database structure the
+impact to the rest of the application would be minimal.
+
+GlobalDatabase: This class is designed for the dependency injection of the database
+and setting the database variable as global so that the database is consistent
+throughout the app.
+
+
+
+Interfacing with the database
+=============================
+So, the way the database is implemented is much like how a query building or
+parameter binding query strategy would work. This is for a magnitude of reasons
+particularly focusing on querying and data access efficiency, readability and easy
+error checking. Below I will attempt, in some detail, to describe the utilities
+and their uses in building the queries so that the functions might be understood
+and easy to use.
+
+To start querying the database you will first have to decide which table you are
+looking at querying. By default the table is set to the Costs table as that is
+where majority of the information resides. If you wanted to, for instance, query
+the Orders table (or in some future version a different table) you would use the
+setTable method
+	public void setTable(String tableName)
+Within your code you would write something like:
+	setTable(DatabaseContract.Orders.TABLE_NAME);
+CAUTION: the setTable method sets a global variable that isn't reset after queries.
+So, it is probably best practice even if you think setTable hasn't been called
+yet to include a setTable statement before you code. This is, to some extent, by
+design so that it is clear to someone reading your code which table you are querying
+(Readability!). Consequently, to set the table to Costs table the code might look
+something like:
+    setTable(DatabaseContract.Costs.TABLE_NAME);
+
+Before we can get into this too much further I want to first explain this idea of
+parameter binding. So when you go to build most SQL queries you need to specify
+a key-value pair in some form or another. INSERT INTO for instance you need to
+specify the column/field (key) you want to place the entity (value) into. Another
+example is UPDATE where you need to specify the field (key) that you want to
+update with the new entity (value) at the location having the specified entity
+(value) in the given column (key). This pattern repeats itself over and over
+again in SQL queries (there are a few exceptions but...) so, somebody, no idea
+who, looked at this and figured out that if you extract this key-value pair away
+from a query and put placeholders instead there are a number of benefits. Generally
+speaking when most people talk about this they are talking a lot about SQL injection
+protection (easy error checking in our case) and SQL caching (in our case querying
+and data access efficiency). To give a slightly more concrete example of what a query
+with bind parameters might look like:
+    INSERT INTO Costs (CostID, OrderID, Store, Description, Type, Price) VALUES (?, ?, ?, ?, ?, ?)
+And then in whatever coding language you would go on to have a statement that
+replaces the ?s with proper values. In PHP for instance it would be
+    mysqli_stmt_bind_param($stmt, 'ddsssf', $costID, $orderID, $store, $description, $type, $price);
+Hopefully at this point you have a basic understanding of parameter binding in SQL so,
+what I did was take this concept a little bit further. Particularly because I know the
+kinds of queries being made the only information I need supplied is these values to bind.
+Because in theory these values can fail I made it so that only one key-value pair was
+passed at a time and therefor being bound at a time (This is a slight simplification in
+that I'm actually generating the query dynamically but its the basic concept).
+
+Now that the table is set and you have a basic understanding of parameter
+binding ins SQL its time to start actually building the query. To build
+a query there is a number of utilities available to you to build different
+types of queries. For instance, to build an insert query you would use
+the insert method:
+	public boolean insert(String field, String value)
+For an update query you would use the update method:
+	public boolean update(String field, String value, String condField, String condValue)
+Building select queries is a bit trickier business since there is that WHERE
+claus wo worry about. Consequently I broke it down into several methods. the
+select method is a select statement without a WHERE clause so the use would
+be if you wanted to return the entire tablen
+	public boolean select()
+To deal with the WHERE clause I came up with several different versions of
+the same method each having its own purpose to start is the simple case;
+you want to get all the columns in the row where the given value is found
+in the given field
+	public boolean where(String field, String value);
+	public boolean where(String[] fields, String field, String value);
+	public boolean where(String[] fields, String innerQuery);
+
+Having built the query we need to now execute it and get the results
+back as as a string
+	public String query();

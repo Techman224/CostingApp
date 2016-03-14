@@ -5,10 +5,13 @@ public interface Database {
 	/*
 	 * Name: Insert
 	 * Description: A public insert method that allows other parts of the app to insert stuff 
-	 * 				into the database abstracted away from the implementation of the database
+	 * 				into the database while abstracted away the implementation of the database.
+	 * 				That is to say that, this method will "bind" a parameter into the insert
+	 * 				query replacing a value at the given field position in the VALUES part of
+	 * 				the query so that it may be inserted with that value in the proper column.
 	 * 				Note: This method builds a query but DOESN'T execute it (see: query).
-	 * Parameter(s): field (String) - The field to which you wish to insert the value
-	 * 				 value (String) - The value to be inserted in the specified column
+	 * Parameter(s): field (String) - The field/column to which you wish to insert the value
+	 * 				 value (String) - The value/entity to be inserted in the specified column
 	 * Return: boolean - If the insertion query was properly built
 	 */
 	public boolean insert(String field, String value);
@@ -16,7 +19,12 @@ public interface Database {
 	/*
 	 * Name: Update
 	 * Description: A public update method that allows other parts of the app to update stuff
-	 * 				in the database abstracted away from the implementation of the database
+	 * 				in the database abstracted away from the implementation of the database.
+	 * 				In essence this method takes a value and "binds" it to the proper position
+	 * 				in the query as to update that column/field with that value. It also takes
+	 * 				two other parameters prefixed with cond that are the conditional parts of
+	 * 				the update query. That is to say if you had a UPDATE query that looked
+	 * 				something like
 	 * 				Note: This method builds a query but DOESN'T execute it (see: query)
 	 * Parameter(s): field (String) - The field to be updated
 	 * 				 value (String) - The value to update the field with
@@ -72,6 +80,16 @@ public interface Database {
 	 * Return: boolean - If the where query was properly built
 	 */
 	public boolean where(String[] fields, String innerQuery);
+
+	/*
+	 * Name: Sort
+	 * Description: A public method that will allow other parts of the app to denote how they
+	 * 				want the result set to be sorted before it comes back.
+	 * Parameter(s): field (String) - The field/column to sort by
+	 * 				 descending (boolean) - whether to sort in descending order or not
+	 * Return: boolean - If the sort query was properly built
+	 */
+	public boolean sort(String field, boolean descending);
 
 	/*
 	 * Name: Set Table (setTable)
