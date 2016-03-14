@@ -26,7 +26,7 @@ public class Calculations {
                 db.insert("Store", store) &&
                 db.insert("Description", description) &&
                 db.insert("Type", type) &&
-                db.insert("Price", Float.toString(price))) {
+                db.insert("Price", String.format("%.2f", price))) {
             result = db.query();
         }
         return result;
@@ -47,8 +47,8 @@ public class Calculations {
 
     public String getItems(int orderID) {
         String result = null;
-
         db.setTable("Costs");
+//        db.select();
 
         if(db.where("OrderID", Integer.toString(orderID))) {
             result = db.query();
@@ -83,24 +83,29 @@ public class Calculations {
     public int[] getOrderIDs()  {
 
         db.setTable("Orders");
-//        db.select();
-        String []orderTable = db.query().split("\n");
-        String unfmtdNums = "";
+        db.select();
+        String strTable = db.query();
+        String []orderTable = null;
+        int []orderNums = null;
 
-        for(int i = 0; i < orderTable.length; i++)  {
-            unfmtdNums += orderTable[i].split(",")[0];
-            if(i != orderTable.length-1)   {
-                unfmtdNums += ",";
+        if(strTable != null&& !strTable.equals("")) {
+            orderTable = strTable.split("\n");
+            String unfmtdNums = "";
+
+            for (int i = 0; i < orderTable.length; i++) {
+                unfmtdNums += orderTable[i].split(",")[0];
+                if (i != orderTable.length - 1) {
+                    unfmtdNums += ",";
+                }
+            }
+
+            String[] unfmtdArray = unfmtdNums.split(",");
+            orderNums = new int[unfmtdArray.length];
+
+            for (int i = 0; i < orderNums.length; i++) {
+                orderNums[i] = Integer.parseInt(unfmtdArray[i]);
             }
         }
-
-        String[] unfmtdArray = unfmtdNums.split(",");
-        int[] orderNums = new int[unfmtdArray.length];
-
-        for(int i = 0; i < orderNums.length; i++)   {
-            orderNums[i] = Integer.parseInt(unfmtdArray[i]);
-        }
-
 
 
         return orderNums;
@@ -136,16 +141,23 @@ public class Calculations {
             query = db.query();
             tokens = query.split("\n");
 
-            for(int i = 0; i < tokens.length; i++)
+            if(query.equals(""))
             {
-                total += Float.parseFloat(tokens[i]);
+                total = 0.00f;
+            }
+            else
+            {
+                for(int i = 0; i < tokens.length; i++)
+                {
+                    total += Float.parseFloat(tokens[i]);
+                }
             }
         }
 
         return total;
     }
 
-    private float getTypeTotal(int orderID, String type)
+    public float getTypeTotal(int orderID, String type)
     {
         float typeTotal = 0;
         String query = null;
@@ -159,9 +171,16 @@ public class Calculations {
             query = db.query();
             tokens = query.split("\n");
 
-            for(int i = 0; i < tokens.length; i++)
+            if(query.equals(""))
             {
-                typeTotal += Float.parseFloat(tokens[i]);
+                typeTotal = 0.00f;
+            }
+            else
+            {
+                for(int i = 0; i < tokens.length; i++)
+                {
+                    typeTotal += Float.parseFloat(tokens[i]);
+                }
             }
         }
 
