@@ -88,8 +88,8 @@ public class Calculations {
         String []orderTable = null;
         int []orderNums = null;
 
-        if(!strTable.equals("")) {
-            strTable.split("\n");
+        if(strTable != null&& !strTable.equals("")) {
+            orderTable = strTable.split("\n");
             String unfmtdNums = "";
 
             for (int i = 0; i < orderTable.length; i++) {
