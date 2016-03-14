@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -29,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Calculations calc = new Calculations();
-        int [] orderIDs = null;
+
+        int [] orderIDs = calc.getOrderIDs();
+
+
         ListView mainList = (ListView) findViewById(R.id.listView);
         String[] listItems;
 
@@ -37,15 +41,20 @@ public class MainActivity extends AppCompatActivity {
             listItems = new String[orderIDs.length];
 
             for (int i = 0; i < orderIDs.length; i++) {
-                listItems[i] = "" + orderIDs[i];
+                listItems[i] = "Order #" + orderIDs[i];
             }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
+            mainList.setAdapter(adapter);
+            mainList.setOnItemClickListener(new ListClickListener());
+
         }
         else    {
-            listItems = getResources().getStringArray(R.array.sports_array);
+            listItems = new String[1];
+            listItems[0] = "No orders to display";
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
+            mainList.setAdapter(adapter);
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_view_row, R.id.listText, listItems);
-        mainList.setAdapter(adapter);
-        mainList.setOnItemClickListener(new ListClickListener());
     }
 
     @Override

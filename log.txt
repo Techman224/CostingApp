@@ -202,13 +202,32 @@ End: 5:12PM
 - Daniel: Displaying an order
 - Jasmin: Do calculation logic behind the scenes and a little of entering data layout
 
-//***** End Task Assignments itr 1 *****//
+//***** End Task Assignments itr1 *****//
 
-//***** Start Design Changes itr 1*****//
+//***** Start Task Assignments itr2 *****//
+
+-	Alan: Create new SQLite database
+-	Courtney: Checking addOrder and editOrder classes to get them working together and with the database with testing
+-	Joseph: do feature, sort.java in business logic with jUnit testing
+-	Ryan: Summary activity: getting the summary of a specific order from calculations.java and displaying on summary page
+-	Daniel: Main activity: getting the list from calculations.java and displaying it on the main page
+-	Jasmin: Finish methods and testing in calculations.java in business logic
+
+//***** End Task Assignments itr2 *****//
+
+//***** Start Design Changes itr1 *****//
 Major: None.
 Minor: 
       - Didn't use navigation drawer since it as too complicated to implement for now.
-//***** End Design Changes itr 1 *****//
+//***** End Design Changes itr1 *****//
+
+//***** Start Design Changes itr2 *****//
+
+Major: None.
+Minor: 
+	- Won't get to implement Profit and Margin due to time constraint.
+	- Sorting and search won't be implemented in this iteration due to problems with earlier iteration.
+//***** End Design Changes itr2 *****//
 
 //***** Start Individual Feedback *****//
 
