@@ -26,7 +26,7 @@ public class Calculations {
                 db.insert("Store", store) &&
                 db.insert("Description", description) &&
                 db.insert("Type", type) &&
-                db.insert("Price", Float.toString(price))) {
+                db.insert("Price", String.format("%.2f", price))) {
             result = db.query();
         }
         return result;
