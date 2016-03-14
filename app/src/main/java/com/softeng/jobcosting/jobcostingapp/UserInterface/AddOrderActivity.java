@@ -92,6 +92,7 @@ public class AddOrderActivity extends AppCompatActivity {
 
             calc.newItem(orderID, store, description, type, amount);
         }
+
         Intent returnIntent = new Intent(this, MainActivity.class);
         startActivity(returnIntent);
     }

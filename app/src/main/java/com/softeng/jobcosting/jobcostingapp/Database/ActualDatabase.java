@@ -84,7 +84,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 				//Rebuild the query with the new column and field sets
 				query = "INSERT INTO " + table + " (" + columns + ") VALUES (" + values + ")";
-				//System.out.println("Built query: " + query);
+				System.out.println("Built query: " + query);
 
 				//The build happend successfully
 				valid = true;
