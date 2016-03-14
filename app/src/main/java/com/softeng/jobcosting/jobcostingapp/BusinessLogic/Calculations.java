@@ -53,6 +53,11 @@ public class Calculations {
         if(db.where("OrderID", Integer.toString(orderID)))
         {
             result = db.query();
+
+            if(result.equals(""))
+            {
+                result = null;
+            }
         }
 
         return result;
