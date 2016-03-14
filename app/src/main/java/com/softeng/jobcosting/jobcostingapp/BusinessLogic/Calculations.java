@@ -47,8 +47,8 @@ public class Calculations {
 
     public String getItems(int orderID) {
         String result = null;
-
         db.setTable("Costs");
+//        db.select();
 
         if(db.where("OrderID", Integer.toString(orderID))) {
             result = db.query();
