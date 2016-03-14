@@ -28,37 +28,38 @@ public class CalculationsTest
         assertEquals("1,1,Shopify,RV-145,Board,100.00\n", newCalc.newItem(1, "Shopify", "RV-145", "Board", 100.00f));
         assertEquals("2,1,EBGames,RV-145,Board,50.00\n", newCalc.newItem(1, "EBGames", "RV-145", "Board", 50f));
         assertEquals("3,1,EBGames,RV-145,Board,10.58\n", newCalc.newItem(1, "EBGames", "RV-145", "Board", 10.584989875f));
-        assertEquals("1,2,EBGames,RV-145,Board,50.00\n", newCalc.newItem(2, "EBGames", "RV-145", "Board", 50f));
+        assertEquals("4,2,EBGames,RV-145,Board,50.00\n", newCalc.newItem(2, "EBGames", "RV-145", "Board", 50f));
     }
 
-    //@Test
+    @Test
     public void editItem_isEdited()
     {
-        Calculations newCalc = new Calculations();
-        assertEquals(2, (newCalc.newItem(1000, "Shopify", "RV-145", "Board", (float)100.00)).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
-        assertEquals(2, (newCalc.editItem("Store", "EBGames", 1)).compareTo("1 1000 EBGames RV-145 Board 100.00"));
+        assertEquals("2 1 Safeway RV-145 Board 50.00 \n", newCalc.editItem("Store", "Safeway", 2));
+        assertEquals("3 1 EBGames RV-200 Board 10.58 \n", newCalc.editItem("Description", "RV-200", 3));
+        assertEquals("3 1 EBGames RV-200 Promo 10.58 \n", newCalc.editItem("Type", "Promo", 3));
     }
 
-    //@Test
+    @Test
     public void getItems_isAllItems()
     {
-        Calculations newCalc = new Calculations();
-        //assertEquals(1, (newCalc.newItem(1000, "Shopify", "RV-145", "Board", (float) 100.00)).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
-        //assertEquals(1, (newCalc.newItem(1001, "EBGames", "RV-145", "Board", (float) 100.00)).compareTo("2,1001,EBGames,RV-145,Board,100.00"));
-
-        newCalc.newOrder();
-        System.out.println(newCalc.getItems(1));
+        assertEquals("3,1,EBGames,RV-200,Promo,10.58\n" +
+                "2,1,Safeway,RV-145,Board,50.00\n" +
+                "1,1,Shopify,RV-145,Board,100.00\n", newCalc.getItems(1));
+        assertEquals("4,2,EBGames,RV-145,Board,50.00\n", newCalc.getItems(2));
     }
 
-    //@Test
-    public void getTotal_isCorrect()
+    @Test
+    public void getOrderTotal_isCorrect()
     {
-        Calculations newCalc = new Calculations();
+        // for this test, please change expected value if previous methods values are changed.
 
-        newCalc.newItem(1000, "Shopify", "RV-145", "Board", 100.00f);
-        newCalc.newItem(1000, "EBGames", "RV-145", "Board", 100.00f);
+        assertEquals(160.58, newCalc.getOrderTotal(1), 0.1);
+        assertEquals(50.00, newCalc.getOrderTotal(2), 0.1);
+    }
 
-        System.out.println(newCalc.getOrderTotal(1000));
-        System.out.println(newCalc.getDate(1000));
+    @Test
+    public void getOrderID_Test()
+    {
+        System.out.println(newCalc.getOrderIDs());
     }
 }

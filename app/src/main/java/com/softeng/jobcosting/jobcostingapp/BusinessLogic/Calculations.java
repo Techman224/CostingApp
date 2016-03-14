@@ -141,9 +141,16 @@ public class Calculations {
             query = db.query();
             tokens = query.split("\n");
 
-            for(int i = 0; i < tokens.length; i++)
+            if(query.equals(""))
             {
-                total += Float.parseFloat(tokens[i]);
+                total = 0.00f;
+            }
+            else
+            {
+                for(int i = 0; i < tokens.length; i++)
+                {
+                    total += Float.parseFloat(tokens[i]);
+                }
             }
         }
 
