@@ -465,6 +465,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				result += ",";
 				col++;
 			}
+			result += "\n";
 			c.moveToNext();
 		}
 		c.close();
