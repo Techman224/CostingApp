@@ -90,8 +90,13 @@ public class AddOrderActivity extends AppCompatActivity {
             String stringAmount = amountInput.getText().toString();
             float amount = Float.parseFloat(stringAmount);
 
-            calc.newItem(orderID, store, type, description, amount);
+            System.out.println("I am calling newItem\n\n\n\n\n\n\n\n\n");
+            calc.newItem(orderID, store,description, type, amount);
         }
+
+        System.out.println("I never called newItem\n\n\n\n\n\n\n\n\n");
+
+        System.out.println(calc.newItem(1,"shoptify","thing","Board",25));
 
         Intent returnIntent = new Intent(this, MainActivity.class);
         startActivity(returnIntent);
