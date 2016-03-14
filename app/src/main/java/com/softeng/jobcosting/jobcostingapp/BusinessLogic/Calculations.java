@@ -157,7 +157,7 @@ public class Calculations {
         return total;
     }
 
-    private float getTypeTotal(int orderID, String type)
+    public float getTypeTotal(int orderID, String type)
     {
         float typeTotal = 0;
         String query = null;
@@ -171,9 +171,16 @@ public class Calculations {
             query = db.query();
             tokens = query.split("\n");
 
-            for(int i = 0; i < tokens.length; i++)
+            if(query.equals(""))
             {
-                typeTotal += Float.parseFloat(tokens[i]);
+                typeTotal = 0.00f;
+            }
+            else
+            {
+                for(int i = 0; i < tokens.length; i++)
+                {
+                    typeTotal += Float.parseFloat(tokens[i]);
+                }
             }
         }
 

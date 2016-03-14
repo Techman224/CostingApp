@@ -48,6 +48,32 @@ public class CalculationsTest
         assertEquals("4,2,EBGames,RV-145,Board,50.00\n", newCalc.getItems(2));
     }
 
+    //@Test
+    public void getDate_isCorrect()
+    {
+        assertEquals(dt.format(newDate), newCalc.getDate(1));
+        assertEquals(dt.format(newDate), newCalc.getDate(2));
+    }
+
+    @Test
+    public void getProfit_isCorrect()
+    {
+        assertEquals(160.58, newCalc.getProfit(1), 0.1);
+        assertEquals(50.00, newCalc.getProfit(2), 0.1);
+    }
+
+    @Test
+    public void getMargin_isCorrect()
+    {
+        System.out.println(newCalc.getProfit(1));
+        System.out.println(newCalc.getTypeTotal(1, "Board"));
+        System.out.println(newCalc.getTypeTotal(1, "PSTCharged"));
+        System.out.println(newCalc.getTypeTotal(1, "GSTCharged"));
+        System.out.println(newCalc.getMargin(1));
+        assertEquals(160.58f / 150.00f, newCalc.getMargin(1), 0.1);
+        assertEquals(1.00f, newCalc.getMargin(2), 0.1);
+    }
+
     @Test
     public void getOrderTotal_isCorrect()
     {
@@ -55,11 +81,5 @@ public class CalculationsTest
 
         assertEquals(160.58, newCalc.getOrderTotal(1), 0.1);
         assertEquals(50.00, newCalc.getOrderTotal(2), 0.1);
-    }
-
-    @Test
-    public void getOrderID_Test()
-    {
-        System.out.println(newCalc.getOrderIDs());
     }
 }
