@@ -20,7 +20,7 @@ public class GlobalDatabase extends Application {
      */
     public void onCreate() {
         super.onCreate();
-        db = new StubDatabase();
+        db = new ActualDatabase(this);
     }
 
     /**
@@ -28,9 +28,9 @@ public class GlobalDatabase extends Application {
      * Used for getting the reference to database for android app and tests
      */
     public GlobalDatabase () {
-        /*if (db == null) {
+        if (db == null) {
             db = new StubDatabase();
-        }*/
+        }
     }
 
     public static Database getDB() {
