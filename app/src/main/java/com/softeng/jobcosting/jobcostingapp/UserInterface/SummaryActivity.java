@@ -32,7 +32,7 @@ public class SummaryActivity extends AppCompatActivity {
         String strOrderID = intent.getStringExtra("orderID");
         setTitle(strOrderID);
 
-        strOrderID = strOrderID.substring(strOrderID.length()-1);
+        strOrderID = (strOrderID.split("#"))[1];
         int orderID = Integer.parseInt(strOrderID);
         String items = getOrderInfo(orderID);
         String[][] processedItems = parseItems(items);
