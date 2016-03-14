@@ -50,9 +50,12 @@ public class Calculations {
 
         db.setTable("Costs");
 
-        if(db.where("OrderID", Integer.toString(orderID)))
-        {
+        if(db.where("OrderID", Integer.toString(orderID))) {
             result = db.query();
+
+            if(result.equals("")) {
+                result = null;
+            }
         }
 
         return result;

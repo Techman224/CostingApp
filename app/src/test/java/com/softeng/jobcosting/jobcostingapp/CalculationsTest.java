@@ -10,14 +10,15 @@ import static org.junit.Assert.*;
 public class CalculationsTest
 {
 
-    //@Test
+    @Test
     public void newOrder_isDateCorrect()
     {
         Calculations newCalc = new Calculations();
-        SimpleDateFormat dt = new SimpleDateFormat("yyyy/mm/dd");
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy/M/d");
         Date newDate = new Date();
 
-        assertEquals(dt.format(newDate), newCalc.newOrder());
+        assertEquals("1," + dt.format(newDate) + "\n", newCalc.newOrder());
+        assertEquals("2," + dt.format(newDate) + "\n", newCalc.newOrder());
     }
 
     //@Test
@@ -36,18 +37,18 @@ public class CalculationsTest
         assertEquals(2, (newCalc.editItem("Store", "EBGames", 1)).compareTo("1 1000 EBGames RV-145 Board 100.00"));
     }
 
-    //@Test
+    @Test
     public void getItems_isAllItems()
     {
         Calculations newCalc = new Calculations();
-        assertEquals(1, (newCalc.newItem(1000, "Shopify", "RV-145", "Board", (float) 100.00)).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
-        assertEquals(1, (newCalc.newItem(1001, "EBGames", "RV-145", "Board", (float) 100.00)).compareTo("2,1001,EBGames,RV-145,Board,100.00"));
+        //assertEquals(1, (newCalc.newItem(1000, "Shopify", "RV-145", "Board", (float) 100.00)).compareTo("1,1000,Shopify,RV-145,Board,100.00"));
+        //assertEquals(1, (newCalc.newItem(1001, "EBGames", "RV-145", "Board", (float) 100.00)).compareTo("2,1001,EBGames,RV-145,Board,100.00"));
 
-        System.out.println(newCalc.getItems(1000));
-        System.out.println(newCalc.getItems(1001));
+        newCalc.newOrder();
+        System.out.println(newCalc.getItems(1));
     }
 
-    @Test
+    //@Test
     public void getTotal_isCorrect()
     {
         Calculations newCalc = new Calculations();
