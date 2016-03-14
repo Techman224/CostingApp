@@ -21,30 +21,14 @@ public class Calculations {
 
         db.setTable("Costs");
 
-
-        boolean orderIDFl = false, storeFl = false, descFl = false, typeFl = false, amtFl = false;
-
-        orderIDFl = db.insert("OrderID", Integer.toString(orderID));
-        storeFl = db.insert("Store", store);
-        descFl = db.insert("Description", description);
-        typeFl = db.insert("Type", type);
-        amtFl = db.insert("Price", String.format("%.2f", price));
-
-        System.out.println(orderIDFl + " " + storeFl+ " " + descFl+ " " + typeFl+ " "+ amtFl);
-
-        if(orderIDFl && storeFl && descFl && typeFl && amtFl)   {
+        //if all inserts were successful, returns the result of the query method
+        if (db.insert("OrderID", Integer.toString(orderID)) &&
+                db.insert("Store", store) &&
+                db.insert("Description", description) &&
+                db.insert("Type", type) &&
+                db.insert("Price", String.format("%.2f", price))) {
             result = db.query();
         }
-        /*Real code below, commented out while testing*/
-
-        //if all inserts were successful, returns the result of the query method
-//        if (db.insert("OrderID", Integer.toString(orderID)) &&
-//                db.insert("Store", store) &&
-//                db.insert("Description", description) &&
-//                db.insert("Type", type) &&
-//                db.insert("Price", String.format("%.2f", price))) {
-//            result = db.query();
-//        }
         return result;
     }
 
