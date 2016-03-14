@@ -35,10 +35,6 @@ public class SummaryActivity extends AppCompatActivity {
         strOrderID = strOrderID.substring(strOrderID.length()-1);
         int orderID = Integer.parseInt(strOrderID);
         String items = getOrderInfo(orderID);
-
-//        if(items == null)   {
-            items = "1,1,Shopify,Im a cost,Board,5000.00\n2,1,Red Paddle,Im a revenue,Board,9000.52";
-//        }
         String[][] processedItems = parseItems(items);
 
         setLayout(processedItems);

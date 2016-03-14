@@ -47,13 +47,16 @@ public class Calculations {
 
     public String getItems(int orderID) {
         String result = null;
-
+        System.out.println(orderID);
         db.setTable("Costs");
+//        db.select();
 
         if(db.where("OrderID", Integer.toString(orderID))) {
             result = db.query();
 
+            System.out.println("where worked");
             if(result.equals("")) {
+                System.out.println("Couldn't find");
                 result = null;
             }
         }
