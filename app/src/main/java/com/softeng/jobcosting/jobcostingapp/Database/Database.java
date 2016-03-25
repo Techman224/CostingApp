@@ -33,7 +33,9 @@ public interface Database {
 	 * Return: boolean - If the update query was properly built
 	 */
 	public boolean update(String field, String value, String condField, String condValue);
-	
+
+	public boolean delete(String field, String value);
+
 	/*
 	 * Name: Select
 	 * Description: A public select method that allows other parts of the app to get the complete

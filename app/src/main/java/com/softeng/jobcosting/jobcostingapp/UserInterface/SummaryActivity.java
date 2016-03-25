@@ -86,11 +86,11 @@ public class SummaryActivity extends AppCompatActivity {
 
     public void setFixedBar(int orderID)    {
 
-//        String margin = "Profit Margin: " + Float.toString(calc.getMargin(orderID));
-//        String profit = "Total Profit: " + Float.toString(calc.getProfit(orderID));
+        String margin = "Profit Margin: " + Float.toString(calc.getMargin(orderID));
+        String profit = "Total Profit: " + Float.toString(calc.getProfit(orderID));
 
-        String margin = "Profit Margin: temp";
-        String profit = "Total Profit: temp";
+//        String margin = "Profit Margin: temp";
+//        String profit = "Total Profit: temp";
 
         ((TextView)findViewById(R.id.profitLabel)).setText(profit);
         ((TextView)findViewById(R.id.marginLabel)).setText(margin);

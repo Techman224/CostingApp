@@ -179,6 +179,17 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		return valid;
 	}
 
+	public boolean delete(String field, String value) {
+		boolean valid = false;
+
+		if(query == null) {
+			query = "DELETE FROM " + table + " WHERE (" + field + "='" + value + "')";
+			valid = true;
+		}
+
+		return valid;
+	}
+
 	public boolean select() {
 		boolean valid = false;
 
@@ -208,7 +219,6 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				//The query doesn't exist so start a select
 				query = "SELECT * FROM " + table + " WHERE (" + field + " = '" + value + "')";
 				//System.out.println("Built query: " + query);
-
 				//The build happend successfully
 				valid = true;
 			}
@@ -233,7 +243,9 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 						conditions.concat("," + field + " = '" + value + "'");
 						//Rebuild the query string with the new condition
 						query = query.substring(0, query.lastIndexOf("(") + 1) + conditions + ");";
-						System.out.println("Built query: " + query);
+						System.out.println(query);
+						System.out.println("Place2");
+
 
 						//The build happend successfully
 						valid = true;
@@ -245,7 +257,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 							//Build OR query code to come...
 
-							System.out.println("Built query: " + query);
+//							System.out.println("Built query: " + query);
 
 							//The build happend successfully
 							valid = true;
@@ -257,10 +269,12 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				}
 				else {
 					//Because the query doesn't have a where clause remove the semicolon and append it
-					query = query.substring(0, query.length() - 1) + " WHERE (" + field + " = '" + value + "')" ;
+
+					query = query + " WHERE (" + field + "='" + value + "')" ;
+
 					//System.out.println("Built query: " + query);
 
-					//The build happend successfully
+					//The build happened successfully
 					valid = true;
 				}
 			}
@@ -303,6 +317,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 						}
 					}
 					query += ") FROM " + table + "";
+
 					//Reuse this other form of the method so that the code doesn't have to be replicated
 					valid = where(field, value);
 				}
@@ -319,6 +334,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 						}
 						tempQuery += ")" + query.substring(query.indexOf("*") + 1);
 						query = tempQuery;
+
 					}
 					else {
 						//The columns are already explicit. So, lets look at them

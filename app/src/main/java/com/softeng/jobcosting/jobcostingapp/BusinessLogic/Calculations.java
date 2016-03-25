@@ -132,6 +132,7 @@ public class Calculations {
         float total = 0;
         String query = null;
         String[] tokens = null;
+        String[] trimmedTokens = null;
         String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
@@ -149,7 +150,8 @@ public class Calculations {
             {
                 for(int i = 0; i < tokens.length; i++)
                 {
-                    total += Float.parseFloat(tokens[i]);
+                    trimmedTokens = tokens[i].split(",");
+                    total += Float.parseFloat(trimmedTokens[0]);
                 }
             }
         }
@@ -162,6 +164,7 @@ public class Calculations {
         float typeTotal = 0;
         String query = null;
         String[] tokens = null;
+        String[] trimmedTokens = null;
         String[] fieldsToReturn = {"Price"};
 
         db.setTable("Costs");
@@ -179,7 +182,8 @@ public class Calculations {
             {
                 for(int i = 0; i < tokens.length; i++)
                 {
-                    typeTotal += Float.parseFloat(tokens[i]);
+                    trimmedTokens = tokens[i].split(",");
+                    typeTotal += Float.parseFloat(trimmedTokens[0]);
                 }
             }
         }

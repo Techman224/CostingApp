@@ -77,7 +77,7 @@
             android:orientation="vertical"
             android:id="@+id/summContentLayout">
 
-            <include layout="@layout/colmd_items" />
+            <include layout="@layout/colmd_items"/>
         </LinearLayout>
     </ScrollView>
 
