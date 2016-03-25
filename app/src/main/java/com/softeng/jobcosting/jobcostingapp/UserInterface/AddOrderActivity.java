@@ -88,9 +88,11 @@ public class AddOrderActivity extends AppCompatActivity {
 
             EditText amountInput = (EditText) items.get(i).findViewById(R.id.amtEditText);
             String stringAmount = amountInput.getText().toString();
-            float amount = Float.parseFloat(stringAmount);
 
-            calc.newItem(orderID, store, description, type, amount);
+            if(!store.equals("") && !type.equals("") && !stringAmount.equals("")) {
+                float amount = Float.parseFloat(stringAmount);
+                calc.newItem(orderID, store, description, type, amount);
+            }
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);
