@@ -179,6 +179,17 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		return valid;
 	}
 
+	public boolean delete(String field, String value) {
+		boolean valid = false;
+
+		if(query == null) {
+			query = "DELETE FROM " + table + " WHERE (" + field + "='" + value + "')";
+			valid = true;
+		}
+
+		return valid;
+	}
+
 	public boolean select() {
 		boolean valid = false;
 

@@ -170,8 +170,11 @@ public class StubDatabase implements Database {
 		
 		return valid;
 	}
-	
 
+	public boolean delete(String field, String vlaue) {
+		boolean valid = false;
+		return valid;
+	}
 	
 	/*
 	 * Name: where
