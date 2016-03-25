@@ -117,7 +117,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(field != null && value != null) {
 			if(query == null) {
 				//The query doesn't exist so start a update
-				query = "UPDATE " + table + " SET (" + field + "=" + value + ") WHERE (" + condField + "=" + condValue +")";
+				query = "UPDATE " + table + " SET (" + field + "='" + value + "') WHERE (" + condField + "='" + condValue +"')";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
@@ -136,11 +136,11 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 					if(setValuePair[j][0].equalsIgnoreCase(field)) {
 						if(!setValuePair[j][1].equalsIgnoreCase(value)) {
-							setValues = setValues.concat("," + field + "=" + value);
+							setValues = setValues.concat("," + field + "='" + value + "'");
 						}
 					}
 					else {
-						setValues = setValues.concat("," + field + "=" + value);
+						setValues = setValues.concat("," + field + "='" + value + "'");
 					}
 				}
 
@@ -155,11 +155,11 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 					if(condValuePair[j][0].equalsIgnoreCase(condField)) {
 						if(!condValuePair[j][1].equalsIgnoreCase(condValue)) {
-							condValues = condValues.concat("," + condField + "=" + condValue);
+							condValues = condValues.concat("," + condField + "='" + condValue + "'");
 						}
 					}
 					else {
-						condValues = condValues.concat("," + condField + "=" + condValue);
+						condValues = condValues.concat("," + condField + "='" + condValue + "'");
 					}
 				}
 
@@ -206,7 +206,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(field != null && value != null) {
 			if(query == null) {
 				//The query doesn't exist so start a select
-				query = "SELECT * FROM " + table + " WHERE (" + field + " = " + value + ")";
+				query = "SELECT * FROM " + table + " WHERE (" + field + " = '" + value + "')";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
@@ -230,7 +230,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 					if(exists == -1) {
 						//Append the conditions with that of the one made with the parameters
-						conditions.concat("," + field + " = " + value);
+						conditions.concat("," + field + " = '" + value + "'");
 						//Rebuild the query string with the new condition
 						query = query.substring(0, query.lastIndexOf("(") + 1) + conditions + ");";
 						System.out.println("Built query: " + query);
@@ -257,7 +257,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				}
 				else {
 					//Because the query doesn't have a where clause remove the semicolon and append it
-					query = query.substring(0, query.length() - 1) + " WHERE (" + field + " = " + value + ")" ;
+					query = query.substring(0, query.length() - 1) + " WHERE (" + field + " = '" + value + "')" ;
 					//System.out.println("Built query: " + query);
 
 					//The build happend successfully
