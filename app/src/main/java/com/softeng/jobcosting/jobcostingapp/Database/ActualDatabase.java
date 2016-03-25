@@ -117,7 +117,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		if(field != null && value != null) {
 			if(query == null) {
 				//The query doesn't exist so start a update
-				query = "UPDATE " + table + " SET (" + field + "='" + value + "') WHERE (" + condField + "='" + condValue +"')";
+				query = "UPDATE " + table + " SET " + field + "='" + value + "' WHERE " + condField + "='" + condValue +"'";
 				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
