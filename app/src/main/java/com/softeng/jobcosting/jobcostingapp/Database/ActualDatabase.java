@@ -208,8 +208,6 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				//The query doesn't exist so start a select
 				query = "SELECT * FROM " + table + " WHERE (" + field + " = '" + value + "')";
 				//System.out.println("Built query: " + query);
-				System.out.println(query);
-				System.out.println("Place1");
 				//The build happend successfully
 				valid = true;
 			}
