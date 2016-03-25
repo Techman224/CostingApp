@@ -32,6 +32,19 @@ public class Calculations {
         return result;
     }
 
+    public boolean deleteOrder(int orderID) {
+        boolean valid = false;
+
+        db.setTable("Orders");
+
+        if(db.delete("orderID", String.valueOf(orderID))) {
+            db.query();
+            valid = true;
+        }
+
+        return valid;
+    }
+
     public String editItem(String field, String newValue, int costID) {
         String result = null;
 

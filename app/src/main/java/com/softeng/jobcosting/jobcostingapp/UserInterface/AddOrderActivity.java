@@ -76,6 +76,8 @@ public class AddOrderActivity extends AppCompatActivity {
 
     //Called when DONE button is clicked
     public void done(View view) {
+        boolean valid = true;
+
         for(int i = 0; i < items.size() ; i++) {
             EditText storeInput = (EditText) items.get(i).findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
@@ -92,7 +94,13 @@ public class AddOrderActivity extends AppCompatActivity {
             if(!store.equals("") && !type.equals("") && !stringAmount.equals("")) {
                 float amount = Float.parseFloat(stringAmount);
                 calc.newItem(orderID, store, description, type, amount);
+            } else {
+                valid = false;
             }
+        }
+
+        if(!valid) {
+            calc.deleteOrder(orderID);
         }
 
         Intent returnIntent = new Intent(this, MainActivity.class);
