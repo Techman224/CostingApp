@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/three_col_item"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="0dp">
+
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/idTextView"/>
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/marginTextView"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/profitTextView"/>
+    </TableRow>
+
+</TableLayout>
