@@ -259,7 +259,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				else {
 					//Because the query doesn't have a where clause remove the semicolon and append it
 
-					query = query + " WHERE (" + field + " = " + value + ")" ;
+					query = query + " WHERE (" + field + "='" + value + "')" ;
 
 					//System.out.println("Built query: " + query);
 
