@@ -203,4 +203,18 @@ public class Calculations {
 
         return typeTotal;
     }
+
+    public float getTotalSold()
+    {
+        float totalSold = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            totalSold += getTypeTotal(orderIDs[i], "Board");
+            totalSold += getTypeTotal(orderIDs[i], "Accessories");
+        }
+
+        return totalSold;
+    }
 }
