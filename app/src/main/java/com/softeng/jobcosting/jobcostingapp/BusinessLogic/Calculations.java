@@ -204,6 +204,24 @@ public class Calculations {
         return typeTotal;
     }
 
+    public float getOverallTypeTotal(String type)
+    {
+        float overallTypeTotal = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            overallTypeTotal += getTypeTotal(orderIDs[i], type);
+        }
+
+        if(type.equals("Margin"))
+        {
+            overallTypeTotal /= orderIDs.length;
+        }
+
+        return overallTypeTotal;
+    }
+
     public float getTotalSold()
     {
         float totalSold = 0;
@@ -216,33 +234,5 @@ public class Calculations {
         }
 
         return totalSold;
-    }
-
-    public float getTotalProfit()
-    {
-        float totalProfit = 0;
-        int[] orderIDs = getOrderIDs();
-
-        for(int i = 0; i < orderIDs.length; i++)
-        {
-            totalProfit += getProfit(orderIDs[i]);
-        }
-
-        return totalProfit;
-    }
-
-    public float getTotalMargin()
-    {
-        float totalMargin = 0;
-        int[] orderIDs = getOrderIDs();
-
-        for(int i = 0; i < orderIDs.length; i++)
-        {
-            totalMargin += getMargin(orderIDs[i]);
-        }
-
-        totalMargin /= orderIDs.length;
-
-        return totalMargin;
     }
 }
