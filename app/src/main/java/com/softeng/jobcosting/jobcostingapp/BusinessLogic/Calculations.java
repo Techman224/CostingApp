@@ -128,10 +128,9 @@ public class Calculations {
     public float getProfit(int orderID) {
         float profit = 0;
 
-        //profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged") - getTypeTotal(orderID, "GSTCharged");
+        //profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged");
         profit += getOrderTotal(orderID);
         profit -= (2 * getTypeTotal(orderID, "PSTCharged"));
-        profit -= (2 * getTypeTotal(orderID, "GSTCharged"));
 
         return profit;
     }
