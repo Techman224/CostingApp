@@ -128,7 +128,10 @@ public class Calculations {
     public float getProfit(int orderID) {
         float profit = 0;
 
-        profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged") - getTypeTotal(orderID, "GSTCharged");
+        //profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged") - getTypeTotal(orderID, "GSTCharged");
+        profit += getOrderTotal(orderID);
+        profit -= (2 * getTypeTotal(orderID, "PSTCharged"));
+        profit -= (2 * getTypeTotal(orderID, "GSTCharged"));
 
         return profit;
     }
@@ -136,7 +139,9 @@ public class Calculations {
     public float getMargin(int orderID) {
         float margin = 0;
 
-        margin = getProfit(orderID) / getTypeTotal(orderID, "Board");
+        //margin = getProfit(orderID) / getTypeTotal(orderID, "Board");
+        margin += getProfit(orderID);
+        margin /= getTypeTotal(orderID, "Board");
 
         return margin;
     }
