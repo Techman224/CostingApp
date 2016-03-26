@@ -230,4 +230,19 @@ public class Calculations {
 
         return totalProfit;
     }
+
+    public float getTotalMargin()
+    {
+        float totalMargin = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            totalMargin += getMargin(orderIDs[i]);
+        }
+
+        totalMargin /= orderIDs.length;
+
+        return totalMargin;
+    }
 }
