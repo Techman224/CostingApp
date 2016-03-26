@@ -217,4 +217,17 @@ public class Calculations {
 
         return totalSold;
     }
+
+    public float getTotalProfit()
+    {
+        float totalProfit = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            totalProfit += getProfit(orderIDs[i]);
+        }
+
+        return totalProfit;
+    }
 }
