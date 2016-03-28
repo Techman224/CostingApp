@@ -72,10 +72,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.calculator) {
-            startActivity(new Intent(MainActivity.this, ManualCalculatorActivity.class));
-        }
-        else if (id == R.id.add_order) {
+        if (id == R.id.add_order) {
             Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
             startActivity(addOrderIntent);
         }

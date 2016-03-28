@@ -8,11 +8,6 @@
         android:title="@string/title_activity_add_order"
         app:showAsAction="never" />
     <item
-        android:id="@+id/calculator"
-        android:orderInCategory="100"
-        android:title="@string/calculator"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/overall_summary"
         android:orderInCategory="100"
         android:title="@string/overall_sumarry"

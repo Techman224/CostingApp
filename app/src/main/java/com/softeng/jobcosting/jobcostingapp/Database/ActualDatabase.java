@@ -84,7 +84,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 				//Rebuild the query with the new column and field sets
 				query = "INSERT INTO " + table + " (" + columns + ") VALUES (" + values + ")";
-				System.out.println("Built query: " + query);
+				//System.out.println("Built query: " + query);
 
 				//The build happend successfully
 				valid = true;
@@ -243,8 +243,8 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 						conditions.concat("," + field + " = '" + value + "'");
 						//Rebuild the query string with the new condition
 						query = query.substring(0, query.lastIndexOf("(") + 1) + conditions + ");";
-						System.out.println(query);
-						System.out.println("Place2");
+						//System.out.println(query);
+						//System.out.println("Place2");
 
 
 						//The build happend successfully
