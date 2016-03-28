@@ -24,8 +24,8 @@ public class OverallSummary extends AppCompatActivity {
         setContentView(R.layout.activity_overall_summary);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         calc = new Calculations();
+        setLayout();
     }
 
     public void setLayout() {
@@ -36,24 +36,33 @@ public class OverallSummary extends AppCompatActivity {
         View tblLay = null;
         TextView column = null;
         String margin = "", profit = "";
+        float totalProfit = 0;
 
         for(int currOrder = 0; currOrder < orderIDs.length; currOrder++)    {
-            tblLay = inflater.inflate((R.layout.colmd_items), null);
-
+            tblLay = inflater.inflate((R.layout.over_summ_item), null);
             column = (TextView)tblLay.findViewById(R.id.idTextView);
-            column.setText(orderIDs[currOrder]);
+            column.setText("Order #" + (currOrder+1));
 
             column = (TextView)tblLay.findViewById(R.id.marginTextView);
-            margin = Float.toString(calc.getMargin(orderIDs[currOrder]));
+            margin = String.format("%.2f", (100 * calc.getMargin(orderIDs[currOrder]))) + "%";
             column.setText(margin);
 
             column = (TextView)tblLay.findViewById(R.id.profitTextView);
-            profit = Float.toString(calc.getProfit(orderIDs[currOrder]));
+            profit = "$" + String.format("%.2f", calc.getProfit(orderIDs[currOrder]));
             column.setText(profit);
 
             contentLay.addView(tblLay);
-
+            totalProfit += calc.getProfit(orderIDs[currOrder]);
         }
+        setFixedBar(totalProfit);
+        totalProfit = 0;
     }
 
+    public void setFixedBar(float total)    {
+
+        String profit = "Total Profit: $" + String.format("%.2f", total);
+        System.out.println(profit);
+        ((TextView)findViewById(R.id.totalProfitLabel)).setText(profit);
+
+    }
 }
