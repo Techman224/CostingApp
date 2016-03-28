@@ -1,64 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".UserInterface.AddOrderActivity"
     tools:showIn="@layout/activity_add_order">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/order_num"
-        android:id="@+id/orderNumber"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dateString"
-        android:id="@+id/date"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_marginBottom="@dimen/button_height"
-        android:paddingTop="30dp">
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_num"
+            android:id="@+id/orderNumber"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateString"
+            android:id="@+id/date"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/addOrderLinearLayout"
-            android:orientation="vertical">
+            android:id="@+id/scrollView"
+            android:layout_marginBottom="@dimen/button_height"
+            android:paddingTop="30dp">
 
-        </LinearLayout>
-    </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/addOrderLinearLayout"
+                android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/button_height"
-        android:text="@string/add_item_button"
-        android:id="@+id/addItemButton"
-        android:onClick="addItem"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+            </LinearLayout>
+        </ScrollView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/button_height"
-        android:text="@string/done_button"
-        android:id="@+id/addOrderDoneButton"
-        android:onClick="done"
-        android:layout_alignTop="@id/addItemButton"
-        android:layout_alignEnd="@id/scrollView" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/add_item_button"
+            android:id="@+id/addItemButton"
+            android:onClick="addItem"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
 
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/done_button"
+            android:id="@+id/addOrderDoneButton"
+            android:onClick="done"
+            android:layout_alignTop="@id/addItemButton"
+            android:layout_alignEnd="@id/scrollView" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="#AA000000"
+        android:id="@+id/popup"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/errorMessage"
+            android:textColor="#ffffffff"
+            android:textSize="40dp"
+            android:text="@string/error"
+            android:layout_gravity="center_horizontal|center_vertical" />
+
+    </RelativeLayout>
+
+</FrameLayout>
