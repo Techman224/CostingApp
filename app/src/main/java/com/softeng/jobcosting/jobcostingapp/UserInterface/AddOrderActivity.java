@@ -85,12 +85,6 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
             EditText storeInput = (EditText) items.get(i).findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
 
-            Spinner types = (Spinner) items.get(i).findViewById(R.id.typeSpinner);
-            String type = (types.getSelectedItem()).toString();
-
-            EditText descriptionInput = (EditText) items.get(i).findViewById(R.id.descEditText);
-            String description = descriptionInput.getText().toString();
-
             EditText amountInput = (EditText) items.get(i).findViewById(R.id.amtEditText);
             String stringAmount = amountInput.getText().toString();
 

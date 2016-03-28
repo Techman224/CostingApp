@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class EditOrderActivity extends AppCompatActivity implements OnTouchListener {
     private ArrayList<View> views;
     private Calculations calc;
+    private int newItems;
+    private int orderID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,11 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        int orderID = intent.getIntExtra("orderID", 0);
+        orderID = intent.getIntExtra("orderID", 0);
 
         views = new ArrayList<View>();
         calc = new Calculations();
+        newItems = 0;
 
         TextView orderNum = (TextView)findViewById(R.id.orderNumber);
         String orderNumView = orderNum.getText().toString();
@@ -56,7 +59,7 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
             final int TYPE = 4;
             final int PRICE = 5;
 
-            LinearLayout mainLayout = (LinearLayout) findViewById(R.id.linearLayout);
+            LinearLayout mainLayout = (LinearLayout) findViewById(R.id.editOrderLinearLayout);
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             for (String item : items) {
@@ -90,6 +93,24 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
         }
     }
 
+    //Called when ADD ITEM button is clicked
+    public void addItem(View view) {
+        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.editOrderLinearLayout);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View lastItem = views.get(views.size() - 1);
+        EditText store = (EditText) lastItem.findViewById(R.id.storeEditText);
+        String lastStore = store.getText().toString();
+
+        View mView = inflater.inflate(R.layout.input_item, null);
+        views.add(mView);
+        mainLayout.addView(mView);
+        newItems++;
+
+        EditText newItem = (EditText) mView.findViewById(R.id.storeEditText);
+        newItem.setText(lastStore);
+    }
+
     //Called when UPDATE button is clicked
     public void update(View view) {
         boolean validStore = true;
@@ -100,12 +121,6 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
 
             EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
-
-            Spinner types = (Spinner) v.findViewById(R.id.typeSpinner);
-            String type = (types.getSelectedItem()).toString();
-
-            EditText descriptionInput = (EditText) v.findViewById(R.id.descEditText);
-            String description = descriptionInput.getText().toString();
 
             EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
             String amount = amountInput.getText().toString();
@@ -136,7 +151,8 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
             popup.setVisibility(View.VISIBLE);
             popup.setOnTouchListener(this);
         } else {
-            for(int i = 0; i < views.size(); i++) {
+            int i = 0;
+            for(;i < (views.size() - newItems); i++) {
                 View v = views.get(i);
                 int costID = i + 1;
 
@@ -155,6 +171,25 @@ public class EditOrderActivity extends AppCompatActivity implements OnTouchListe
                 EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
                 String amount = amountInput.getText().toString();
                 calc.editItem("Price", amount, costID);
+            }
+
+            for(;i < views.size(); i++) {
+                View v = views.get(i);
+
+                EditText storeInput = (EditText) v.findViewById(R.id.storeEditText);
+                String store = storeInput.getText().toString();
+
+                Spinner types = (Spinner) v.findViewById(R.id.typeSpinner);
+                String type = (types.getSelectedItem()).toString();
+
+                EditText descriptionInput = (EditText) v.findViewById(R.id.descEditText);
+                String description = descriptionInput.getText().toString();
+
+                EditText amountInput = (EditText) v.findViewById(R.id.amtEditText);
+                String stringAmount = amountInput.getText().toString();
+                float amount = Float.parseFloat(stringAmount);
+
+                calc.newItem(orderID, store, description, type, amount);
             }
 
             Intent returnIntent = new Intent(this, MainActivity.class);
