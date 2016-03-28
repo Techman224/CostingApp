@@ -24,8 +24,6 @@ import java.util.ArrayList;
 public class AddOrderActivity extends AppCompatActivity implements OnTouchListener {
     private ArrayList<View> items;
     private int orderID;
-    private boolean validStore;
-    private boolean validAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +78,8 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
 
     //Called when DONE button is clicked
     public void done(View view) {
-        validStore = true;
-        validAmount = true;
+        boolean validStore = true;
+        boolean validAmount = true;
 
         for(int i = 0; i < items.size(); i++) {
             EditText storeInput = (EditText) items.get(i).findViewById(R.id.storeEditText);
