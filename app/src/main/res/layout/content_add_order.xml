@@ -82,10 +82,10 @@
             android:layout_height="match_parent"
             android:id="@+id/errorMessage"
             android:textColor="#ffffffff"
-            android:textSize="40dp"
+            android:textSize="28dp"
             android:text="@string/error"
+            android:gravity="center_horizontal|center_vertical"
             android:layout_gravity="center_horizontal|center_vertical" />
 
     </RelativeLayout>
-
 </FrameLayout>

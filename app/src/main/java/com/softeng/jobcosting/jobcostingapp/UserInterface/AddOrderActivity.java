@@ -66,9 +66,16 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
         LinearLayout mainLayout = (LinearLayout) findViewById(R.id.addOrderLinearLayout);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        View lastItem = items.get(items.size() - 1);
+        EditText store = (EditText) lastItem.findViewById(R.id.storeEditText);
+        String lastStore = store.getText().toString();
+
         View mView = inflater.inflate(R.layout.input_item, null);
         items.add(mView);
         mainLayout.addView(mView);
+
+        EditText newItem = (EditText) mView.findViewById(R.id.storeEditText);
+        newItem.setText(lastStore);
     }
 
     //Called when DONE button is clicked
