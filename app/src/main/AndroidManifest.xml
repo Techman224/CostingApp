@@ -35,8 +35,8 @@
             android:label="@string/title_activity_edit_order"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".UserInterface.overallSummary"
-            android:label="@string/title_activity_overall_summary"
+            android:name=".UserInterface.OverallSummary"
+            android:label="@string/overall_sumarry"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

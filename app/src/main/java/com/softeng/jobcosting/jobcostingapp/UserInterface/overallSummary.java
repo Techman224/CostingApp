@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
 import com.softeng.jobcosting.jobcostingapp.R;
 
-public class overallSummary extends AppCompatActivity {
+public class OverallSummary extends AppCompatActivity {
 
     private Calculations calc;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.softeng.jobcosting.jobcostingapp.UserInterface.overallSummary"
+    tools:context=".UserInterface.OverallSummary"
     tools:showIn="@layout/activity_overall_summary"
     android:id="@+id/overall_summary">
 

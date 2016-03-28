@@ -79,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
             Intent addOrderIntent = new Intent(MainActivity.this, AddOrderActivity.class);
             startActivity(addOrderIntent);
         }
+        else if (id == R.id.overall_summary) {
+            Intent addOrderIntent = new Intent(MainActivity.this, OverallSummary.class);
+            startActivity(addOrderIntent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
