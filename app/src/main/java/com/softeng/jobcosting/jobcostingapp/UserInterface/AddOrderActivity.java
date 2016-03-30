@@ -20,6 +20,7 @@ import com.softeng.jobcosting.jobcostingapp.BusinessLogic.Calculations;
 import com.softeng.jobcosting.jobcostingapp.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AddOrderActivity extends AppCompatActivity implements OnTouchListener {
     private ArrayList<View> items;
@@ -52,11 +53,9 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
 
         //display the current date
         Date currDate = new Date();
-        String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(currDate);
-        TextView date = (TextView) findViewById(R.id.date);
-        String dateView = date.getText().toString();
-        dateView += " " + formattedDate;
-        date.setText(dateView);
+        String formattedDate = new SimpleDateFormat("dd/MM/yyyy", Locale.US).format(currDate);
+        EditText date = (EditText) findViewById(R.id.editDate);
+        date.setText(formattedDate);
     }
 
     //Called when ADD ITEM button is clicked

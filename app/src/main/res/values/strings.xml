@@ -9,8 +9,8 @@
     <string name="update_button">UPDATE</string>
     <string name="add_item_button">ADD ANOTHER ITEM</string>
     <string name="edit_order">Edit Order</string>
-    <string name="add_order_num">Order #: auto</string>
-    <string name="edit_order_num">Order #:</string>
+    <string name="auto">auto</string>
+    <string name="order_num">Order #: </string>
     <string name="dateString">Date:</string>
     <string name="title_activity_calculation">Calculation</string>
     <string name="title_activity_summary">Summary</string>

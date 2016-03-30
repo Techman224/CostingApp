@@ -12,31 +12,54 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_order_num"
-            android:id="@+id/orderNumber"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text_height"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:weightSum="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dateString"
-            android:id="@+id/date"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/edit_text_height"
+                android:id="@+id/half_screen"
+                android:layout_weight="0.7">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:text="@string/order_num"
+                    android:id="@+id/orderNumber" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/edit_text_height"
+                    android:text="@string/auto"
+                    android:id="@+id/editOrderNum" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/edit_text_height"
+                android:text="@string/dateString"
+                android:id="@+id/date" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/edit_text_height"
+                android:id="@+id/editDate" />
+
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/scrollView"
             android:layout_marginBottom="@dimen/button_height"
-            android:paddingTop="30dp">
+            android:layout_marginTop="@dimen/edit_text_height">
 
             <LinearLayout
                 android:layout_width="match_parent"
