@@ -147,6 +147,7 @@ End: 4:30PM
 
 Meeting 10 - March 4:
 People: Courtney, Joseph, Alan, Ryan (Skype), Daniel (Skype), Jasmin
+Location: EITC E2-164
 
 Start: 2:52PM
 Updates:
@@ -193,6 +194,7 @@ March 7 meeting rescheduled
 
 Meeting 11 - March 17
 People: Ryan, Courtney, Alan, Jasmin
+Location: Table in EITC E3
 
 Start: 12:30PM
 Updates:
@@ -218,6 +220,7 @@ End: 1:00PM
 
 Meeting 12 - March 22
 People: Ryan, Courtney, Alan, Daniel, Jasmin
+Location: EITC Linux Lab
 
 Start: 12:15PM
 Updates:
