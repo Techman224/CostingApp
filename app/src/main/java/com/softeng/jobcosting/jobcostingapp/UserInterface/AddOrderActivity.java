@@ -79,7 +79,15 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
     public void done(View view) {
         boolean validStore = true;
         boolean validAmount = true;
+        boolean validOrderNum = true;
 
+        TextView orderNum = (TextView)findViewById(R.id.editOrderNum);
+        String stringOrderNum = orderNum.getText().toString();
+        if(!(stringOrderNum.equals("auto") || stringOrderNum.matches("\\s*[-+]?\\d*\\s*"))) {
+            validOrderNum = false;
+        }
+
+        //check if each item is valid
         for(int i = 0; i < items.size(); i++) {
             EditText storeInput = (EditText) items.get(i).findViewById(R.id.storeEditText);
             String store = storeInput.getText().toString();
@@ -96,7 +104,15 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
             }
         }
 
-        if(!validStore) {
+        if(!validOrderNum) {
+            TextView errorPopup = (TextView) findViewById(R.id.errorMessage);
+            String errorString = errorPopup.getText().toString();
+            errorString += "Please enter either \"auto\" or an integer for the order number.";
+            errorPopup.setText(errorString);
+            View popup = findViewById(R.id.popup);
+            popup.setVisibility(View.VISIBLE);
+            popup.setOnTouchListener(this);
+        } else if(!validStore) {
             TextView errorPopup = (TextView) findViewById(R.id.errorMessage);
             String errorString = errorPopup.getText().toString();
             errorString += "Please enter a store for each item.";
@@ -112,7 +128,7 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
             View popup = findViewById(R.id.popup);
             popup.setVisibility(View.VISIBLE);
             popup.setOnTouchListener(this);
-        } else {
+        } else { //if orderID, date, and all items are valid
             //create a new order
             Calculations calc = new Calculations();
             String newOrder = calc.newOrder();
