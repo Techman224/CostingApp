@@ -147,6 +147,7 @@ End: 4:30PM
 
 Meeting 10 - March 4:
 People: Courtney, Joseph, Alan, Ryan (Skype), Daniel (Skype), Jasmin
+Location: EITC E2-164
 
 Start: 2:52PM
 Updates:
@@ -189,7 +190,61 @@ Next Meeting: Monday, March 7, 2016 at 6:30PM
 
 End: 5:12PM
 
+March 7 meeting rescheduled
 
+Meeting 11 - March 17
+People: Ryan, Courtney, Alan, Jasmin
+Location: Table in EITC E3
+
+Start: 12:30PM
+Updates:
+-	Edit order still crashes
+-	Itr3 hasn’t been posted
+-	A lot of fixing bugs
+-	Ryan worked on main activity so that it would stop crashing
+Itr2
+-	Junit testing done for calculations
+-	Integration testing hasn’t been really done
+-	Still rushed at the last minute again
+-	Some major & minor problems
+-	Finished core features of the app
+Itr3
+-	Do some documentation (manual)
+-	Do more integration testing and jUnit testing
+-	Must use robotium for testing UI of the app
+-	Will more some buttons around for addOrder and editOrder
+
+End: 1:00PM
+
+
+
+Meeting 12 - March 22
+People: Ryan, Courtney, Alan, Daniel, Jasmin
+Location: EITC Linux Lab
+
+Start: 12:15PM
+Updates:
+-	No updates since last time
+Itr3
+-	Get the app running without bugs before the presentation on March 28, 2016
+-	Make popups for doing an order without values
+-	After presentation, finish features for itr3
+-	Jasmin and Ryan will work on summary page to get to show profit and margin
+-	Video Meeting with Keith on Saturday
+-	Finish working version for Friday 5pm
+
+End: 1:00PM
+
+
+
+Meeting 13 - March 26 (Video Meeting via Skype with customer)
+People: Keith, Ryan, Courtney, Alan, Jasmin
+
+Start: 10:15AM
+-	Recorded 2 minute video for customer feedback on the app
+-	Discussed about improvements to the app for iteration 3
+-	Discussed about the presentation for March 28
+End: 10:45AM
 
 //***** End of Meeting Minutes *****//
 
