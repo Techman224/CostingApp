@@ -232,6 +232,17 @@ Itr3
 
 End: 1:00PM
 
+
+
+Meeting 13 - March 26 (Video Meeting via Skype with customer)
+People: Keith, Ryan, Courtney, Alan, Jasmin
+
+Start: 10:15AM
+-	Recorded 2 minute video for customer feedback on the app
+-	Discussed about improvements to the app for iteration 3
+-	Discussed about the presentation for March 28
+End: 10:45AM
+
 //***** End of Meeting Minutes *****//
 
 //***** Start Task Assignments itr1 *****//
