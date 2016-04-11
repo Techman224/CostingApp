@@ -234,6 +234,16 @@ public class QueryBuilder {
 
         System.out.println(query);
 
+        type = null;
+        fields = new ArrayList<String>();
+        values = new ArrayList<String>();
+        conditions = new ArrayList<String>();
+        sortFlag = false;
+        sortField = null;
+        ascending = true;
+        groupFlag = false;
+        groups = null;
+
         return query;
     }
 }

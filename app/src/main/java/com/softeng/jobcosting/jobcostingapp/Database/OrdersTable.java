@@ -7,7 +7,7 @@ public class OrdersTable extends Table {
     public OrdersTable() {
         super ("Orders",
                 new TableColumn("OrderID", ColumnType.INTEGER, true, "PRIMARY KEY", "AUTOINCREMENT"),
-                new TableColumn("Date", ColumnType.DATE, true)
+                new TableColumn("Date", ColumnType.TEXT, true)
         );
     }
 

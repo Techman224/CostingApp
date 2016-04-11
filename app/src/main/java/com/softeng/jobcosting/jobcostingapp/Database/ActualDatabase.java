@@ -256,17 +256,37 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 
 		Cursor c = null;
 		c = db.rawQuery(query.build(), null);
+		c.moveToFirst();
 
+		System.out.println(c.getCount());
+
+		Cursor c2 = null;
 		if(isInsert){
+			System.out.println("SELECT * FROM " + query.getTable() + " ORDER BY OrderID DESC limit 1");
 			String resultQuery = "SELECT * FROM " + query.getTable() + " ORDER BY OrderID DESC limit 1";
-			c = db.rawQuery(resultQuery, null);
+			c2 = db.rawQuery(resultQuery, null);
 		}
 
-		result = "";
+		if(c2 != null) {
+			c.close();
+			result = getResults(c2);
+			c2.close();
+		}
+		else {
+			result = getResults(c);
+			c.close();
+		}
+
+		return result;
+	}
+
+	public String getResults(Cursor c) {
+		String result = "";
 
 		c.moveToFirst();
 
 		while (!c.isAfterLast()) {
+			System.out.println("The query result wasn't empty");
 			int col = 0;
 			while(col < c.getColumnCount()) {
 				switch(c.getType(col)) {
