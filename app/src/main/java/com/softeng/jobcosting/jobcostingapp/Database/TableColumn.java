@@ -36,6 +36,6 @@ public class TableColumn {
         return flags.toArray(returnArray);
     }
     public boolean hasFlag(String flag) {
-        flags.contains(flag);
+        return flags.contains(flag);
     }
 }

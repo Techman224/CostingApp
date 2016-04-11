@@ -20,7 +20,7 @@ public class CostsTable extends Table {
 
         createQuery += "CREATE TABLE IF NOT EXISTS " + super.getName() + " (";
 
-        TableColumn[] cols = super.getColumns()
+        TableColumn[] cols = super.getColumns();
         for(int j=0;j < cols.length;j++) {
             createQuery += cols[j].getName() + " " + cols[j].getType();
             if (cols[j].hasFlag("PRIMARY KEY")) {

@@ -217,7 +217,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 				}
 			}
 			if(valid) {
-				valid = query.addCondition(field, value);
+				valid = false;//query.addCondition(field, innerQuery);
 			}
 		}
 
@@ -258,7 +258,7 @@ public class ActualDatabase extends SQLiteOpenHelper implements Database {
 		c = db.rawQuery(query.build(), null);
 
 		if(isInsert){
-			String resultQuery = "SELECT * FROM " + table + " ORDER BY OrderID DESC limit 1";
+			String resultQuery = "SELECT * FROM " + query.getTable() + " ORDER BY OrderID DESC limit 1";
 			c = db.rawQuery(resultQuery, null);
 		}
 

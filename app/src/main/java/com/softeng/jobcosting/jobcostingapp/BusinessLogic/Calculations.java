@@ -54,6 +54,7 @@ public class Calculations {
             result = db.query();
 
             if(result.equals("")) {
+                System.out.println("Results are empty");
                 result = null;
             }
         }

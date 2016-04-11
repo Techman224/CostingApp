@@ -60,6 +60,9 @@ public class QueryBuilder {
 
         return isValid;
     }
+    public String getTable() {
+        return table;
+    }
 
     public boolean addColumn(String column) {
         boolean isValid = false;
@@ -100,7 +103,7 @@ public class QueryBuilder {
             if(contract.getTable(table).hasColumnNamed(column)) {
                 switch(contract.getTable(table).getColumn(column).getTypeObject()) {
                     case TEXT:
-                        value = "'" + value + "'");
+                        value = "'" + value + "'";
                         break;
                 }
             }
@@ -183,7 +186,7 @@ public class QueryBuilder {
                         query = query.replace("[fields]", replaceStr);
                     }
                     else if(type == QueryType.SELECT) {
-                        query = query.replace("[fields]", "*");
+                        query = query.replace("([fields])", "*");
                     }
                 }
                 if (type.hasValues() && values.size() > 0) {
@@ -219,12 +222,17 @@ public class QueryBuilder {
             }
 
             if(query.contains("[") || query.contains("]")) {
+                if(type == QueryType.SELECT && query.contains("[conditions]")) {
+                    query = query.substring(0, query.indexOf("WHERE"));
+                }
                 //Error: The values provided didn't properly match the SQL format
             }
         }
         else {
             //Error: There is no query started or an illegal type was given
         }
+
+        System.out.println(query);
 
         return query;
     }

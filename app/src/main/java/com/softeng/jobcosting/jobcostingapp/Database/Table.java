@@ -12,6 +12,7 @@ public abstract class Table {
 
     public Table(String name, TableColumn... tableCols) {
         tableName = name;
+        columns = new ArrayList<TableColumn>();
         columns.addAll(Arrays.asList(tableCols));
     }
 

@@ -206,7 +206,7 @@ public class StubDatabase implements Database {
 				}
 			}
 			if(valid) {
-				valid = query.addCondition(field, value);
+				valid = false;//query.addCondition(field, value);
 			}
 		}
 
