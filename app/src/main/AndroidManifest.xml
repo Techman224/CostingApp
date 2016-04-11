@@ -20,9 +20,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserInterface.ManualCalculatorActivity"
-            android:label="@string/title_activity_calculation" />
-        <activity
             android:name=".UserInterface.SummaryActivity"
             android:label="@string/title_activity_summary"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -35,8 +32,8 @@
             android:label="@string/title_activity_edit_order"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".UserInterface.overallSummary"
-            android:label="@string/title_activity_overall_summary"
+            android:name=".UserInterface.OverallSummary"
+            android:label="@string/overall_sumarry"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

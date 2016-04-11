@@ -5,13 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e4b944f-8d0b-4ca1-a779-7d4e160bad91" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JobCostingApp Documentation and Manual.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SoftEng Arch.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app-release.apk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CostingApp/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\Users\Alan\Documents\GitHub\CostingApp\Grades\Iteration 0 Marking group 3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alan\Documents\GitHub\CostingApp\Grades\Iteration1MarkingGroup3.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/AddOrderActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/AddOrderActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/BusinessLogic/Calculations.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/BusinessLogic/Calculations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/CostsTable.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/CostsTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/stub/StubDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/stub/StubDatabase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/Table.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/TableColumn.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/TableColumn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/EditOrderActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/EditOrderActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/SummaryActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/SummaryActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_overall_summary.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_overall_summary.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/content_add_order.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/content_add_order.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/content_edit_order.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/content_edit_order.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/content_overall_summary.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/content_overall_summary.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/gradle.xml" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/input_item.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/input_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../log.txt" afterPath="$PROJECT_DIR$/../log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/menu_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/overallSummary.java" afterPath="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/overallSummary.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -40,20 +63,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SummaryActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SummaryActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/SummaryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.45132744">
               <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryBuilder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6502732">
+            <state vertical-scroll-proportion="-8.814815">
               <caret line="106" column="29" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
               <folding />
             </state>
@@ -64,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/BusinessLogic/Calculations.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+              <caret line="69" column="53" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -1704,12 +1727,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/DatabaseContract.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/CostsTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/TableColumn.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/stub/StubDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/Table.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/BusinessLogic/Calculations.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java" />
       </list>
     </option>
   </component>
@@ -2136,7 +2159,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2192,7 +2215,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2200,7 +2226,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2230,7 +2259,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2254,7 +2286,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2369,14 +2404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="260" column="68" selection-start-line="260" selection-start-column="68" selection-end-line="260" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04644809">
@@ -2393,26 +2420,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/SummaryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/BusinessLogic/Calculations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+          <caret line="69" column="53" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/QueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6502732">
+        <state vertical-scroll-proportion="-8.814815">
           <caret line="106" column="29" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/Database/ActualDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89102566">
+          <caret line="161" column="8" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="8" />
+          <folding>
+            <element signature="e#6488#6489#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/softeng/jobcosting/jobcostingapp/UserInterface/SummaryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45132744">
+          <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
           <folding />
         </state>
       </provider>

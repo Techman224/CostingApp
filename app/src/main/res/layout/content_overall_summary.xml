@@ -6,19 +6,52 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.softeng.jobcosting.jobcostingapp.UserInterface.overallSummary"
+    tools:context=".UserInterface.OverallSummary"
     tools:showIn="@layout/activity_overall_summary"
     android:id="@+id/overall_summary">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <TableRow
+            android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:id="@+id/orderNumberText"
+            android:text="Order #"/>
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:id="@+id/marginText"
+            android:text="Margin"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:id="@+id/profitText"
+            android:text="Profit"/>
+        </TableRow>
 
         <ScrollView
 
             android:id="@+id/over_scroll"
             android:layout_width="match_parent"
+            android:layout_marginTop="-25dp"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -30,8 +63,27 @@
 
             </LinearLayout>
         </ScrollView>
+    </TableLayout>
 
-
-
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/overallSummaryBottomLabel"
+        android:background="#000000">
+        <TableRow
+            android:layout_width="0dp" >
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_margin="2dip"
+            android:layout_weight="1"
+            android:id="@+id/totalProfitLabel"
+            android:textSize="20dp"
+            android:textColor="#ffffff">
+        </TextView>
+        </TableRow>
     </TableLayout>
 </RelativeLayout>

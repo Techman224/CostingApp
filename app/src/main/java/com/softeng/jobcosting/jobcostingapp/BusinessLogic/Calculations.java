@@ -32,6 +32,19 @@ public class Calculations {
         return result;
     }
 
+    public boolean deleteOrder(int orderID) {
+        boolean valid = false;
+
+        db.setTable("Orders");
+
+        if(db.delete("orderID", String.valueOf(orderID))) {
+            db.query();
+            valid = true;
+        }
+
+        return valid;
+    }
+
     public String editItem(String field, String newValue, int costID) {
         String result = null;
 
@@ -116,7 +129,9 @@ public class Calculations {
     public float getProfit(int orderID) {
         float profit = 0;
 
-        profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged") - getTypeTotal(orderID, "GSTCharged");
+        //profit = getOrderTotal(orderID) - getTypeTotal(orderID, "PSTCharged");
+        profit += getOrderTotal(orderID);
+        profit -= (2 * getTypeTotal(orderID, "PSTCharged"));
 
         return profit;
     }
@@ -124,7 +139,9 @@ public class Calculations {
     public float getMargin(int orderID) {
         float margin = 0;
 
-        margin = getProfit(orderID) / getTypeTotal(orderID, "Board");
+        //margin = getProfit(orderID) / getTypeTotal(orderID, "Board");
+        margin += getProfit(orderID);
+        margin /= getTypeTotal(orderID, "Board");
 
         return margin;
     }
@@ -190,5 +207,37 @@ public class Calculations {
         }
 
         return typeTotal;
+    }
+
+    public float getOverallTypeTotal(String type)
+    {
+        float overallTypeTotal = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            overallTypeTotal += getTypeTotal(orderIDs[i], type);
+        }
+
+        if(type.equals("Margin"))
+        {
+            overallTypeTotal /= orderIDs.length;
+        }
+
+        return overallTypeTotal;
+    }
+
+    public float getTotalSold()
+    {
+        float totalSold = 0;
+        int[] orderIDs = getOrderIDs();
+
+        for(int i = 0; i < orderIDs.length; i++)
+        {
+            totalSold += getTypeTotal(orderIDs[i], "Board");
+            totalSold += getTypeTotal(orderIDs[i], "Accessories");
+        }
+
+        return totalSold;
     }
 }

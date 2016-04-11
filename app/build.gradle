@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.softeng.jobcosting.jobcostingapp"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 23
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionCode 1
@@ -20,15 +20,17 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    testCompile 'com.android.support:support-annotations:23.1.1'
+    testCompile 'com.android.support:support-annotations:23.2.1'
     testCompile 'org.mockito:mockito-core:1.10.19'
     androidTestCompile('com.android.support.test:runner:0.3') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
     testCompile 'com.android.support.test:rules:0.4.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:support-v4:23.2.1'
 }
