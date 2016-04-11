@@ -37,7 +37,7 @@ public class Calculations {
 
         db.setTable("Orders");
 
-        if(db.delete("orderID", String.valueOf(orderID))) {
+        if(db.delete("OrderID", String.valueOf(orderID))) {
             db.query();
             valid = true;
         }
@@ -188,6 +188,7 @@ public class Calculations {
 
         if(db.where(fieldsToReturn, "Type", type))
         {
+            db.where(fieldsToReturn, "OrderID", Integer.toString(orderID));
             query = db.query();
             tokens = query.split("\n");
 
