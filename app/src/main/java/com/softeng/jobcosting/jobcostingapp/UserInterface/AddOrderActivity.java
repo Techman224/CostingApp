@@ -135,6 +135,8 @@ public class AddOrderActivity extends AppCompatActivity implements OnTouchListen
 
             //get orderID FOR NOW will eventually be putting it in myself.
             String[] values = newOrder.split(",");
+            System.out.println("Value[0]: " + values[0]);
+            System.out.println("Value[1]: " + values[1]);
             orderID = Integer.parseInt(values[0]);
 
             for(int i = 0; i < items.size(); i++) {

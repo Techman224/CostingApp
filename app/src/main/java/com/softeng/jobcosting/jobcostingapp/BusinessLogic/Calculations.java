@@ -12,7 +12,7 @@ public class Calculations {
 
     public String newOrder() {
         db.setTable("Orders");
-        db.insert("Date", "Date()");
+        db.insert("Date", "01/01/2001");
         return db.query();
     }
 
@@ -67,6 +67,7 @@ public class Calculations {
             result = db.query();
 
             if(result.equals("")) {
+                System.out.println("Results are empty");
                 result = null;
             }
         }
