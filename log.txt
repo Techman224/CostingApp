@@ -270,6 +270,17 @@ End: 10:45AM
 
 //***** End Task Assignments itr2 *****//
 
+//***** Start Task Assignments itr3 *****//
+
+- 	Focused more on fixing existing issues, completing documentation, and a new feature
+-	Alan: Improvements to database such as supporting deletion
+- 	Ryan: Overall summary activity: page to view the whole summary of all orders
+- 	Courtney: Fix addOrder and EditOrder such that we have error checking for required fields
+- 	Daniel: Fix bugs in business logic and implemented profit and margin for orders
+- 	Jasmin: jUnit testing with new methods in calculations.java such as getTypeTotal, getOverallTotal, getTotalSold, and deleteOrder
+
+//***** End Task Assignments itr3 *****//
+
 //***** Start Design Changes itr1 *****//
 Major: None.
 Minor: 
@@ -284,6 +295,15 @@ Minor:
 	- Sorting and search won't be implemented in this iteration due to problems with earlier iteration.
 	- editOrder seems to still do duplicate entries.
 //***** End Design Changes itr2 *****//
+
+//***** Start Design Changes itr3 *****//
+
+Major: None.
+Minor:
+	- Remove ManualCalculator since it had too many problems and wasn't really needed at this time.
+	- Instead we added an overall summary page accessible from the main screen.
+
+//***** End Design Changes itr3 *****//
 
 //***** Start Individual Feedback *****//
 

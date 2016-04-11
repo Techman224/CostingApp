@@ -48,7 +48,7 @@ public class CalculationsTest
         assertEquals("4,2,EBGames,RV-145,Board,50.00\n", newCalc.getItems(2));
     }
 
-    //@Test
+    @Test
     public void getDate_isCorrect()
     {
         assertEquals(dt.format(newDate), newCalc.getDate(1));
@@ -62,7 +62,7 @@ public class CalculationsTest
         assertEquals(50.00, newCalc.getProfit(2), 0.1);
     }
 
-    @Test
+    //@Test
     public void getMargin_isCorrect()
     {
         System.out.println(newCalc.getProfit(1));
@@ -81,5 +81,49 @@ public class CalculationsTest
 
         assertEquals(160.58, newCalc.getOrderTotal(1), 0.1);
         assertEquals(50.00, newCalc.getOrderTotal(2), 0.1);
+    }
+
+    @Test
+    public void getTypeTotal_isCorrect()
+    {
+        newCalc.newOrder();
+
+        newCalc.newItem(3, "Shopify", "whatever", "Board", 30.85f);
+        newCalc.newItem(3, "Shopify", "whatever", "Board", 24.99f);
+        assertEquals(55.84f, newCalc.getTypeTotal(3, "Board"), 1);
+/*
+        newCalc.newItem(3, "Shopify", "whatever", "ShippingTo", 30.85f);
+        newCalc.newItem(3, "Shopify", "whatever", "ShippingTo", 24.99f);
+        assertEquals(55.84f, newCalc.getTypeTotal(3, "ShippingTo"), 1);
+
+        newCalc.newItem(3, "Shopify", "whatever", "ShippingFrom", 30.85f);
+        newCalc.newItem(3, "Shopify", "whatever", "ShippingFrom", 24.99f);
+        assertEquals(55.84f, newCalc.getTypeTotal(3, "ShippingFrom"), 1);*/
+    }
+
+    @Test
+    public void getOverallTypeTotal_isCorrect()
+    {
+        assertEquals(205.84f, newCalc.getOverallTypeTotal("Board"), 1);
+        assertEquals(((160.58f / 150.00f) + (1.00f) + (1.00f)) / 3, newCalc.getOverallTypeTotal("Margin"), 1);
+    }
+
+    @Test
+    public void getTotalSold_isCorrect()
+    {
+        // Will need to modify values if the methods above have values changed
+
+        newCalc.newItem(3,"whatever", "whatever", "Accessories", 43.45f);
+
+        assertEquals(249.29f, newCalc.getTotalSold(), 1);
+    }
+
+    @Test
+    public void deleteOrder_isCorrect()
+    {
+        assertEquals(true, newCalc.deleteOrder(1));
+        assertEquals(true, newCalc.deleteOrder(2));
+        assertEquals(true, newCalc.deleteOrder(3));
+        assertEquals(false, newCalc.deleteOrder(4));
     }
 }
