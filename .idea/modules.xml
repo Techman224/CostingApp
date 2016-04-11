@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CostingApp.iml" filepath="$PROJECT_DIR$/CostingApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/robotium-solo-5.3.1/robotium-solo-5.3.1.iml" filepath="$PROJECT_DIR$/robotium-solo-5.3.1/robotium-solo-5.3.1.iml" />
     </modules>
   </component>
 </project>
